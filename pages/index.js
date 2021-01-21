@@ -4,36 +4,33 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>PHM Data Hub</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
         <h1 className="title">
-          Hello from <a href="https://nextjs.org">Next.js!</a>
+          Welcome to the Open Source Prognostics Health Monitoring (PHM) Data Hub for Machine Learning!
         </h1>
 
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
+        <p className="What is PHM?">
+          Prognostics health monitoring is attempting to acc... <code>pages/PHM_info.js</code>
         </p>
 
         <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
+          <a href="pages/PHM_info.js" className="card">
+            <h3>What is PHM? &rarr;</h3>
+            <p>Preview webpage about PHM... fill later.</p>
           </a>
 
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
+          <a href="https://github.com/PHM-Data-Hub" className="card">
+            <h3>Source Code &rarr;</h3>
+            <p>View our source code!</p>
           </a>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
+          <a href="pages/profiles.js" className="card">
+            <h3>ENGINE 2021 Capstone &rarr;</h3>
+            <p>Fill in later</p>
           </a>
 
           <a
