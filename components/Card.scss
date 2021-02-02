@@ -1,0 +1,21 @@
+@import "../theme/theme";
+
+
+.card-template { 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: whitesmoke;
+
+
+    padding: 1.5rem;
+    color: #000000;
+    margin: 1rem;
+    border: 1px solid #EAEAEA;
+    border-radius: 10px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+
+    height: 100%;
+    cursor: pointer;
+}

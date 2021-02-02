@@ -1,0 +1,32 @@
+
+@import "../theme/theme";
+
+
+.grid-wrapper {
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 50px 100px;
+
+
+    flex-grow: 1;
+    padding: 10px;
+    margin: 'auto';
+    max-width: 500px;
+}
+
+.card-wrapper {
+    max-width: 200px;
+    color: red;
+}
+
+image {
+    width: 128px;
+    height: 128px;
+}
+
+img {
+    margin: 'autor';
+    display: 'block';
+    max-width: 100%;
+    max-height: 100%;
+}

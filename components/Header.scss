@@ -1,0 +1,28 @@
+
+
+@import "../theme/theme";
+
+.Header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  height: 50px;
+  width: 100%;
+
+  padding: 0 20px;
+
+  font-family: $logo-font;
+  font-size: 24px;
+  font-weight: bold;
+  color: $on-secondary;
+  text-transform: uppercase;
+
+  background: $highlight;
+
+  position: relative;
+  z-index: 10;
+  box-shadow: 0px 9px 15px rgba(50, 50, 50, 0.45);
+
+  cursor: pointer;
+}
