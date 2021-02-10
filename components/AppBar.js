@@ -53,7 +53,7 @@ export default function ButtonAppBar() {
               </Link>
             </Button>
             <Button color="inherit">
-              <Link href="#">
+              <Link href="/recommend">
                 <a className={classes.text}>SUGGEST A DATA</a>
               </Link>
             </Button>
