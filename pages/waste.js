@@ -1,3 +1,3 @@
-const Waste() = 1;
+const Waste = 1;
 
-export default Waste()
+export default Waste;
