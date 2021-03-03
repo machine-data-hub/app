@@ -4,7 +4,7 @@ import {
   handleSectorFilter,
   handleTypeFilter,
   handleLabeledFilter,
-} from "../utils/filter"; // import filter handler
+} from "../utils/filter"; //import filter handler
 
 const List = ({
   datasets,
