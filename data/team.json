@@ -1,20 +1,20 @@
 [
   {
-    "name": "J",
-    "profile_pict": "https://asset.kompas.com/crops/co6eI6cSLhVPTJDB5Ctd5b-9lv4=/0x0:0x0/750x500/data/photo/2021/01/28/60122e4d2fab4.jpg",
-    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel metus finibus, consequat mi a, hendrerit lorem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
-    "linkedin_url": "www.linkedin.com"
+    "name": "Cecilia Barnes",
+    "profile_pict": "/images/cecilia.jpg",
+    "summary": "Cecilia is a senior at the University of Washington studying Data Science as part of the Human Centered Design and Engineering department. She is currently a Data Science Intern for the UW IT department and is interested in machine learning applications.",
+    "linkedin_url": "www.linkedin.com/in/cecilia-barnes/ "
   },
   {
-    "name": "Member 2",
-    "profile_pict": "https://asset.kompas.com/crops/co6eI6cSLhVPTJDB5Ctd5b-9lv4=/0x0:0x0/750x500/data/photo/2021/01/28/60122e4d2fab4.jpg",
-    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel metus finibus, consequat mi a, hendrerit lorem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
-    "linkedin_url": "www.linkedin.com"
+    "name": "Jiwoo Park",
+    "profile_pict": "/images/jiwoo.jpg",
+    "summary": "Jiwoo is a senior majoring in Electrical Engineering at the University of Washington, concentrating on digital signal processing. He has an interest in software development.",
+    "linkedin_url": "www.linkedin.com/in/jiwoo-park-a7660a196/"
   },
   {
-    "name": "Member 3",
-    "profile_pict": "https://asset.kompas.com/crops/co6eI6cSLhVPTJDB5Ctd5b-9lv4=/0x0:0x0/750x500/data/photo/2021/01/28/60122e4d2fab4.jpg",
-    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel metus finibus, consequat mi a, hendrerit lorem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
-    "linkedin_url": "www.linkedin.com"
+    "name": "Matthew Sullivan",
+    "profile_pict": "/images/matthew.jpg",
+    "summary": "Matt is a senior electrical engineering student at the University of Washington focusing on digital signal processing and communications. He is currently a research assistant under Dr. Shen and interested in medical imaging research. ",
+    "linkedin_url": "www.linkedin.com/in/matthew-sullivan-287906153/"
   }
 ]
