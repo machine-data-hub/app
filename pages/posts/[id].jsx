@@ -47,7 +47,15 @@ const Posts = ({ data, similar }) => {
                         <div className="content__right">
                             <h3>About this dataset</h3>
                             <p>{data['Short Summary']}</p>
-                            <a href={data.DownloadLink}><button type="button">Download</button></a>
+                            {data['Datasets'].map((set) => (
+                                <div className="more_datasets">
+                                    <div className="more_name">{set.Name}</div>
+                                    <div><span><MdFavorite/></span>{set.Likes} Likes</div>
+                                    <div><span className="icon__download"><MdFileDownload/></span>{set.Downloads} Downloads</div>
+                                    <div>{set["File Size"]} </div>
+                                    <a href={set.URL}><button className="button" type="button">Download</button></a>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

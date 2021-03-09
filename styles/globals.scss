@@ -617,6 +617,49 @@ button:focus{
                     font-size:16px;   
                     border:0;
                 }
+                .more_datasets{
+                    background-color: rgb(231, 243, 255);
+                    padding:1rem;
+                    width:100%;
+                    display:flex;
+                    border-bottom:1px solid #ddd;
+                    white-space: nowrap;
+
+                    .more_name{
+                        font-size: 1rem;
+                    }
+
+                    div{
+                        width:40%;
+                        color:rgb(33, 120, 179);
+                        font-size:.8rem;
+                        font-weight:600;
+                        display:flex;
+                        align-items:center;
+
+                        span{
+                            font-size:1rem;
+                            margin-right:4px;
+                            transform:translateY(1px);
+                        }
+
+                        .icon__download{
+                            margin-left: 1px;
+                            font-size:1.2rem;
+                            transform:translateY(2px);
+                        }
+
+                        &:first-of-type{
+                            justify-content:flex-start;
+                        }
+                        &:last-of-type{
+                            justify-content:flex-end;
+                        }
+                    }
+                    .button{
+                        margin: 10px;
+                    }
+                }
             }
         }
     }
