@@ -21,7 +21,7 @@
     },
     {
       "id": "2",
-      "Name": "Steel Plates Faults Data Set 1",
+      "Name": "Steel Plates Faults Data Set",
       "Owner": "UC Irvine",
       "URL": ["http://archive.ics.uci.edu/ml/machine-learning-databases/00198/Faults.NNA", "http://archive.ics.uci.edu/ml/machine-learning-databases/00198/Faults27x7_var"],
       "Short Summary": "Folder containing Readme file and All instances of a dataset of steel plates faults, classified into 7 different types. The goal was to train machine learning for automatic pattern recognition.",
