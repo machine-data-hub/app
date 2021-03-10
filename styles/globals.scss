@@ -925,3 +925,47 @@ button:focus{
         border:0;
     }
 }
+
+// Navbar
+.main__footer{
+    background:var(--primary);
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:auto;
+    padding:1.5rem 2rem;
+
+    .footer__left{
+        margin: auto;
+        h1{
+            margin:0;
+            font-size:3rem;
+            cursor: pointer;
+        }
+    }
+        
+    .footer_right{
+        margin: auto;
+        ul{
+            display:inline-grid;
+            align-items:center;
+        
+            li{
+                padding:2px 1.5rem;
+                font-size:1rem;
+                cursor:pointer;
+                border-radius:4px;
+                text-align: center;
+                line-height: 30px;
+                &:hover{
+                    background:#1f74ad;
+                }
+            }
+
+            li.nav-active{
+                text-decoration: underline;
+            }
+        }
+    }
+}
