@@ -15,6 +15,7 @@
       "Downloads": 191037,
       "Likes": 0,
       "File Size": "3.7 MB",
+      "img_link":"https://www.miga.org/sites/default/files/2018-06/power-plant-bright-blue-sky.jpg",
       "Datasets": [
                     {"Name": "Dataset 1", "URL": "https://archive.ics.uci.edu/ml/machine-learning-databases/00294/CCPP.zip", "Likes":0, "Downloads": "191037", "File Size": "3.7 MB"}
                   ]
