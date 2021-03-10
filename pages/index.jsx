@@ -247,7 +247,7 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
   }, [totalPagination]);
 
   return (
-    <Layout title={`PHM Data Hub`}>
+    <Layout title={`Machine Data Hub`}>
       <Search
         sectors={sectors}
         mLTypes={mLTypes}
