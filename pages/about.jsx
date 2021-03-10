@@ -3,9 +3,9 @@ import teams from "../data/team.json";
 
 const About = () => {
   return (
-    <Layout title="About | PHM Data Hub">
+    <Layout title="About | Machine Data Hub">
       <div className="page__about">
-        <h1>About PHM Data Hub</h1>
+        <h1>About Machine Data Hub</h1>
         <div className="body">
           <p>
             Welcome to the Machine Data Hub! The goal of this open source
