@@ -18,7 +18,7 @@ const SuggesttDatasets = () => {
   console.log(title, summary, link);
 
   return (
-    <Layout title="About | PHM Data Hub">
+    <Layout title="About | Machine Data Hub">
       <div className="page__form">
         <div className="body">
           <p>Suggest a dataset to be added to the Data Hub!</p>
