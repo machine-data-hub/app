@@ -83,8 +83,8 @@
                   {"Name": "Dataset 4", "URL": "https://ti.arc.nasa.gov/c/15/", "Likes":"0", "Downloads": "9803", "File Size": "14.7 MB"},
                   {"Name": "Dataset 5", "URL": "https://ti.arc.nasa.gov/c/16/", "Likes":"0", "Downloads": "10494", "File Size": "8.7 MB"},
                   {"Name": "Dataset 6", "URL": "https://ti.arc.nasa.gov/c/17/", "Likes":"0", "Downloads": "11068", "File Size": "24.9 MB"}
-                 ]
-  
+                 ],
+        "img_link" : "https://www.freepik.com/premium-vector/battery-energy-design_3779675.htm#page=1&query=battery&position=21"
     },
     {
       "id": "5",
