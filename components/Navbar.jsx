@@ -8,7 +8,7 @@ const Navbar = () => {
         <div className="navbar">
             <div className="container">
                 <div className="navbar__left">
-                    <Link href="/"><h1>PHM Data Hub</h1></Link>
+                    <Link href="/"><h1>Machine Data Hub</h1></Link>
                 </div>
                 <div className="navbar__right">
                     <ul>
