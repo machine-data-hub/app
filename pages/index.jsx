@@ -332,7 +332,7 @@ Home.getInitialProps = async (context) => {
   const typeWrapper = [];
   datasets.map((item) => {
     // mapping through datasest to get sector list only
-    if (item["ML Type"].length >= 0) {
+    if (item["ML Type"].length > 0) {
       typeWrapper.push(...item["ML Type"]);
     }
   });
