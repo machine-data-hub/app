@@ -74,7 +74,7 @@ const Search = ({
           className={`icon__sort ${filterOpen ? "active" : ""}`}
           onClick={() => setFilterOpen(!filterOpen)}
         >
-          <BiSort />
+          <BiSort /> Filter
         </span>
         {filterOpen && (
           <div className="sort__wrapper">
