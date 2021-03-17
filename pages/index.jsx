@@ -263,22 +263,6 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
         labeled={labeled}
         setLabeled={setLabeled}
       />
-      <div className="pagination">
-        {/* mapping pagination button. index 0 = page 1 */}
-        {[...Array(totalPagination)].map((x, index) => {
-          return (
-            <div
-              className={`page ${
-                parseInt(index + 1) === parseInt(page) ? "active" : ""
-              }`}
-              key={index}
-              onClick={() => changePage(index + 1)}
-            >
-              {index + 1}
-            </div>
-          );
-        })}
-      </div>
       <List
         // paginate(array, post per page, current page)
         datasets={paginate(
