@@ -23,11 +23,6 @@ textarea {
     Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -405,7 +400,7 @@ button:focus {
       right: 0;
       background: white;
       padding: 2rem;
-      max-width: 70%;
+      width: 100%;
       z-index: 1;
       box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
         rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
@@ -431,9 +426,20 @@ button:focus {
           background: #fff;
         }
 
-        button.active {
+        button.active, .active {
           background: var(--primary);
           color: white;
+        }
+
+        h2 {
+          color: var(--primary);
+
+        }
+
+        h3 {
+          color: var(--primary);
+          font-size: 16px;
+          font-weight: 400;
         }
       }
     }
@@ -468,6 +474,19 @@ button:focus {
     p {
       color: var(--dark);
     }
+
+    .gitURL{
+      font-weight: 600;
+    }
+
+    a{
+      color: var(--dark);
+      text-decoration: none;
+    }
+    a:hover{
+      text-decoration: underline;
+    }
+    
   }
 }
 
@@ -876,6 +895,7 @@ button:focus {
     }
 
     .team__details {
+      padding-right: 15px;
       .team__name {
         font-weight: bold;
       }
