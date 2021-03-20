@@ -1,4 +1,4 @@
-import blogs from "../data/blogdata.json";
+// import blogs from "../data/blogdata.json";
 import Link from "next/link";
 import React from 'react'
 
