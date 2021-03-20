@@ -50,7 +50,10 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
     // filter when query is not empty
     if (query !== "") {
       const map = datasets.filter((v, i) => {
-        return v.Name.toLocaleLowerCase().includes(query.toLowerCase()); // filter datasets by string using includes()
+        if (v.Owner.toLocaleLowerCase().includes(query.toLowerCase().trim())) {
+          return v.Owner.toLocaleLowerCase().includes(query.toLowerCase().trim());
+        }
+        return v.Name.toLocaleLowerCase().includes(query.toLowerCase().trim()); // filter datasets by string using includes()
       });
       setList(map);
     } else {
