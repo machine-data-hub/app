@@ -5,7 +5,7 @@ import React from 'react'
 export default function BlogHome( props ) {
     return (
         <>
-        <h1>Blog Pages!</h1> // : {props.blogTitle}</h1> 
+        <h1>Blog Pages!</h1> 
         // <Link href={`/blogs/${props.blogTitle}`} />
         </>
     )
