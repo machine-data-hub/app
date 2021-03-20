@@ -1,12 +1,39 @@
-import { MdSearch } from "react-icons/md";
+import { MdSearch, MdSettingsInputComponent } from "react-icons/md";
 import { BiSort } from "react-icons/bi";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   handleSectorFilter,
   handleTypeFilter,
   handleLabeledFilter,
 } from "../utils/filter";
 import { ASC, DATAADDED, DES, MOSTPOPULAR, DOWNLOAD } from "../utils/sort";
+
+let useClickOutside = (handler) => {
+  let ref = useRef()
+
+  useEffect(() => {
+    let clickHandler = (event) => {
+      if (!ref.current.contains(event.target)){
+        handler();
+      };
+    };
+
+    let keyHandler = (event) => {
+      if (event.keyCode === 27) {
+        handler();
+      };
+    }
+    document.addEventListener('mousedown', clickHandler);
+
+    document.addEventListener('keydown', keyHandler);
+    return () => {
+      document.removeEventListener("mousedown", clickHandler);
+      document.removeEventListener("keydown", keyHandler);
+    };
+  });
+  return ref
+}
+
 
 const Search = ({
   sectors,
@@ -28,7 +55,12 @@ const Search = ({
   labeled,
   setLabeled,
 }) => {
+
   const [filterOpen, setFilterOpen] = useState(false); // State to toggle filter box
+  let clickRef = useClickOutside(() => {
+    setFilterOpen(false);
+  });
+
 
   //  Function to handle sorting (by Date added, ascending, descending, total dowwnload, and total likes)
   const onClickSort = (prop) => () => {
@@ -61,7 +93,7 @@ const Search = ({
 
   return (
     <div className="search__feature">
-      <div className="input__wrapper">
+      <div className="input__wrapper" ref={clickRef}>
         <span className="icon__search">
           <MdSearch />
         </span>
@@ -83,7 +115,6 @@ const Search = ({
               <div className="buttons">
                 {/* activate a css class for clicked button */}
                 <button
-                  onClick={onClickSort("DATA_ADDED")}
                   className={sort === "DATA_ADDED" ? "active" : ""}
                 >
                   Date Added
@@ -115,7 +146,8 @@ const Search = ({
               </div>
             </div>
             <div className="field">
-              <h2>Sector</h2>
+              <h2>Filter By</h2>
+              <h3>Sector</h3>
               <div className="buttons">
                 {sectors?.map((item, index) => (
                   <button
@@ -131,7 +163,7 @@ const Search = ({
               </div>
             </div>
             <div className="field">
-              <h2>ML Type</h2>
+              <h3>ML Type</h3>
               <div className="buttons">
                 {mLTypes?.map((item, index) => (
                   <button
@@ -147,7 +179,7 @@ const Search = ({
               </div>
             </div>
             <div className="field">
-              <h2>Labeled</h2>
+              <h3>Labeled</h3>
               <div className="buttons">
                 <button
                   onClick={() => {
