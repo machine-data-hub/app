@@ -1,8 +1,9 @@
 [
   {
     "id": "1",
+    "Rank": 1,
     "Name": "Combined Cycle Power Plant Data Set",
-    "Owner": "UC Irvine",
+    "Owner": "University of California Irvine",
     "URL": [
       "https://archive.ics.uci.edu/ml/machine-learning-databases/00294/CCPP.zip"
     ],
@@ -18,21 +19,21 @@
     "Likes": 0,
     "File Size": "3.7 MB",
     "img_link": "https://www.miga.org/sites/default/files/2018-06/power-plant-bright-blue-sky.jpg",
-    "time": 1139812731,
     "Datasets": [
       {
         "Name": "Dataset 1",
         "URL": "https://archive.ics.uci.edu/ml/machine-learning-databases/00294/CCPP.zip",
         "Likes": 0,
-        "Downloads": "191037",
+        "Downloads": 191037,
         "File Size": "3.7 MB"
       }
     ]
   },
   {
     "id": "2",
+    "Rank": 2,
     "Name": "Steel Plates Faults Data Set",
-    "Owner": "UC Irvine",
+    "Owner": "University of California Irvine",
     "URL": [
       "http://archive.ics.uci.edu/ml/machine-learning-databases/00198/Faults.NNA",
       "http://archive.ics.uci.edu/ml/machine-learning-databases/00198/Faults27x7_var"
@@ -48,7 +49,6 @@
     "Downloads": 87458,
     "Likes": 0,
     "File Size": "299 KB",
-    "time": 8329812731,
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -68,8 +68,9 @@
   },
   {
     "id": "3",
+    "Rank": 3,
     "Name": "Appliances Energy Prediction Data Set",
-    "Owner": "UC Irvine",
+    "Owner": "University of California Irvine",
     "URL": [
       "https://archive.ics.uci.edu/ml/machine-learning-databases/00374/energydata_complete.csv"
     ],
@@ -84,21 +85,21 @@
     "Downloads": 140905,
     "Likes": 0,
     "File Size": "11.4 MB",
-    "time": 4139812731,
     "Datasets": [
       {
         "Name": "Dataset 1",
         "URL": "https://archive.ics.uci.edu/ml/machine-learning-databases/00374/energydata_complete.csv",
         "Likes": 0,
-        "Downloads": "140905",
+        "Downloads": 140905,
         "File Size": "11.4 MB"
       }
     ]
   },
   {
     "id": "4",
-    "Name": "Experiments on Li-ion batteries Data Set",
-    "Owner": "Nasa",
+    "Rank": 4,
+    "Name": "Experiments on Lithium-Ion batteries Data Set",
+    "Owner": "NASA",
     "URL": [
       "https://ti.arc.nasa.gov/c/5/, https://ti.arc.nasa.gov/c/9/",
       "https://ti.arc.nasa.gov/c/14/",
@@ -114,59 +115,59 @@
     "Simulation (Yes/No)": "No",
     "Attributes": 23,
     "Instances": "N/A",
-    "Downloads": "31861",
+    "Downloads": 31861,
     "Likes": 0,
     "File Size": "56.5 MB",
-    "time": 5639812731,
     "img_link": "https://image.freepik.com/free-vector/battery-energy-design_24911-37484.jpg",
     "Datasets": [
       {
         "Name": "Dataset 1",
         "URL": "https://ti.arc.nasa.gov/c/5/",
         "Likes": "0",
-        "Downloads": "31861",
+        "Downloads": 31861,
         "File Size": "56.5 MB"
       },
       {
         "Name": "Dataset 2",
         "URL": "https://ti.arc.nasa.gov/c/9/",
         "Likes": "0",
-        "Downloads": "15882",
+        "Downloads": 15882,
         "File Size": "11.1 MB"
       },
       {
         "Name": "Dataset 3",
         "URL": "https://ti.arc.nasa.gov/c/14/",
         "Likes": "0",
-        "Downloads": "`12899",
+        "Downloads": 12899,
         "File Size": "93.7 MB"
       },
       {
         "Name": "Dataset 4",
         "URL": "https://ti.arc.nasa.gov/c/15/",
         "Likes": "0",
-        "Downloads": "9803",
+        "Downloads": 9803,
         "File Size": "14.7 MB"
       },
       {
         "Name": "Dataset 5",
         "URL": "https://ti.arc.nasa.gov/c/16/",
         "Likes": "0",
-        "Downloads": "10494",
+        "Downloads": 10494,
         "File Size": "8.7 MB"
       },
       {
         "Name": "Dataset 6",
         "URL": "https://ti.arc.nasa.gov/c/17/",
         "Likes": "0",
-        "Downloads": "11068",
+        "Downloads": 11068,
         "File Size": "24.9 MB"
       }
     ]
   },
   {
     "id": "5",
-    "Name": "Panasonic 18650PF Li-ion Battery Data",
+    "Rank": 5,
+    "Name": "Panasonic 18650PF Lithium-Ion Battery Data",
     "Owner": "University of Wisconsin-Madison and McMaster University",
     "URL": [
       "https://md-datasets-cache-zipfiles-prod.s3.eu-west-1.amazonaws.com/wykht8y7tg-1.zip"
@@ -182,21 +183,21 @@
     "Downloads": 0,
     "Likes": 0,
     "File Size": "191.1 MB",
-    "time": 3139812731,
     "Datasets": [
       {
         "Name": "Dataset 1",
         "URL": "https://md-datasets-cache-zipfiles-prod.s3.eu-west-1.amazonaws.com/wykht8y7tg-1.zip",
         "Likes": 0,
-        "Downloads": "???",
+        "Downloads": 0,
         "File Size": "191.1 MB"
       }
     ]
   },
   {
     "id": "6",
-    "Name": "CFRP Composites Data Set",
-    "Owner": "Nasa",
+    "Rank": 6,
+    "Name": "Carbon Fiber Reinforced Polymer Composites Data Set",
+    "Owner": "NASA",
     "URL": [
       "https://ti.arc.nasa.gov/c/21/",
       "https://ti.arc.nasa.gov/c/20/",
@@ -204,7 +205,7 @@
     ],
     "Short Summary": "Run-to-failure experiments were run on CFRP panels with periodic measurements to capture internal damage growth under tension-tension fatigue. Monitoring data consist of lamb wave signals from a network of 16 piezoelectric (PZT) sensors and multiple triaxial strain gages. Additionally, periodic x-rays were taken to characterize internal damage as ground truth information. Three different layups were tested. Experiments were conducted at Stanford Structures and Composites Laboratory (SACL) in collaboration with the Prognostic Center of Excellence (PCoE) of NASA Ames Research Center. Dataset is organized into three zipped folders each containing data from coupons of single layup type and includes a readme file, and a folder with reports and papers published from this dataset.",
     "Sector": "Etc",
-    "ML Type": [""],
+    "ML Type": [],
     "Labeled": "",
     "Time Series": "",
     "Simulation (Yes/No)": "Yes",
@@ -213,7 +214,6 @@
     "Downloads": 9549,
     "Likes": 0,
     "File Size": "--.- MB",
-    "time": 9139812731,
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -240,12 +240,13 @@
   },
   {
     "id": "7",
+    "Rank": 7,
     "Name": "Milling Data Set",
-    "Owner": "Nasa",
+    "Owner": "NASA",
     "URL": ["https://ti.arc.nasa.gov/c/4/"],
     "Short Summary": "Experiments on a milling machine for different speeds, feeds, and depth of cut. Records the wear of the milling insert, VB. The data set was provided by the BEST lab at UC Berkeley.",
     "Sector": "Etc",
-    "ML Type": [""],
+    "ML Type": [],
     "Labeled": "",
     "Time Series": "",
     "Simulation (Yes/No)": "Yes",
@@ -254,25 +255,25 @@
     "Downloads": 16112,
     "Likes": 0,
     "File Size": "--.- MB",
-    "time": 1139812731,
     "Datasets": [
       {
         "Name": "Dataset 1",
         "URL": "https://ti.arc.nasa.gov/c/4/",
         "Likes": 0,
-        "Downloads": "16112",
+        "Downloads": 0,
         "File Size": "--.- MB"
       }
     ]
   },
   {
     "id": "8",
+    "Rank": 8,
     "Name": "Bearing Data Set",
-    "Owner": "Nasa",
+    "Owner": "NASA",
     "URL": ["https://ti.arc.nasa.gov/c/3/"],
     "Short Summary": "Experiments on bearings. The data set was provided by the Center for Intelligent Maintenance Systems (IMS), University of Cincinnati.",
     "Sector": "Mechanical",
-    "ML Type": [""],
+    "ML Type": [],
     "Labeled": "",
     "Time Series": "",
     "Simulation (Yes/No)": "Yes",
@@ -281,25 +282,25 @@
     "Downloads": 53221,
     "Likes": 0,
     "File Size": "--.- MB",
-    "time": 2139812731,
     "Datasets": [
       {
         "Name": "Dataset 1",
         "URL": "https://ti.arc.nasa.gov/c/3/",
         "Likes": 0,
-        "Downloads": "53221",
+        "Downloads": 0,
         "File Size": "--.- MB"
       }
     ]
   },
   {
     "id": "9",
+    "Rank": 9,
     "Name": "Turbofan Engine Degradation Simulation",
-    "Owner": "Nasa",
+    "Owner": "NASA",
     "URL": ["https://ti.arc.nasa.gov/c/6/", "https://ti.arc.nasa.gov/c/47/"],
     "Short Summary": "Engine degradation simulation was carried out using C-MAPSS. Four different were sets simulated under different combinations of operational conditions and fault modes. Records several sensor channels to characterize fault evolution. The data set was provided by the Prognostics CoE at NASA Ames.",
     "Sector": "Mechanical",
-    "ML Type": [""],
+    "ML Type": [],
     "Labeled": "",
     "Time Series": "",
     "Simulation (Yes/No)": "Yes",
@@ -308,59 +309,59 @@
     "Downloads": 65700,
     "Likes": 0,
     "File Size": "--.- MB",
-    "time": 2139812731,
     "Datasets": [
       {
         "Name": "Dataset 1",
         "URL": "https://ti.arc.nasa.gov/c/6/",
         "Likes": 0,
-        "Downloads": "???",
+        "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
         "Name": "Dataset 1",
         "URL": "https://ti.arc.nasa.gov/c/47/",
         "Likes": 0,
-        "Downloads": "???",
+        "Downloads": 0,
         "File Size": "--.- MB"
       }
     ]
   },
   {
     "id": "10",
-    "Name": "IGBT Accelerated Aging Data Set",
-    "Owner": "Nasa",
+    "Rank": 10,
+    "Name": "Insulated-Gate Bipolar Transistor Accelerated Aging Data Set",
+    "Owner": "NASA",
     "URL": ["https://ti.arc.nasa.gov/c/7/"],
     "Short Summary": "Preliminary data from thermal overstress accelerated aging using the aging and characterization system. The data set contains aging data from 6 devices, one device aged with DC gate bias and the rest aged with a squared signal gate bias. Several variables are recorded and in some cases, high-speed measurements of gate voltage, collector-emitter voltage and collector current are available. The data set is provided by the Prognostics CoE at NASA Ames.",
     "Sector": "Automotive",
-    "ML Type": [""],
+    "ML Type": [],
     "Labeled": "",
     "Time Series": "Yes",
     "Simulation (Yes/No)": "Yes",
     "Attributes": 26,
     "Instances": "N/A",
-    "Downloads": "???",
+    "Downloads": 0,
     "Likes": 0,
     "File Size": "--.- MB",
-    "time": 2139812731,
     "Datasets": [
       {
         "Name": "Dataset 1",
         "URL": "https://ti.arc.nasa.gov/c/7/",
         "Likes": 0,
-        "Downloads": "???",
+        "Downloads": 0,
         "File Size": "--.- MB"
       }
     ]
   },
   {
     "id": "11",
+    "Rank": 11,
     "Name": "Trebuchet Data Set",
-    "Owner": "Nasa",
+    "Owner": "NASA",
     "URL": ["https://ti.arc.nasa.gov/c/8/"],
     "Short Summary": "Trajectories of different types of balls launched from a trebuchet with varying counter weights. Flights were filmed and extraction routines calculated position of data. Both raw video data and extracted trajectories are provided. Geometry and physical properties of the trebuchet are available.",
     "Sector": "Etc",
-    "ML Type": [""],
+    "ML Type": [],
     "Labeled": "",
     "Time Series": "Yes",
     "Simulation (Yes/No)": "Yes",
@@ -369,48 +370,48 @@
     "Downloads": 9279,
     "Likes": 0,
     "File Size": "--.- MB",
-    "time": 2139812731,
     "Datasets": [
       {
         "Name": "Dataset 1",
         "URL": "https://ti.arc.nasa.gov/c/8/",
         "Likes": 0,
-        "Downloads": "9279",
+        "Downloads": 0,
         "File Size": "--.- MB"
       }
     ]
   },
   {
     "id": "12",
-    "Name": "FEMTO Bearing Data Set",
-    "Owner": "Nasa",
+    "Rank": 12,
+    "Name": "Bearing Data Set",
+    "Owner": "NASA",
     "URL": ["https://ti.arc.nasa.gov/c/18/"],
     "Short Summary": "Experiments on bearings' accelerated life tests provided by FEMTO-ST Institute, Besançon, France",
     "Sector": "Mechanical",
-    "ML Type": [""],
+    "ML Type": [],
     "Labeled": "",
     "Time Series": "",
     "Simulation (Yes/No)": "",
     "Attributes": "???",
     "Instances": "N/A",
-    "Downloads": "???",
+    "Downloads": 0,
     "Likes": 0,
     "File Size": "--.- MB",
-    "time": 2139812731,
     "Datasets": [
       {
         "Name": "Dataset 1",
         "URL": "https://ti.arc.nasa.gov/c/18/",
         "Likes": 0,
-        "Downloads": "???",
+        "Downloads": 0,
         "File Size": "--.- MB"
       }
     ]
   },
   {
     "id": "13",
+    "Rank": 13,
     "Name": "Randomized Battery Usage Data Set",
-    "Owner": "Nasa",
+    "Owner": "NASA",
     "URL": [
       "https://ti.arc.nasa.gov/c/25/",
       "https://ti.arc.nasa.gov/c/26/",
@@ -421,65 +422,65 @@
     ],
     "Short Summary": "Batteries are continuously cycled with randomly generated current profiles. Reference charging and discharging cycles are also performed after a fixed interval of randomized usage in order to provide reference benchmarks for battery state of health.",
     "Sector": "Battery",
-    "ML Type": [""],
+    "ML Type": [],
     "Labeled": "",
     "Time Series": "",
     "Simulation (Yes/No)": "",
     "Attributes": "???",
     "Instances": "N/A",
-    "Downloads": "???",
+    "Downloads": 0,
     "Likes": 0,
     "File Size": "--.- MB",
-    "time": 2139812731,
     "Datasets": [
       {
         "Name": "Dataset 1",
         "URL": "https://ti.arc.nasa.gov/c/25/",
         "Likes": "0",
-        "Downloads": "???",
+        "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
         "Name": "Dataset 2",
         "URL": "https://ti.arc.nasa.gov/c/26/",
         "Likes": "0",
-        "Downloads": "???",
+        "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
         "Name": "Dataset 3",
         "URL": "https://ti.arc.nasa.gov/c/27/",
         "Likes": "0",
-        "Downloads": "???",
+        "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
         "Name": "Dataset 4",
         "URL": "https://ti.arc.nasa.gov/c/28/",
         "Likes": "0",
-        "Downloads": "???",
+        "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
         "Name": "Dataset 5",
         "URL": "https://ti.arc.nasa.gov/c/29/",
         "Likes": "0",
-        "Downloads": "???",
+        "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
         "Name": "Dataset 6",
         "URL": "https://ti.arc.nasa.gov/c/30/",
         "Likes": "0",
-        "Downloads": "???",
+        "Downloads": 0,
         "File Size": "--.- MB"
       }
     ]
   },
   {
     "id": "14",
+    "Rank": 14,
     "Name": "Capacitor Electriacl Stress Data Set",
-    "Owner": "Nasa",
+    "Owner": "NASA",
     "URL": [
       "https://ti.arc.nasa.gov/c/33/",
       "https://ti.arc.nasa.gov/c/34/",
@@ -487,44 +488,44 @@
     ],
     "Short Summary": "Capacitors were subjected to electrical stress under three voltage levels i.e 10V, 12V and 14V. Data Set contains EIS data as well as Charge/Discharge Signal data. D",
     "Sector": "Power",
-    "ML Type": [""],
+    "ML Type": [],
     "Labeled": "",
     "Time Series": "",
     "Simulation (Yes/No)": "",
     "Attributes": "???",
     "Instances": "N/A",
-    "Downloads": "???",
+    "Downloads": 0,
     "Likes": 0,
     "File Size": "--.- MB",
-    "time": 2139812731,
     "Datasets": [
       {
         "Name": "Dataset 1",
         "URL": "https://ti.arc.nasa.gov/c/33/",
         "Likes": 0,
-        "Downloads": "???",
+        "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
         "Name": "Dataset 2",
         "URL": "https://ti.arc.nasa.gov/c/34/",
         "Likes": 0,
-        "Downloads": "???",
+        "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
         "Name": "Dataset 3",
         "URL": "https://ti.arc.nasa.gov/c/35/",
         "Likes": 0,
-        "Downloads": "???",
+        "Downloads": 0,
         "File Size": "--.- MB"
       }
     ]
   },
   {
     "id": "15",
-    "Name": "HIRF Battery Data Set",
-    "Owner": "Nasa",
+    "Rank": 15,
+    "Name": "High-Intensity Radiated Field Battery Data Set",
+    "Owner": "NASA",
     "URL": [
       "https://ti.arc.nasa.gov/c/38/",
       "https://ti.arc.nasa.gov/c/39/",
@@ -535,100 +536,126 @@
     ],
     "Short Summary": "Battery Data collected from the Experiments on the Edge 540 Aircraft in HIRF Chamber.",
     "Sector": "Battery",
-    "ML Type": [""],
+    "ML Type": [],
     "Labeled": "",
     "Time Series": "",
     "Simulation (Yes/No)": "",
     "Attributes": "???",
     "Instances": "N/A",
-    "Downloads": "???",
+    "Downloads": 0,
     "Likes": 0,
     "File Size": "--.- MB",
-    "time": 2139812731,
     "Datasets": [
       {
         "Name": "Dataset 1",
         "URL": "https://ti.arc.nasa.gov/c/38/",
         "Likes": "0",
-        "Downloads": "???",
+        "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
         "Name": "Dataset 2",
         "URL": "https://ti.arc.nasa.gov/c/39/",
         "Likes": "0",
-        "Downloads": "???",
+        "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
         "Name": "Dataset 3",
         "URL": "https://ti.arc.nasa.gov/c/40/",
         "Likes": "0",
-        "Downloads": "???",
+        "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
         "Name": "Dataset 4",
         "URL": "https://ti.arc.nasa.gov/c/41/",
         "Likes": "0",
-        "Downloads": "???",
+        "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
         "Name": "Dataset 5",
         "URL": "https://ti.arc.nasa.gov/c/42/",
         "Likes": "0",
-        "Downloads": "???",
+        "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
         "Name": "Dataset 6",
         "URL": "https://ti.arc.nasa.gov/c/43/",
         "Likes": "0",
-        "Downloads": "???",
+        "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
         "Name": "Dataset 7",
         "URL": "https://ti.arc.nasa.gov/c/44/",
         "Likes": "0",
-        "Downloads": "???",
+        "Downloads": 0,
         "File Size": "--.- MB"
       }
     ]
   },
   {
     "id": "16",
+    "Rank": 16,
     "Name": "Small Satellite Power Simulation Data Set",
-    "Owner": "Nasa",
+    "Owner": "NASA",
     "URL": ["https://ti.arc.nasa.gov/c/45/", "https://ti.arc.nasa.gov/c/46/"],
     "Short Summary": "Data collected from the simulated experiments on small satellite BP930 batteries using the MACCOR system",
     "Sector": "Etc",
-    "ML Type": [""],
+    "ML Type": [],
     "Labeled": "",
     "Time Series": "",
     "Simulation (Yes/No)": "",
     "Attributes": "???",
     "Instances": "N/A",
-    "Downloads": "???",
+    "Downloads": 0,
     "Likes": 0,
     "File Size": "--.- MB",
-    "time": 2139812731,
     "Datasets": [
       {
         "Name": "Dataset 1",
         "URL": "https://ti.arc.nasa.gov/c/45/",
         "Likes": 0,
-        "Downloads": "???",
+        "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
         "Name": "Dataset 2",
         "URL": "https://ti.arc.nasa.gov/c/46/",
         "Likes": 0,
-        "Downloads": "???",
+        "Downloads": 0,
+        "File Size": "--.- MB"
+      }
+    ]
+  },
+  {
+    "id": "17",
+    "Rank": 17,
+    "Name": "MOSFET Thermal Overstress Aging Data Set",
+    "Owner": "NASA",
+    "URL": ["https://ti.arc.nasa.gov/c/37/"],
+    "Short Summary": "Run-to-failure experiments on Power MOSFETs under thermal overstress.",
+    "Sector": "Semicon",
+    "ML Type": [],
+    "Labeled": "",
+    "Time Series": "",
+    "Simulation (Yes/No)": "No",
+    "Attributes": "???",
+    "Instances": "N/A",
+    "Downloads": 0,
+    "Likes": 0,
+    "File Size": "--.- MB",
+    "Datasets": [
+      {
+        "Name": "Dataset 1",
+        "URL": "https://ti.arc.nasa.gov/c/37/",
+        "Likes": 0,
+        "Downloads": 0,
         "File Size": "--.- MB"
       }
     ]
   }
-]
+]  
