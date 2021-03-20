@@ -2,17 +2,17 @@
 import Link from "next/link";
 import React from 'react'
 
-export default function BlogHome( props ) {
-    return (
-        <>
-        <h1>Blog Pages!</h1> 
-        // <Link href={`/blogs/${props.blogTitle}`} />
-        </>
-    )
-}
+import Layout from "../components/Layout";
+import teams from "../data/team.json";
 
-// BlogHome.getInitialProps = () => {
-//     return {
-//         blogTitle: "Test inside Home.getInitialProps"
-//     }
-// }
+const BlogHome = () => {
+  return (
+    <Layout title="Blogs | Machine Data Hub">
+      <div>
+        Blogs Home
+      </div>
+    </Layout>
+  );
+};
+
+export default BlogHome;
