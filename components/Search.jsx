@@ -61,11 +61,9 @@ const Search = ({
     setFilterOpen(false);
   });
 
-
   //  Function to handle sorting (by Date added, ascending, descending, total dowwnload, and total likes)
   const onClickSort = (prop) => () => {
     // prop = sorting type
-
     // If sorting type is already clicked -> unclick the button and remove the sorting
     if (sort === prop) {
       setSort("");
@@ -115,9 +113,10 @@ const Search = ({
               <div className="buttons">
                 {/* activate a css class for clicked button */}
                 <button
-                  className={sort === "DATA_ADDED" ? "active" : ""}
+                  onClick={onClickSort("DOWNLOAD")}
+                  className={sort === "DOWNLOAD" ? "active" : sort === "" ? "active" :""}
                 >
-                  Date Added
+                  Most Downloads
                 </button>
                 <button
                   onClick={onClickSort("MOST_POPULAR")}
@@ -126,10 +125,10 @@ const Search = ({
                   Most Likes
                 </button>
                 <button
-                  onClick={onClickSort("DOWNLOAD")}
-                  className={sort === "DOWNLOAD" ? "active" : ""}
+                  onClick={onClickSort("DATA_ADDED")}
+                  className={sort === "DATA_ADDED" ? "active" : ""}
                 >
-                  Most Downloads
+                  Date Added
                 </button>
                 <button
                   onClick={onClickSort("ASC")}
