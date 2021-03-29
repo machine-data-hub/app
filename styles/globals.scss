@@ -169,21 +169,20 @@ button:focus {
       color: #888;
     }
 
-    .buttonsSort {
-      button {
-        background: var(--tetradic1);
+    button{
+        display: flex;
+        flex-wrap: wrap;
         border: 1px solid #ddd;
         color: var(--accents-1);
         border: 1px solid #ddd;
+        padding: 8px 16px;
         border-radius: 4px;
         margin-right: 8px;
         margin-bottom: 8px;
         font-size: 14px;
         cursor: pointer;
         margin-bottom: 2rem;
-        display: flex;
         align-items: center;
-
         span {
           display: flex;
           transform: translateY(1px);
@@ -195,98 +194,42 @@ button:focus {
           background: #eee;
           color: rgba(0, 0, 0, 0.54);
         }
+    }
+
+    .buttonsSort {
+      display: flex;
+      flex-wrap: wrap;
+      button {
+        background: var(--tetradic1);
       }
     }
 
     .buttonsSector {
+      display: flex;
+      flex-wrap: wrap;
       button {
         background: var(--tetradic3);
-        border: 1px solid #ddd;
-        color: var(--accents-1);
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        margin-right: 8px;
-        margin-bottom: 8px;
-        font-size: 14px;
-        cursor: pointer;
-        margin-bottom: 2rem;
-        display: flex;
-        align-items: center;
-
-        span {
-          display: flex;
-          transform: translateY(1px);
-          margin-left: 4px;
-          font-size: 1.1rem;
-        }
-
-        &:hover {
-          background: #eee;
-          color: rgba(0, 0, 0, 0.54);
-        }
       }
     }
 
     .buttonsML {
+      display: flex;
+      flex-wrap: wrap;
       button {
         background: var(--tetradic2);
-        border: 1px solid #ddd;
-        color: var(--accents-1);
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        margin-right: 8px;
-        margin-bottom: 8px;
-        font-size: 14px;
-        cursor: pointer;
-        margin-bottom: 2rem;
-        display: flex;
-        align-items: center;
+      }
+    }
 
-        span {
-          display: flex;
-          transform: translateY(1px);
-          margin-left: 4px;
-          font-size: 1.1rem;
-        }
-
-        &:hover {
-          background: #eee;
-          color: rgba(0, 0, 0, 0.54);
-        }
+    .buttonsLabeled {
+      display: flex;
+      flex-wrap: wrap;
+      button {
+        background: var(--tetradic3);
       }
     }
 
     h2 {
       color: var(--primary);
-    }
-
-    .buttonsLabeled {
-      button {
-        background: var(--tetradic3);
-        border: 1px solid #ddd;
-        color: var(--accents-1);
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        margin-right: 8px;
-        margin-bottom: 8px;
-        font-size: 14px;
-        cursor: pointer;
-        margin-bottom: 2rem;
-        display: flex;
-        align-items: center;
-
-        span {
-          display: flex;
-          transform: translateY(1px);
-          margin-left: 4px;
-          font-size: 1.1rem;
-        }
-
-        &:hover {
-          background: #eee;
-          color: rgba(0, 0, 0, 0.54);
-        }
-      }
     }
   }
 
@@ -409,48 +352,6 @@ button:focus {
         display: flex;
         align-items: flex-start;
 
-        .buttonsSector{
-          background: var(--tetradic1);
-          color: white;
-          padding: 4px 10px;
-          border-radius: 4px;
-          margin-right: 8px;
-          margin-bottom: 8px;
-          font-size: 12px;
-          cursor: pointer;
-
-          &:hover {
-            background: rgb(21, 92, 139);
-          }
-        }
-        .buttonsML{
-          background: var(--tetradic2);
-          color: white;
-          padding: 4px 10px;
-          border-radius: 4px;
-          margin-right: 8px;
-          margin-bottom: 8px;
-          font-size: 12px;
-          cursor: pointer;
-
-          &:hover {
-            background: rgb(21, 92, 139);
-          }
-        }
-        .buttonsLabeled{
-          background: var(--tetradic3);
-          color: white;
-          padding: 4px 10px;
-          border-radius: 4px;
-          margin-right: 8px;
-          margin-bottom: 8px;
-          font-size: 12px;
-          cursor: pointer;
-
-          &:hover {
-            background: rgb(21, 92, 139);
-          }
-        }
         div {
           background: rgb(33, 120, 179);
           color: white;
