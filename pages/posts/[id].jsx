@@ -16,7 +16,7 @@ const Posts = ({ data, similar }) => {
             <div className="content__left">
               <div className="head">
                 <div>Dataset from: {data.Owner}</div>
-                <div>Donated: January 20, 2021</div>
+                <div>Acquired: January 20, 2021</div>
               </div>
               <div className="info">
                 <span>{data["File Size"]}</span>
