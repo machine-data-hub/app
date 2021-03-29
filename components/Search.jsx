@@ -1,12 +1,39 @@
-import { MdSearch } from "react-icons/md";
+import { MdSearch, MdSettingsInputComponent } from "react-icons/md";
 import { BiSort } from "react-icons/bi";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   handleSectorFilter,
   handleTypeFilter,
   handleLabeledFilter,
 } from "../utils/filter";
 import { ASC, DATAADDED, DES, MOSTPOPULAR, DOWNLOAD } from "../utils/sort";
+
+let useClickOutside = (handler) => {
+  let ref = useRef()
+
+  useEffect(() => {
+    let clickHandler = (event) => {
+      if (!ref.current.contains(event.target)){
+        handler();
+      };
+    };
+
+    let keyHandler = (event) => {
+      if (event.keyCode === 27) {
+        handler();
+      };
+    }
+    document.addEventListener('mousedown', clickHandler);
+
+    document.addEventListener('keydown', keyHandler);
+    return () => {
+      document.removeEventListener("mousedown", clickHandler);
+      document.removeEventListener("keydown", keyHandler);
+    };
+  });
+  return ref
+}
+
 
 const Search = ({
   sectors,
@@ -27,13 +54,45 @@ const Search = ({
 
   labeled,
   setLabeled,
+
+  simulation,
+  setSimulation,
+
+  timeSeries,
+  setTimeSeries,
+
+  //--------
+  // card, 
+  // setCard,
 }) => {
+
+  const handleSimulationFilter = () => {
+    if (simulation === "Yes") {
+      // if user has clicked the button -> empty the state
+      setSimulation("");
+    } else {
+      setSimulation("Yes"); // if user has not clicked the button -> set the state to Yes (filter by simulation is active)
+    }
+  };
+
+  // function to handle timeseries state
+  const handleTimeSeriesFilter = () => {
+    if (timeSeries === "Yes") {
+      // if user has clicked the button (timeseries filter is active) -> empty the state
+      setTimeSeries(""); 
+    } else {
+      setTimeSeries("Yes"); // if user has not clicked the button -> set the state to Yes (filter by timeseries is active)
+    }
+  };
+
   const [filterOpen, setFilterOpen] = useState(false); // State to toggle filter box
+  let clickRef = useClickOutside(() => {
+    setFilterOpen(false);
+  });
 
   //  Function to handle sorting (by Date added, ascending, descending, total dowwnload, and total likes)
   const onClickSort = (prop) => () => {
     // prop = sorting type
-
     // If sorting type is already clicked -> unclick the button and remove the sorting
     if (sort === prop) {
       setSort("");
@@ -61,7 +120,7 @@ const Search = ({
 
   return (
     <div className="search__feature">
-      <div className="input__wrapper">
+      <div className="input__wrapper" ref={clickRef}>
         <span className="icon__search">
           <MdSearch />
         </span>
@@ -74,19 +133,19 @@ const Search = ({
           className={`icon__sort ${filterOpen ? "active" : ""}`}
           onClick={() => setFilterOpen(!filterOpen)}
         >
-          <BiSort />
+          <BiSort /> Filter
         </span>
         {filterOpen && (
           <div className="sort__wrapper">
             <div className="field">
               <h2>Sort By</h2>
-              <div className="buttons">
+              <div className="buttonsSort">
                 {/* activate a css class for clicked button */}
                 <button
-                  onClick={onClickSort("DATA_ADDED")}
-                  className={sort === "DATA_ADDED" ? "active" : ""}
+                  onClick={onClickSort("DOWNLOAD")}
+                  className={sort === "DOWNLOAD" ? "active" : sort === "" ? "active" :""}
                 >
-                  Date Added
+                  Most Downloads
                 </button>
                 <button
                   onClick={onClickSort("MOST_POPULAR")}
@@ -95,10 +154,10 @@ const Search = ({
                   Most Likes
                 </button>
                 <button
-                  onClick={onClickSort("DOWNLOAD")}
-                  className={sort === "DOWNLOAD" ? "active" : ""}
+                  onClick={onClickSort("DATA_ADDED")}
+                  className={sort === "DATA_ADDED" ? "active" : ""}
                 >
-                  Most Downloads
+                  Date Added
                 </button>
                 <button
                   onClick={onClickSort("ASC")}
@@ -112,11 +171,13 @@ const Search = ({
                 >
                   Z to A
                 </button>
+                
               </div>
             </div>
             <div className="field">
-              <h2>Sector</h2>
-              <div className="buttons">
+              <h2>Filter By</h2>
+              <h3>Sector</h3>
+              <div className="buttonsSector">
                 {sectors?.map((item, index) => (
                   <button
                     key={index}
@@ -128,11 +189,17 @@ const Search = ({
                     {item}
                   </button>
                 ))}
+                <button
+                  onClick={() => handleSimulationFilter("Yes")}
+                  className={simulation === "" ? "" : "active"}
+                >
+                  Simulation
+                </button>
               </div>
             </div>
             <div className="field">
-              <h2>ML Type</h2>
-              <div className="buttons">
+              <h3>ML Type</h3>
+              <div className="buttonsML">
                 {mLTypes?.map((item, index) => (
                   <button
                     key={index}
@@ -144,11 +211,17 @@ const Search = ({
                     {item}
                   </button>
                 ))}
+                <button
+                  onClick={() => handleTimeSeriesFilter("Yes")}
+                  className={timeSeries === "" ? "" : "active"}
+                >
+                  Time Series
+                </button>
               </div>
             </div>
             <div className="field">
-              <h2>Labeled</h2>
-              <div className="buttons">
+              <h3>Labeled</h3>
+              <div className="buttonsLabeled">
                 <button
                   onClick={() => {
                     labeled === "Yes"
@@ -171,6 +244,7 @@ const Search = ({
                 </button>
               </div>
             </div>
+            
           </div>
         )}
       </div>

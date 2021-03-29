@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
+// import axious from "axious";
 
 const SuggesttDatasets = () => {
   // Title, Summary, and Dataset Link
@@ -10,15 +11,22 @@ const SuggesttDatasets = () => {
   // Function to be executed when user presses enter or click the submit button
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const newSuggestions = {
+      Name: this.title,
+      Summary: this.summary,
+      URL: this.link,
+    };
 
-    // save to database, etc
-    console.log(title, summary, link);
+    axious
+      .post("https://machinedatahub.ai/suggest-dataset", newSuggestions)
+      .then(() => console.log("Dataset Added", newSuggestions))
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
-  console.log(title, summary, link);
-
   return (
-    <Layout title="About | PHM Data Hub">
+    <Layout title="About | Machine Data Hub">
       <div className="page__form">
         <div className="body">
           <p>Suggest a dataset to be added to the Data Hub!</p>
@@ -42,7 +50,9 @@ const SuggesttDatasets = () => {
               placeholder="Enter a link to a dataset"
               onChange={(e) => setLink(e.target.value)}
             />
-            <button type="submit">Submit</button>
+            <button type="submit">
+              Submit
+            </button>
           </form>
         </div>
       </div>
