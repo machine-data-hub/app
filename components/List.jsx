@@ -193,8 +193,8 @@ const List = ({
                   </div>
                 )}
 
-                {item.ML_Type?.length > 0 &&
-                  item.ML_Type.map((tag, index) => (
+                {item["ML Type"]?.length > 0 &&
+                  item["ML Type"].map((tag, index) => (
                     <div
                     className="buttonsML"
                       key={index}
