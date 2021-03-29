@@ -54,7 +54,36 @@ const Search = ({
 
   labeled,
   setLabeled,
+
+  simulation,
+  setSimulation,
+
+  timeSeries,
+  setTimeSeries,
+
+  //--------
+  // card, 
+  // setCard,
 }) => {
+
+  const handleSimulationFilter = () => {
+    if (simulation === "Yes") {
+      // if user has clicked the button -> empty the state
+      setSimulation("");
+    } else {
+      setSimulation("Yes"); // if user has not clicked the button -> set the state to Yes (filter by simulation is active)
+    }
+  };
+
+  // function to handle timeseries state
+  const handleTimeSeriesFilter = () => {
+    if (timeSeries === "Yes") {
+      // if user has clicked the button (timeseries filter is active) -> empty the state
+      setTimeSeries(""); 
+    } else {
+      setTimeSeries("Yes"); // if user has not clicked the button -> set the state to Yes (filter by timeseries is active)
+    }
+  };
 
   const [filterOpen, setFilterOpen] = useState(false); // State to toggle filter box
   let clickRef = useClickOutside(() => {
@@ -110,7 +139,7 @@ const Search = ({
           <div className="sort__wrapper">
             <div className="field">
               <h2>Sort By</h2>
-              <div className="buttons">
+              <div className="buttonsSort">
                 {/* activate a css class for clicked button */}
                 <button
                   onClick={onClickSort("DOWNLOAD")}
@@ -142,12 +171,13 @@ const Search = ({
                 >
                   Z to A
                 </button>
+                
               </div>
             </div>
             <div className="field">
               <h2>Filter By</h2>
               <h3>Sector</h3>
-              <div className="buttons">
+              <div className="buttonsSector">
                 {sectors?.map((item, index) => (
                   <button
                     key={index}
@@ -159,11 +189,17 @@ const Search = ({
                     {item}
                   </button>
                 ))}
+                <button
+                  onClick={() => handleSimulationFilter("Yes")}
+                  className={simulation === "" ? "" : "active"}
+                >
+                  Simulation
+                </button>
               </div>
             </div>
             <div className="field">
               <h3>ML Type</h3>
-              <div className="buttons">
+              <div className="buttonsML">
                 {mLTypes?.map((item, index) => (
                   <button
                     key={index}
@@ -175,11 +211,17 @@ const Search = ({
                     {item}
                   </button>
                 ))}
+                <button
+                  onClick={() => handleTimeSeriesFilter("Yes")}
+                  className={timeSeries === "" ? "" : "active"}
+                >
+                  Time Series
+                </button>
               </div>
             </div>
             <div className="field">
               <h3>Labeled</h3>
-              <div className="buttons">
+              <div className="buttonsLabeled">
                 <button
                   onClick={() => {
                     labeled === "Yes"
@@ -202,6 +244,7 @@ const Search = ({
                 </button>
               </div>
             </div>
+            
           </div>
         )}
       </div>
