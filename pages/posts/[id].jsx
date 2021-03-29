@@ -129,13 +129,13 @@ const Posts = ({ data, similar }) => {
               </div>
               <div className="card__tags">
                 {item.Sector && <div className="buttonsSector">{item.Sector}</div>}
-                {item.ML_Type &&
-                  data.ML_Type?.map((x, i) => <div key={i}>{x}</div>)}
-                {item.Labeled === "Yes" && <div>Labeled</div>}
+                {item["ML Type"] &&
+                  data['ML Type'].map((x, i) => <div className="buttonsML" key={i}>{x}</div>)}
+                {item.Labeled === "Yes" && <div className="buttonsLabeled">Labeled</div>}
                 {item["Time Series"] === "Yes" && (
-                  <div>Time Series</div>
+                  <div className="buttonsML">Time Series</div>
                 )}
-                {item["Simulation (Yes/No)"] === "Yes" && <div>Simulation</div>}
+                {item["Simulation (Yes/No)"] === "Yes" && <div buttons="buttonsSector">Simulation</div>}
               </div>
               <div className="card__footer">
                 <Link href={`/posts/${item.id}`}>
