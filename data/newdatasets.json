@@ -77,7 +77,7 @@
       "https://archive.ics.uci.edu/ml/machine-learning-databases/00374/energydata_complete.csv"
     ],
     "Short Summary": "The data set is at 10 min for about 4.5 months. The house temperature and humidity conditions were monitored with a ZigBee wireless sensor network. Each wireless node transmitted the temperature and humidity conditions around 3.3 min. Then, the wireless data was averaged for 10 minutes periods. The energy data was logged every 10 minutes with m-bus energy meters. Weather from the nearest airport weather station (Chievres Airport, Belgium) was downloaded from a public data set from Reliable Prognosis (rp5.ru), and merged together with the experimental data sets using the date and time column. Two random variables have been included in the data set for testing the regression models and to filter out non predictive attributes (parameters).",
-    "One Line": "Monitored house temperature adn humidity for average energy consumption.",
+    "One Line": "Monitored house temperature and humidity for average energy consumption.",
     "Sector": "Power",
     "ML Type": ["Regression"],
     "Labeled": "Yes",
@@ -176,7 +176,7 @@
     "URL": [
       "https://md-datasets-cache-zipfiles-prod.s3.eu-west-1.amazonaws.com/wykht8y7tg-1.zip"
     ],
-    "Short Summary": "A brand new 2.9Ah Panasonic 18650PF cell was tested in an 8 cu.ft. thermal chamber with a 25 amp, 18 volt Digatron Firing Circuits Universal Battery Tester channel.",
+    "Short Summary": "A brand new 2.9Ah Panasonic 18650PF cell was tested in an 8 cubic foot thermal chamber with a 25 amp, 18 volt Digatron Firing Circuits Universal Battery Tester channel.",
     "One Line": "Exhaustively testing the new Panasonic 18650PF Lithium-Ion Battery",
     "Sector": "Battery",
     "ML Type": ["Regression", "Kalman Filtering", "Neural Networks"],
@@ -433,7 +433,7 @@
       "https://ti.arc.nasa.gov/c/30/"
     ],
     "Short Summary": "Batteries are continuously cycled with randomly generated current profiles. Reference charging and discharging cycles are also performed after a fixed interval of randomized usage in order to provide reference benchmarks for battery state of health.",
-    "One Line": "Batteries continuoulsy cycled with randomly generated current profiles.",
+    "One Line": "Batteries continuously  cycled with randomly generated current profiles.",
     "Sector": "Battery",
     "ML Type": [],
     "Labeled": "",
@@ -492,7 +492,7 @@
   {
     "id": "14",
     "Rank": 14,
-    "Name": "Capacitor Electriacl Stress Data Set",
+    "Name": "Capacitor Electrical Stress Data Set",
     "Owner": "NASA",
     "URL": [
       "https://ti.arc.nasa.gov/c/33/",
