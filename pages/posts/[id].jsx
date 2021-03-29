@@ -16,7 +16,7 @@ const Posts = ({ data, similar }) => {
             <div className="content__left">
               <div className="head">
                 <div>Dataset from: {data.Owner}</div>
-                <div>Acquired: January 20, 2021</div>
+                <div>Donated: January 20, 2021</div>
               </div>
               <div className="info">
                 <span>{data["File Size"]}</span>
@@ -47,8 +47,8 @@ const Posts = ({ data, similar }) => {
               </div>
               <div className="tags">
                 {data.Sector && <div>{data.Sector}</div>}
-                {data.ML_Type &&
-                  data.ML_Type?.map((x, i) => <div key={i}>{x}</div>)}
+                {data["ML Type"] &&
+                  data["ML Type"]?.map((x, i) => <div key={i}>{x}</div>)}
                 {data.Labeled === "Yes" && <div>Labeled</div>}
                 {data["Time Series (Yes/No)"] === "Yes" && (
                   <div>Time Series</div>
@@ -128,11 +128,11 @@ const Posts = ({ data, similar }) => {
                 </div>
               </div>
               <div className="card__tags">
-                {item.Sector && <div>{item.Sector}</div>}
+                {item.Sector && <div className="buttonsSector">{item.Sector}</div>}
                 {item.ML_Type &&
                   data.ML_Type?.map((x, i) => <div key={i}>{x}</div>)}
                 {item.Labeled === "Yes" && <div>Labeled</div>}
-                {item["Time Series (Yes/No)"] === "Yes" && (
+                {item["Time Series"] === "Yes" && (
                   <div>Time Series</div>
                 )}
                 {item["Simulation (Yes/No)"] === "Yes" && <div>Simulation</div>}
