@@ -12,6 +12,9 @@ import { usePage } from "../context/PageContext";
 import { useSort } from "../context/SortContext";
 import { ASC, DATAADDED, DES, MOSTPOPULAR, DOWNLOAD } from "../utils/sort";
 
+//---------------------------
+import { useCard } from "../context/CardContext";
+
 // Change page limit here
 const postPerPage = 20;
 
@@ -25,6 +28,8 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
   const [labeled, setLabeled] = useLabeled(); // state to store labeled keyword
   const [timeSeries, setTimeSeries] = useTimeSeries(); // state to store array of sector
   const [simulation, setSimulation] = useSimulation(); // state to store simulation keyword
+
+  // const [card, setCard] = useCard();
 
   // handle automatic sorting for initial load
   // default: by total downloads
@@ -265,6 +270,13 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
         setTypeList={setTypeList}
         labeled={labeled}
         setLabeled={setLabeled}
+        simulation={simulation}
+        setSimulation={setSimulation}
+        timeSeries={timeSeries}
+        setTimeSeries={setTimeSeries}
+        // ---------------
+        // card={card}
+        // setCard={setCard}
       />
       <List
         // paginate(array, post per page, current page)
@@ -285,6 +297,9 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
         setTimeSeries={setTimeSeries}
         currentPage={page}
         totalPage={totalPagination}
+        //---------------------------
+        // card={card}
+        // setCard={setCard}
       />
       <div className="pagination">
         {/* mapping pagination button. index 0 = page 1 */}
