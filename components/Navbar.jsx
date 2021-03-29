@@ -25,11 +25,11 @@ const Navbar = () => {
                 About
               </li>
             </Link>
-            <Link href="/blogs">
+            {/* <Link href="/blogs">
               <li className={router.pathname === "/blogs" ? "nav-active" : ""}>
                 Blogs
               </li>
-            </Link>
+            </Link> */}
             <Link href="/suggest-dataset">
               <li
                 className={
