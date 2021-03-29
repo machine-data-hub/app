@@ -4,6 +4,10 @@
   --primary: rgb(33, 120, 179);
   --dark: rgb(21, 92, 139);
 
+  --tetradic1: #b35b21;
+  --tetradic2: #79b321;
+  --tetradic3: #5b21b3;
+
   --accents-1: #ddd;
 }
 
@@ -85,7 +89,7 @@ button:focus {
     align-items: center;
     margin: auto;
     max-width: 100%;
-    padding: .5rem 2rem;
+    padding: 0.5rem 2rem;
     box-shadow: 0px 0px 3px #000000;
 
     .navbar__left {
@@ -111,7 +115,6 @@ button:focus {
 
           &:hover {
             box-shadow: 0 0 3px 2px var(--primary);
-            
           }
         }
 
@@ -165,32 +168,129 @@ button:focus {
       font-size: 1.2rem;
       color: #888;
     }
-  }
 
-  button {
-    background: #f4f4f4;
-    border: 1px solid #ddd;
-    color: #666;
-    border: 1px solid #ddd;
-    padding: 8px 16px;
-    border-radius: 4px;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    font-size: 14px;
-    cursor: pointer;
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
+    .buttonsSort {
+      button {
+        background: var(--tetradic1);
+        border: 1px solid #ddd;
+        color: var(--accents-1);
+        border: 1px solid #ddd;
+        padding: 8px 16px;
+        border-radius: 4px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        font-size: 14px;
+        cursor: pointer;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
 
-    span {
-      display: flex;
-      transform: translateY(1px);
-      margin-left: 4px;
-      font-size: 1.1rem;
+        span {
+          display: flex;
+          transform: translateY(1px);
+          margin-left: 4px;
+          font-size: 1.1rem;
+        }
+
+        &:hover {
+          background: #eee;
+          color: rgba(0, 0, 0, 0.54);
+        }
+      }
     }
 
-    &:hover {
-      background: #eee;
+    .buttonsSector {
+      button {
+        background: var(--tetradic3);
+        border: 1px solid #ddd;
+        color: var(--accents-1);
+        border: 1px solid #ddd;
+        padding: 8px 16px;
+        border-radius: 4px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        font-size: 14px;
+        cursor: pointer;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+
+        span {
+          display: flex;
+          transform: translateY(1px);
+          margin-left: 4px;
+          font-size: 1.1rem;
+        }
+
+        &:hover {
+          background: #eee;
+          color: rgba(0, 0, 0, 0.54);
+        }
+      }
+    }
+
+    .buttonsML {
+      button {
+        background: var(--tetradic2);
+        border: 1px solid #ddd;
+        color: var(--accents-1);
+        border: 1px solid #ddd;
+        padding: 8px 16px;
+        border-radius: 4px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        font-size: 14px;
+        cursor: pointer;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+
+        span {
+          display: flex;
+          transform: translateY(1px);
+          margin-left: 4px;
+          font-size: 1.1rem;
+        }
+
+        &:hover {
+          background: #eee;
+          color: rgba(0, 0, 0, 0.54);
+        }
+      }
+    }
+
+    h2 {
+      color: var(--primary);
+    }
+
+    .buttonsLabeled {
+      button {
+        background: var(--tetradic3);
+        border: 1px solid #ddd;
+        color: var(--accents-1);
+        border: 1px solid #ddd;
+        padding: 8px 16px;
+        border-radius: 4px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        font-size: 14px;
+        cursor: pointer;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+
+        span {
+          display: flex;
+          transform: translateY(1px);
+          margin-left: 4px;
+          font-size: 1.1rem;
+        }
+
+        &:hover {
+          background: #eee;
+          color: rgba(0, 0, 0, 0.54);
+        }
+      }
     }
   }
 
@@ -224,10 +324,9 @@ button:focus {
       overflow: hidden;
       box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
         rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
-        &:hover {
-          box-shadow: 0px 0px 3px 3px var(--primary);
-        }
-  
+      &:hover {
+        box-shadow: 0px 0px 3px 3px var(--primary);
+      }
 
       .card__image {
         width: 100%;
@@ -314,6 +413,48 @@ button:focus {
         display: flex;
         align-items: flex-start;
 
+        .buttonsSector{
+          background: var(--tetradic1);
+          color: white;
+          padding: 4px 10px;
+          border-radius: 4px;
+          margin-right: 8px;
+          margin-bottom: 8px;
+          font-size: 12px;
+          cursor: pointer;
+
+          &:hover {
+            background: rgb(21, 92, 139);
+          }
+        }
+        .buttonsML{
+          background: var(--tetradic2);
+          color: white;
+          padding: 4px 10px;
+          border-radius: 4px;
+          margin-right: 8px;
+          margin-bottom: 8px;
+          font-size: 12px;
+          cursor: pointer;
+
+          &:hover {
+            background: rgb(21, 92, 139);
+          }
+        }
+        .buttonsLabeled{
+          background: var(--tetradic3);
+          color: white;
+          padding: 4px 10px;
+          border-radius: 4px;
+          margin-right: 8px;
+          margin-bottom: 8px;
+          font-size: 12px;
+          cursor: pointer;
+
+          &:hover {
+            background: rgb(21, 92, 139);
+          }
+        }
         div {
           background: rgb(33, 120, 179);
           color: white;
@@ -415,25 +556,84 @@ button:focus {
       .field {
         margin-bottom: 1.5rem;
 
-        button {
-          color: var(--primary);
-          padding: 8px 16px;
-          border-radius: 4px;
-          margin-right: 8px;
-          margin-bottom: 8px;
-          font-size: 14px;
-          border: 1px solid var(--primary);
-          background: #fff;
+        .buttonsSort {
+          button {
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            border: 1px solid var(--primary);
+            background: #fff;
+          }
+
+          button.active,
+          .active {
+            background: var(--primary);
+            color: white;
+          }
         }
 
-        button.active, .active {
-          background: var(--primary);
-          color: white;
+        .buttonsSector {
+          button {
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            border: 1px solid var(--tetradic1);
+            background: #fff;
+          }
+
+          button.active,
+          .active {
+            background: var(--tetradic1);
+            color: white;
+          }
+        }
+
+        .buttonsML {
+          button {
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            border: 1px solid var(--tetradic2);
+            background: #fff;
+          }
+
+          button.active,
+          .active {
+            background: var(--tetradic2);
+            color: white;
+          }
         }
 
         h2 {
           color: var(--primary);
+        }
 
+        .buttonsLabeled {
+          button {
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            border: 1px solid var(--tetradic3);
+            background: #fff;
+          }
+
+          button.active,
+          .active {
+            background: var(--tetradic3);
+            color: white;
+          }
         }
 
         h3 {
@@ -475,18 +675,17 @@ button:focus {
       color: var(--dark);
     }
 
-    .gitURL{
+    .gitURL {
       font-weight: 600;
     }
 
-    a{
+    a {
       color: var(--dark);
       text-decoration: none;
     }
-    a:hover{
+    a:hover {
       text-decoration: underline;
     }
-    
   }
 }
 
@@ -659,8 +858,6 @@ button:focus {
           border-bottom: 1px solid #ddd;
           white-space: nowrap;
           text-align: center;
-          
-
 
           .more_name {
             font-size: 1rem;
