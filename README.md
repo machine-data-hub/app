@@ -25,3 +25,30 @@ Not allowed at the moment
 ## License
 In progress
 [MIT](https://github.com/PHM-Data-Hub/)
+
+---
+
+# Recent Updates
+### March 29, 2020
+1. HCDE Reviews Implemented
+2. 11/15 design changes implemented
+  * What's not implemented
+  * Couldn't get axios JSON filing writing working with Netlify. Works locally. I am prioritizing this (3/29/2020)
+    * This is used for counting Like, Downloads, and suggesting datasets. 
+  * Blog slugs kept crashing, unsure why
+  * Displaying cards by Tile / Datasets is in progress. Paused to solve the axios problem. 
+3. What is Implemented / What to Review
+  * Prettier used for formatting
+  * Simulation and Time Series sorting
+  * Color code tags for filtering
+  * Filtering and Sorting separated
+  * Pagination set to bottom
+  * Nested datasets format completed
+  * Summary on front of card -- removed "Attributes": card look overwhelming, felt like attributes wasn't needed information
+  * About page reviewed, typos fixed
+  * Cecilia and Jiwoo profiles spaced out
+  * Search panel full width
+  * MOSFET dataset added
+  * Search by name implemented
+  * Filter box closes on external mouse click
+  * Download and Like active from tile but do not appear to work (need to fix axios to show)
