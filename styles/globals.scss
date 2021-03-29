@@ -353,7 +353,6 @@ button:focus {
         align-items: flex-start;
 
         div {
-          background: rgb(33, 120, 179);
           color: white;
           padding: 4px 10px;
           border-radius: 4px;
@@ -365,6 +364,18 @@ button:focus {
           &:hover {
             background: rgb(21, 92, 139);
           }
+        }
+       
+        .buttonsSector {
+          background: var(--tetradic1);
+        }
+
+        .buttonsML {
+          background: var(--tetradic2);
+        }
+
+        .buttonsLabeled {
+          background: var(--tetradic3);
         }
       }
 
