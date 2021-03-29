@@ -169,31 +169,31 @@ button:focus {
       color: #888;
     }
 
-    button{
+    button {
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid #ddd;
+      color: var(--accents-1);
+      border: 1px solid #ddd;
+      padding: 8px 16px;
+      border-radius: 4px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-bottom: 2rem;
+      align-items: center;
+      span {
         display: flex;
-        flex-wrap: wrap;
-        border: 1px solid #ddd;
-        color: var(--accents-1);
-        border: 1px solid #ddd;
-        padding: 8px 16px;
-        border-radius: 4px;
-        margin-right: 8px;
-        margin-bottom: 8px;
-        font-size: 14px;
-        cursor: pointer;
-        margin-bottom: 2rem;
-        align-items: center;
-        span {
-          display: flex;
-          transform: translateY(1px);
-          margin-left: 4px;
-          font-size: 1.1rem;
-        }
+        transform: translateY(1px);
+        margin-left: 4px;
+        font-size: 1.1rem;
+      }
 
-        &:hover {
-          background: #eee;
-          color: rgba(0, 0, 0, 0.54);
-        }
+      &:hover {
+        background: #eee;
+        color: rgba(0, 0, 0, 0.54);
+      }
     }
 
     .buttonsSort {
@@ -881,6 +881,18 @@ button:focus {
           margin-right: 8px;
           margin-bottom: 8px;
           font-size: 12px;
+        }
+
+        .buttonsSector {
+          background: var(--tetradic1);
+        }
+
+        .buttonsML {
+          background: var(--tetradic2);
+        }
+
+        .buttonsLabeled {
+          background: var(--tetradic3);
         }
       }
 
