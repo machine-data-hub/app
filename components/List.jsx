@@ -219,7 +219,7 @@ const List = ({
                   </div>
                 )}
 
-                {item["Time Series (Yes/No)"] === "Yes" && (
+                {item["Time Series"] === "Yes" && (
                   <div 
                     onClick={() => handleTimeSeriesFilter("Yes")}
                     className="buttonsML"
