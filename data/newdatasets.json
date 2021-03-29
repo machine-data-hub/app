@@ -251,7 +251,7 @@
     "Owner": "NASA",
     "URL": ["https://ti.arc.nasa.gov/c/4/"],
     "Short Summary": "Experiments on a milling machine for different speeds, feeds, and depth of cut. Records the wear of the milling insert, VB. The data set was provided by the BEST lab at UC Berkeley.",
-    "One Line": "Experiments on a milling machine for different speeds, feeds, and depth of cut and the effects on the milling insert, VB.",
+    "One Line": "Experiments on a milling machine for different speeds, feeds, and depth of cut and their effects on the milling insert, VB.",
     "Sector": "Etc",
     "ML Type": [],
     "Labeled": "",
