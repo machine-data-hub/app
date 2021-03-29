@@ -50,71 +50,30 @@ const List = ({
   return (
     <div className="dataset__list">
       <div className="buttons">
-        {
-          // only show the button if filter by sector is active (array is not empty)
-          sectorList.length > 0 ? (
-            <>
-              {sectorList.map((item, index) => (
-                <button
-                  key={index}
-                  onClick={() =>
-                    handleSectorFilter(item, sectorList, setSecorList)
-                  }
-                >
-                  {item}{" "}
-                  <span>
-                    <MdClose />
-                  </span>
-                </button>
-              ))}
-            </>
-          ) : (
-            ""
-          )
-        }
-        {
-          // only show the button if filter by ml type is active (array is not empty)
-          typeList.length > 0 ? (
-            <>
-              {typeList.map((item, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleTypeFilter(item, typeList, setTypeList)}
-                >
-                  {item}{" "}
-                  <span>
-                    <MdClose />
-                  </span>
-                </button>
-              ))}
-            </>
-          ) : (
-            ""
-          )
-        }
-        {
-          // only show the button if filter by labeled is active (state is not empty)
-          labeled && (
-            <button onClick={() => setLabeled("")}>
-              {labeled === "Yes" ? "Labeled" : "Not Labeled"}{" "}
-              <span>
-                <MdClose />
-              </span>
-            </button>
-          )
-        }
-        {
-          // only show the button if filter by timeseries is active (state is not empty)
-          timeSeries && (
-            <button onClick={() => setTimeSeries("")}>
-              Time Series{" "}
-              <span>
-                <MdClose />
-              </span>
-            </button>
-          )
-        }
-        {
+        <div className="buttonsSort">
+          {
+            // only show the button if filter by sector is active (array is not empty)
+            sectorList.length > 0 ? (
+              <>
+                {sectorList.map((item, index) => (
+                  <button
+                    key={index}
+                    onClick={() =>
+                      handleSectorFilter(item, sectorList, setSecorList)
+                    }
+                  >
+                    {item}{" "}
+                    <span>
+                      <MdClose />
+                    </span>
+                  </button>
+                ))}
+              </>
+            ) : (
+              ""
+            )
+          }
+          {
           // only show the button if filter by simulation is active (state is not empty)
           simulation && (
             <button onClick={() => setSimulation("")}>
@@ -125,6 +84,54 @@ const List = ({
             </button>
           )
         }
+        </div>
+        <div className="buttonsML">
+          {
+            // only show the button if filter by ml type is active (array is not empty)
+            typeList.length > 0 ? (
+              <>
+                {typeList.map((item, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleTypeFilter(item, typeList, setTypeList)}
+                    className="buttonsML"
+                  >
+                    {item}{" "}
+                    <span>
+                      <MdClose />
+                    </span>
+                  </button>
+                ))}
+              </>
+            ) : (
+              ""
+            )
+          }
+          {
+          // only show the button if filter by timeseries is active (state is not empty)
+          timeSeries && (
+            <button onClick={() => setTimeSeries("")}>
+              Time Series{" "}
+              <span>
+                <MdClose />
+              </span>
+            </button>
+          )
+        }
+        </div>
+        <div className="buttonsLabeled">
+          {
+            // only show the button if filter by labeled is active (state is not empty)
+            labeled && (
+              <button onClick={() => setLabeled("")} className="buttonsLabeled">
+                {labeled === "Yes" ? "Labeled" : "Not Labeled"}{" "}
+                <span>
+                  <MdClose />
+                </span>
+              </button>
+            )
+          }
+        </div>
         {/* <div className="page-number">Page {currentPage} of {totalPage > 0 ? totalPage : 1}</div> */}
       </div>
       <ul className="list__wrapper">
@@ -147,7 +154,8 @@ const List = ({
                 </Link>
                 <div className="card__info">
                   <span>{item.FileSize}</span>
-                  {item.Attributes && item.Attributes !== "N/A" ? (
+                  {item["One Line"]}
+                  {/* {item.Attributes && item.Attributes !== "N/A" ? (
                     <span>{item.Attributes} Attributes</span>
                   ) : (
                     ""
@@ -156,7 +164,7 @@ const List = ({
                     <span>{item.Instances} Instances</span>
                   ) : (
                     ""
-                  )}
+                  )} */}
                 </div>
               </div>
               <div className="card__details">
@@ -176,6 +184,7 @@ const List = ({
               <div className="card__tags">
                 {item.Sector && (
                   <div
+                    className="buttonsSector"
                     onClick={() =>
                       handleSectorFilter(item.Sector, sectorList, setSecorList)
                     }
@@ -183,9 +192,11 @@ const List = ({
                     {item.Sector}
                   </div>
                 )}
+
                 {item.ML_Type?.length > 0 &&
                   item.ML_Type.map((tag, index) => (
                     <div
+                    className="buttonsML"
                       key={index}
                       onClick={() =>
                         handleTypeFilter(tag, typeList, setTypeList)
@@ -194,8 +205,10 @@ const List = ({
                       {tag}
                     </div>
                   ))}
+
                 {item.Labeled === "Yes" && (
                   <div
+                  className="buttonsLabeled"
                     onClick={() => {
                       labeled === "Yes"
                         ? handleLabeledFilter("", setLabeled)
@@ -205,13 +218,20 @@ const List = ({
                     Labeled
                   </div>
                 )}
+
                 {item["Time Series (Yes/No)"] === "Yes" && (
-                  <div onClick={() => handleTimeSeriesFilter("Yes")}>
+                  <div 
+                    onClick={() => handleTimeSeriesFilter("Yes")}
+                    className="buttonsML"
+                  >
                     Time Series
                   </div>
                 )}
                 {item["Simulation (Yes/No)"] === "Yes" && (
-                  <div onClick={() => handleSimulationFilter("Yes")}>
+                  <div 
+                    onClick={() => handleSimulationFilter("Yes")}
+                    className="buttonsSector"  
+                  >
                     Simulation
                   </div>
                 )}
