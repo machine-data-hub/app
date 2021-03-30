@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import List from "../components/List";
 import Search from "../components/Search";
-import datasets from "../data/newdatasets.json";
+import datasets from "../public/datasets.json";
 import { useSector } from "../context/SectorContext";
 import { useType } from "../context/TypeContext";
 import { useLabeled } from "../context/LabeledContext";
