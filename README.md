@@ -32,10 +32,9 @@ In progress
 ### March 29, 2020
 1. 11/15 design changes implemented
     * What's not implemented
-    * Couldn't get axios JSON filing writing working with Netlify. Works locally. I am prioritizing this (3/29/2020)
-        * This is used for counting Like, Downloads, and suggesting datasets. 
-    * Blog slugs kept crashing, unsure why
-    * Displaying cards by Tile / Datasets is in progress. Paused to solve the axios problem. 
+    * Blog function works locally, does not work on Netlify, cannot find any error codes on what is happening
+    * Writing to JSON requires ExpressJS. Been working on that since last Wednesday. Have been prioritizing this. Feels like I'm almost done. 
+    * Displaying cards by Tile / Datasets is in progress. Paused to solve the JSON problem. 
 2. What is Implemented / What to Review
     * Prettier used for formatting
     * Simulation and Time Series sorting
@@ -53,3 +52,4 @@ In progress
     * Download and Like active from tile but do not appear to work (need to fix axios to show)
     * Donated --> "Acquired"
     * HCDE Reviews Completed
+    * Blog functions
