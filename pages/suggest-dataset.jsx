@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
-// import axious from "axious";
 
 const SuggesttDatasets = () => {
   // Title, Summary, and Dataset Link
@@ -16,13 +15,6 @@ const SuggesttDatasets = () => {
       Summary: this.summary,
       URL: this.link,
     };
-
-    axious
-      .post("https://machinedatahub.ai/suggest-dataset", newSuggestions)
-      .then(() => console.log("Dataset Added", newSuggestions))
-      .catch((err) => {
-        console.log(err);
-      });
   };
 
   return (
