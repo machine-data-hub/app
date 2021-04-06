@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
-import postIssues from "../lib/auth.js";
 
 const SuggesttDatasets = () => {
   // Title, Summary, and Dataset Link
@@ -9,16 +8,13 @@ const SuggesttDatasets = () => {
   const [link, setLink] = useState();
 
   // Function to be executed when user presses enter or click the submit button
-  const  handleSubmit =  async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newSuggestions = {
-      Name: title,
-      Summary: summary,
-      URL: link,
+      Name: this.title,
+      Summary: this.summary,
+      URL: this.link,
     };
-    console.log('Received:');
-    console.log(newSuggestions);
-    postIssues(title, link, summary);
   };
 
   return (
