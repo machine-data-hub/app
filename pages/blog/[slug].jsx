@@ -21,7 +21,7 @@ PostTemplate.getInitialProps = async (context) => {
   const { slug } = context.query;
 
   // Import our .md file using the `slug` from the URL
-  const content = await import(`../../blogcontent/${slug}.md`);
+  const content = await import(`../../public/${slug}.md`);
 
   // Parse .md data through `matter`
   const data = matter(content.default);
