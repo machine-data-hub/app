@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
-// import axious from "axious";
+import postIssues from "../lib/auth.js";
 
 const SuggesttDatasets = () => {
   // Title, Summary, and Dataset Link
@@ -9,20 +9,16 @@ const SuggesttDatasets = () => {
   const [link, setLink] = useState();
 
   // Function to be executed when user presses enter or click the submit button
-  const handleSubmit = async (e) => {
+  const  handleSubmit =  async (e) => {
     e.preventDefault();
     const newSuggestions = {
-      Name: this.title,
-      Summary: this.summary,
-      URL: this.link,
+      Name: title,
+      Summary: summary,
+      URL: link,
     };
-
-    axious
-      .post("https://machinedatahub.ai/suggest-dataset", newSuggestions)
-      .then(() => console.log("Dataset Added", newSuggestions))
-      .catch((err) => {
-        console.log(err);
-      });
+    console.log('Received:');
+    console.log(newSuggestions);
+    postIssues(title, link, summary);
   };
 
   return (
