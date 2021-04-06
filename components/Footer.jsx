@@ -13,15 +13,19 @@ const Footer = () => {
             alt="Deploys by Netlify"
           />
         </a>
-              <Link href="https://github.com/PHM-Data-Hub">
+        <ul>
+          <Link href="https://github.com/PHM-Data-Hub">
             <li
               className={
-                router.pathname === "https://github.com/PHM-Data-Hub" ? "nav-active" : ""
+                router.pathname === "https://github.com/PHM-Data-Hub"
+                  ? "nav-active"
+                  : ""
               }
             >
               Source Code
             </li>
           </Link>
+        </ul>
       </div>
       <div className="footer_right">
         <ul>
