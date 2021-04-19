@@ -3,18 +3,21 @@
     "name": "Cecilia Barnes",
     "profile_pict": "/images/cecilia.jpg",
     "summary": "Cecilia is a senior at the University of Washington studying Data Science as part of the Human Centered Design and Engineering department. She is currently a Data Science Intern for the UW IT department and is interested in machine learning applications.",
-    "linkedin_url": "www.linkedin.com/in/cecilia-barnes/ "
+    "linkedin_url": "www.linkedin.com/in/cecilia-barnes/",
+    "LinkedInShort": "/cecilia-barnes"
   },
   {
     "name": "Jiwoo Park",
     "profile_pict": "/images/jiwoo.jpg",
     "summary": "Jiwoo is a senior majoring in Electrical Engineering at the University of Washington, concentrating on digital signal processing. He has an interest in software development.",
-    "linkedin_url": "www.linkedin.com/in/jiwoo-park-a7660a196/"
+    "linkedin_url": "www.linkedin.com/in/jiwoo-park-a7660a196/",
+    "LinkedInShort": "/jiwoo-park-a7660a196"
   },
   {
     "name": "Matthew Sullivan",
     "profile_pict": "/images/matthew.jpg",
     "summary": "Matt is a senior electrical engineering student at the University of Washington focusing on digital signal processing and communications. He is currently a research assistant under Dr. Shen and interested in medical imaging research. ",
-    "linkedin_url": "www.linkedin.com/in/matthew-sullivan-287906153/"
+    "linkedin_url": "www.linkedin.com/in/matthew-sullivan-287906153/",
+    "LinkedInShort": "/matthew-sullivan-287906153"
   }
 ]
