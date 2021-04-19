@@ -1,5 +1,6 @@
 import Layout from "../components/Layout";
 import teams from "../data/team.json";
+import {AiFillLinkedin, AiFillGithub} from 'react-icons/ai';
 
 const About = () => {
   return (
@@ -14,7 +15,7 @@ const About = () => {
             have been compiled from various companies and institutions such as
             NASA, University of California Irvine, and University of Wisconsin.
           </p>
-          <a href="https://github.com/PHM-Data-Hub" className="gitURL">You can view our code here!</a>
+          <a href="https://github.com/PHM-Data-Hub" className="gitURL">You can view our code here! <span className="icon__download"><AiFillGithub/></span></a>
           <p>
             If you are interested in using our Python package, you can install
             it the PyPI package in the near future using ‘pip install
@@ -47,7 +48,8 @@ const About = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {item.linkedin_url}
+                      <span className="icon__download"><AiFillLinkedin/></span>
+                      {item['LinkedInShort']}
                     </a>
                   </div>
                 </li>

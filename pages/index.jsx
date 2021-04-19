@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import List from "../components/List";
 import Search from "../components/Search";
+
+import Filter from "../components/Filter";
+
 import datasets from "../data/newdatasets.json";
 import { useSector } from "../context/SectorContext";
 import { useType } from "../context/TypeContext";
@@ -256,7 +259,7 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
 
   return (
     <Layout title={`Machine Data Hub`}>
-      <Search
+      <Filter
         sectors={sectors}
         mLTypes={mLTypes}
         setQuery={setQuery}
@@ -274,9 +277,6 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
         setSimulation={setSimulation}
         timeSeries={timeSeries}
         setTimeSeries={setTimeSeries}
-        // ---------------
-        // card={card}
-        // setCard={setCard}
       />
       <List
         // paginate(array, post per page, current page)
