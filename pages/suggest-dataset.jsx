@@ -17,9 +17,9 @@ const SuggesttDatasets = () => {
       'title': title,
       'summary': summary,
       'URL': link,
-    }
-    createSuggestion(newSuggestion)
-  }
+    };
+    // createSuggestion(newSuggestion)
+  };
 
   return (
     <Layout title="About | Machine Data Hub">
