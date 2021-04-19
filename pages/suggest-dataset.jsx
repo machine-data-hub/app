@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
-import {createSuggestion} from "../api/suggestAPI";
+// import {createSuggestion} from "../api/suggestAPI";
 //import postIssues from "../lib/auth.js";
 
 
