@@ -8,12 +8,12 @@ const SuggesttDatasets = () => {
   const [link, setLink] = useState();
 
   // Function to be executed when user presses enter or click the submit button
-  const handleSubmit = async (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    const newSuggestions = {
-      Name: this.title,
-      Summary: this.summary,
-      URL: this.link,
+    var newSuggestion = {
+      'title': title,
+      'summary': summary,
+      'URL': link,
     };
   };
 

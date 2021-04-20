@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { AiFillGithub } from "react-icons/ai";
 
 const Footer = () => {
   const router = useRouter();
@@ -7,35 +8,19 @@ const Footer = () => {
   return (
     <div className="main__footer">
       <div className="footer__left">
-        <a href="https://www.netlify.com">
+        <a className="netlify" href="https://www.netlify.com">
           <img
             src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"
             alt="Deploys by Netlify"
           />
         </a>
       </div>
-      <div className="footer_right">
-        <ul>
-          <Link href="/">
-            <li className={router.pathname === "/" ? "nav-active" : ""}>
-              Home
-            </li>
-          </Link>
-          <Link href="/about">
-            <li className={router.pathname === "/about" ? "nav-active" : ""}>
-              About
-            </li>
-          </Link>
-          <Link href="/suggest-dataset">
-            <li
-              className={
-                router.pathname === "/suggest-dataset" ? "nav-active" : ""
-              }
-            >
-              Suggest a Dataset
-            </li>
-          </Link>
-        </ul>
+      <div className="footer__right">
+        <Link href="https://github.com/PHM-Data-Hub">
+            <span className="icon">
+              <AiFillGithub />
+            </span>
+        </Link>
       </div>
     </div>
   );

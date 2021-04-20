@@ -153,8 +153,8 @@ const List = ({
                   <h2>{item.Name}</h2>
                 </Link>
                 <div className="card__info">
-                  <span>{item.FileSize}</span>
                   {item["One Line"]}
+                  {/* <span>{item['File Size']}</span> */}
                   {/* {item.Attributes && item.Attributes !== "N/A" ? (
                     <span>{item.Attributes} Attributes</span>
                   ) : (
@@ -167,7 +167,7 @@ const List = ({
                   )} */}
                 </div>
               </div>
-              <div className="card__details">
+              {/* <div className="card__details">
                 <div>
                   <span className="icon__download">
                     <MdFileDownload />
@@ -180,7 +180,7 @@ const List = ({
                   </span>
                   {item.Likes} Likes
                 </div>
-              </div>
+              </div> */}
               <div className="card__tags">
                 {item.Sector && (
                   <div

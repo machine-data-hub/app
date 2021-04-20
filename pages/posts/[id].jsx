@@ -7,7 +7,7 @@ const Posts = ({ data, similar }) => {
   return (
     <Layout title={`${data.Name} - Machine Data Hub`}>
       <div className="page__post">
-        <div className="page-left">
+        <div className="page__top">
           <div className="content__head">
             <h1>{data.Name}</h1>
             {data.img_link ? <img src={data.img_link} alt="Laptop" /> : ""}
@@ -46,14 +46,22 @@ const Posts = ({ data, similar }) => {
                 </div>
               </div>
               <div className="tags">
-                {data.Sector && <div>{data.Sector}</div>}
+                {data.Sector && <div className="sector">{data.Sector}</div>}
                 {data["ML Type"] &&
-                  data["ML Type"]?.map((x, i) => <div key={i}>{x}</div>)}
-                {data.Labeled === "Yes" && <div>Labeled</div>}
-                {data["Time Series (Yes/No)"] === "Yes" && (
-                  <div>Time Series</div>
+                  data["ML Type"]?.map((x, i) => (
+                    <div key={i} className="ML">
+                      {x}
+                    </div>
+                  ))}
+                {data.Labeled === "Yes" && (
+                  <div className="labeled">Labeled</div>
                 )}
-                {data["Simulation (Yes/No)"] === "Yes" && <div>Simulation</div>}
+                {data["Time Series"] === "Yes" && (
+                  <div className="ML">Time Series</div>
+                )}
+                {data["Simulation (Yes/No)"] === "Yes" && (
+                  <div className="sector">Simulation</div>
+                )}
               </div>
               <div className="more">
                 <div>More info:</div>
@@ -80,7 +88,7 @@ const Posts = ({ data, similar }) => {
                     </span>
                     {set.Downloads} Downloads
                   </div>
-                  <div>{set["File Size"]} </div>
+                  <div className="file__size">{set["File Size"]} </div>
                   <a href={set.URL}>
                     <button className="button" type="button">
                       Download
@@ -91,29 +99,18 @@ const Posts = ({ data, similar }) => {
             </div>
           </div>
         </div>
-        <div className="page-right">
+        <div className="page__bottom">
           <h2 className="widget__title">Similar Datasets</h2>
-          {similar?.map((item, index) => (
-            <div className="card" key={index}>
-              <div className="card__title">
-                <Link href={`/posts/${item.id}`}>
-                  <h2>{item.Name}</h2>
-                </Link>
-                <div className="card__info">
-                  <span>{item["File Size"]}</span>
-                  {item.Attributes && item.Attributes !== "N/A" ? (
-                    <span>{item.Attributes} Attributes</span>
-                  ) : (
-                    ""
-                  )}
-                  {item.Instances && item.Instances !== "N/A" ? (
-                    <span>{item.Instances} Instances</span>
-                  ) : (
-                    ""
-                  )}
+          <div className="card__container">
+            {similar?.map((item, index) => (
+              <div className="card" key={index}>
+                <div className="card__title">
+                  <Link href={`/posts/${item.id}`}>
+                    <h2>{item.Name}</h2>
+                  </Link>
+                  <div className="card__info">{item["One Line"]}</div>
                 </div>
-              </div>
-              <div className="card__details">
+                {/* <div className="card__details">
                 <div>
                   <span className="icon__download">
                     <MdFileDownload />
@@ -126,24 +123,35 @@ const Posts = ({ data, similar }) => {
                   </span>
                   {item.Likes} Likes
                 </div>
+              </div> */}
+                <div className="card__tags">
+                  {item.Sector && (
+                    <div className="buttonsSector">{item.Sector}</div>
+                  )}
+                  {item["ML Type"] &&
+                    data["ML Type"].map((x, i) => (
+                      <div className="buttonsML" key={i}>
+                        {x}
+                      </div>
+                    ))}
+                  {item.Labeled === "Yes" && (
+                    <div className="buttonsLabeled">Labeled</div>
+                  )}
+                  {item["Time Series"] === "Yes" && (
+                    <div className="buttonsML">Time Series</div>
+                  )}
+                  {item["Simulation (Yes/No)"] === "Yes" && (
+                    <div buttons="buttonsSector">Simulation</div>
+                  )}
+                </div>
+                <div className="card__footer">
+                  <Link href={`/posts/${item.id}`}>
+                    <span>SEE MORE &gt;</span>
+                  </Link>
+                </div>
               </div>
-              <div className="card__tags">
-                {item.Sector && <div className="buttonsSector">{item.Sector}</div>}
-                {item["ML Type"] &&
-                  data['ML Type'].map((x, i) => <div className="buttonsML" key={i}>{x}</div>)}
-                {item.Labeled === "Yes" && <div className="buttonsLabeled">Labeled</div>}
-                {item["Time Series"] === "Yes" && (
-                  <div className="buttonsML">Time Series</div>
-                )}
-                {item["Simulation (Yes/No)"] === "Yes" && <div buttons="buttonsSector">Simulation</div>}
-              </div>
-              <div className="card__footer">
-                <Link href={`/posts/${item.id}`}>
-                  <span>SEE MORE &gt;</span>
-                </Link>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
       <div className="wrapper">

@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import List from "../components/List";
 import Search from "../components/Search";
-import datasets from "../public/datasets.json";
+import Filter from "../components/Filter";
+
+import datasets from "../data/newdatasets.json";
 import { useSector } from "../context/SectorContext";
 import { useType } from "../context/TypeContext";
 import { useLabeled } from "../context/LabeledContext";
@@ -12,10 +14,6 @@ import { usePage } from "../context/PageContext";
 import { useSort } from "../context/SortContext";
 import { ASC, DATAADDED, DES, MOSTPOPULAR, DOWNLOAD } from "../utils/sort";
 
-//---------------------------
-import { useCard } from "../context/CardContext";
-
-// Change page limit here
 const postPerPage = 20;
 
 export default function Home({ datasets, sectors, isServer, mLTypes }) {
@@ -256,7 +254,7 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
 
   return (
     <Layout title={`Machine Data Hub`}>
-      <Search
+      <Filter
         sectors={sectors}
         mLTypes={mLTypes}
         setQuery={setQuery}
@@ -274,9 +272,6 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
         setSimulation={setSimulation}
         timeSeries={timeSeries}
         setTimeSeries={setTimeSeries}
-        // ---------------
-        // card={card}
-        // setCard={setCard}
       />
       <List
         // paginate(array, post per page, current page)
