@@ -9,6 +9,7 @@
   --tetradic3: #0d3047;
 
   --accents-1: #ddd;
+  --accents-2: #747f86;
 }
 
 html,
@@ -1378,7 +1379,7 @@ button:focus {
 
 // Footer
 .main__footer {
-  background: var(--primary);
+  background: var(--accents-2);
   color: white;
   display: flex;
   justify-content: space-between;
