@@ -4,9 +4,9 @@
   --primary: rgb(33, 120, 179);
   --dark: rgb(21, 92, 139);
 
-  --tetradic1: #b35b21;
-  --tetradic2: #79b321;
-  --tetradic3: #5b21b3;
+  --tetradic1: #2790d7;
+  --tetradic2: #6fb5e4;
+  --tetradic3: #0d3047;
 
   --accents-1: #ddd;
 }
@@ -75,7 +75,15 @@ button:focus {
 }
 
 .footer {
-  padding-top: 4rem;
+  padding-top: 2rem;
+}
+
+.sticky {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10000;
 }
 
 // Navbar
@@ -236,7 +244,7 @@ button:focus {
   .list__wrapper {
     display: grid;
     grid-template-columns: repeat(4, minmax(250px, 1fr));
-    grid-gap: 24px;
+    grid-gap: 32px;
 
     @media (max-width: 1200px) {
       grid-template-columns: repeat(3, minmax(250px, 1fr));
@@ -308,7 +316,7 @@ button:focus {
       }
 
       .card__info {
-        font-size: 10px;
+        font-size: 14px;
         text-align: center;
         color: rgba(0, 0, 0, 0.54);
 
@@ -365,7 +373,7 @@ button:focus {
             background: rgb(21, 92, 139);
           }
         }
-       
+
         .buttonsSector {
           background: var(--tetradic1);
         }
@@ -404,6 +412,7 @@ button:focus {
 .search__feature {
   padding-top: 120px;
   padding-bottom: 120px;
+  position: relative;
 
   .input__wrapper {
     margin: 0 auto;
@@ -427,127 +436,297 @@ button:focus {
       left: 1rem;
     }
 
-    .icon__sort {
-      right: 1rem;
-      display: flex;
-      padding: 6px;
-      border-radius: 50%;
-      cursor: pointer;
+    .search__bar {
+      position: absolute;
+      top: 0px;
+      background: pink;
+      height: 50px;
+      width: 100%;
 
-      &:hover {
-        background: #f4f4f4;
-      }
-
-      &.active {
-        background: #f4f4f4;
+      .icon__search {
+        left: 1rem;
+        top: 15px;
       }
     }
 
-    .sort__wrapper {
-      position: absolute;
-      top: 52px;
-      right: 0;
-      background: white;
-      padding: 2rem;
-      width: 100%;
-      z-index: 1;
-      box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
-        rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+    .filter__bar {
+      display: absolute;
+      height: 96px;
 
-      h2 {
-        margin-top: 0;
-        margin-bottom: 0.75rem;
-        font-size: 1.2rem;
+      span {
+        position: absolute;
+        font-size: 1.25rem;
+        transform: translateY(1px);
         color: var(--primary);
+        top: 60px;
+        left: 10px;
       }
 
-      .field {
-        margin-bottom: 1.5rem;
+      .icon__sort {
+        left: 1rem;
+        bottom: 1rem;
+        display: flex;
 
-        .buttonsSort {
-          button {
-            color: var(--primary);
-            padding: 8px 16px;
-            border-radius: 4px;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            font-size: 14px;
-            border: 1px solid var(--primary);
-            background: #fff;
-          }
-
-          button.active,
-          .active {
-            background: var(--primary);
-            color: white;
-          }
+        border-radius: 50%;
+        cursor: pointer;
+  
+        &:hover {
+          background: #f4f4f4;
+          height: 24px;
+          font-weight: 500;
         }
-
-        .buttonsSector {
-          button {
-            color: var(--primary);
-            padding: 8px 16px;
-            border-radius: 4px;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            font-size: 14px;
-            border: 1px solid var(--tetradic1);
-            background: #fff;
-          }
-
-          button.active,
-          .active {
-            background: var(--tetradic1);
-            color: white;
-          }
+  
+        &.active {
+          background: #f4f4f4;
         }
+      }
 
-        .buttonsML {
-          button {
-            color: var(--primary);
-            padding: 8px 16px;
-            border-radius: 4px;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            font-size: 14px;
-            border: 1px solid var(--tetradic2);
-            background: #fff;
-          }
-
-          button.active,
-          .active {
-            background: var(--tetradic2);
-            color: white;
-          }
-        }
+      .sort__wrapper {
+        position: absolute;
+        top: 92px;
+        right: 0;
+        background: white;
+        padding: 2rem;
+        width: 100%;
+        z-index: 1;
+        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+          rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
 
         h2 {
+          margin-top: 0;
+          margin-bottom: 0.75rem;
+          font-size: 1.2rem;
           color: var(--primary);
         }
+        .field {
+          margin-bottom: 1.5rem;
 
-        .buttonsLabeled {
-          button {
+          .buttonsSort {
+            button {
+              color: var(--primary);
+              padding: 8px 16px;
+              border-radius: 4px;
+              margin-right: 8px;
+              margin-bottom: 8px;
+              font-size: 14px;
+              border: 1px solid var(--primary);
+              background: #fff;
+            }
+
+            button.active,
+            .active {
+              background: var(--primary);
+              color: white;
+            }
+          }
+
+          .buttonsSector {
+            button {
+              color: var(--primary);
+              padding: 8px 16px;
+              border-radius: 4px;
+              margin-right: 8px;
+              margin-bottom: 8px;
+              font-size: 14px;
+              border: 1px solid var(--tetradic1);
+              background: #fff;
+            }
+
+            button.active,
+            .active {
+              background: var(--tetradic1);
+              color: white;
+            }
+          }
+
+          .buttonsML {
+            button {
+              color: var(--primary);
+              padding: 8px 16px;
+              border-radius: 4px;
+              margin-right: 8px;
+              margin-bottom: 8px;
+              font-size: 14px;
+              border: 1px solid var(--tetradic2);
+              background: #fff;
+            }
+
+            button.active,
+            .active {
+              background: var(--tetradic2);
+              color: white;
+            }
+          }
+
+          h2 {
             color: var(--primary);
-            padding: 8px 16px;
-            border-radius: 4px;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            font-size: 14px;
-            border: 1px solid var(--tetradic3);
-            background: #fff;
           }
 
-          button.active,
-          .active {
-            background: var(--tetradic3);
-            color: white;
+          .buttonsLabeled {
+            button {
+              color: var(--primary);
+              padding: 8px 16px;
+              border-radius: 4px;
+              margin-right: 8px;
+              margin-bottom: 8px;
+              font-size: 14px;
+              border: 1px solid var(--tetradic3);
+              background: #fff;
+            }
+
+            button.active,
+            .active {
+              background: var(--tetradic3);
+              color: white;
+            }
+          }
+
+          h3 {
+            color: var(--primary);
+            font-size: 16px;
+            font-weight: 400;
           }
         }
+      }
+    }
 
-        h3 {
+    .sort__bar {
+      display: relative;
+      height: 96px;
+      padding: 16px 16px 16px 48px;
+      width: 100%;
+
+      span {
+        position: absolute;
+        font-size: 1.25rem;
+        transform: translateY(1px);
+        color: var(--primary);
+        top: 90px;
+      }
+
+      .icon__sort {
+        left: 1rem;
+        bottom: 1rem;
+        display: flex;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &:hover {
+          background: #f4f4f4;
+          height: 24px;
+          font-weight: 500;
+        }
+  
+        &.active {
+          background: #f4f4f4;
+        }
+      }
+
+      .sort__wrapper {
+        position: absolute;
+        top: 52px;
+        right: 0;
+        background: white;
+        padding: 2rem;
+        width: 100%;
+        z-index: 1;
+        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+          rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+
+        h2 {
+          margin-top: 0;
+          margin-bottom: 0.75rem;
+          font-size: 1.2rem;
           color: var(--primary);
-          font-size: 16px;
-          font-weight: 400;
+        }
+        .field {
+          margin-bottom: 1.5rem;
+
+          .buttonsSort {
+            button {
+              color: var(--primary);
+              padding: 8px 16px;
+              border-radius: 4px;
+              margin-right: 8px;
+              margin-bottom: 8px;
+              font-size: 14px;
+              border: 1px solid var(--primary);
+              background: #fff;
+            }
+
+            button.active,
+            .active {
+              background: var(--primary);
+              color: white;
+            }
+          }
+
+          .buttonsSector {
+            button {
+              color: var(--primary);
+              padding: 8px 16px;
+              border-radius: 4px;
+              margin-right: 8px;
+              margin-bottom: 8px;
+              font-size: 14px;
+              border: 1px solid var(--tetradic1);
+              background: #fff;
+            }
+
+            button.active,
+            .active {
+              background: var(--tetradic1);
+              color: white;
+            }
+          }
+
+          .buttonsML {
+            button {
+              color: var(--primary);
+              padding: 8px 16px;
+              border-radius: 4px;
+              margin-right: 8px;
+              margin-bottom: 8px;
+              font-size: 14px;
+              border: 1px solid var(--tetradic2);
+              background: #fff;
+            }
+
+            button.active,
+            .active {
+              background: var(--tetradic2);
+              color: white;
+            }
+          }
+
+          h2 {
+            color: var(--primary);
+          }
+
+          .buttonsLabeled {
+            button {
+              color: var(--primary);
+              padding: 8px 16px;
+              border-radius: 4px;
+              margin-right: 8px;
+              margin-bottom: 8px;
+              font-size: 14px;
+              border: 1px solid var(--tetradic3);
+              background: #fff;
+            }
+
+            button.active,
+            .active {
+              background: var(--tetradic3);
+              color: white;
+            }
+          }
+
+          h3 {
+            color: var(--primary);
+            font-size: 16px;
+            font-weight: 400;
+          }
         }
       }
     }
@@ -594,22 +773,28 @@ button:focus {
     a:hover {
       text-decoration: underline;
     }
+
+    .icon__download {
+      vertical-align: middle;
+      font-size: 2rem;
+    }
   }
 }
 
 // Page - Post
 .page__post {
-  display: flex;
+  display: grid;
   padding: 0 2rem;
   padding-top: 4rem;
   justify-content: space-between;
 
+  
   .content__head {
     background: #ddd;
   }
 
-  .page-left {
-    width: 72%;
+  .page__top {
+    width: 100%;
     border-radius: 4px;
     height: 100%;
     box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
@@ -641,7 +826,6 @@ button:focus {
 
     .content__body {
       display: flex;
-      height: 100%;
 
       .content__left {
         background: rgb(231, 243, 255);
@@ -704,13 +888,24 @@ button:focus {
           align-items: flex-start;
 
           div {
-            background: rgb(33, 120, 179);
             color: white;
             padding: 4px 10px;
             border-radius: 4px;
             margin-right: 8px;
             margin-bottom: 8px;
             font-size: 12px;
+          }
+
+          .sector {
+            background: var(--tetradic1);
+          }
+
+          .ML {
+            background: var(--tetradic2);
+          }
+
+          .labeled {
+            background: var(--tetradic3);
           }
         }
 
@@ -731,7 +926,7 @@ button:focus {
         padding-bottom: 2rem;
         display: flex;
         flex-direction: column;
-
+        height: 100%;
         h3 {
           margin-top: 0;
           margin-bottom: 1rem;
@@ -759,11 +954,8 @@ button:focus {
         }
 
         .more_datasets {
-          background-color: rgb(231, 243, 255);
-          padding: 1rem;
           width: auto;
           display: flex;
-          border-bottom: 1px solid #ddd;
           white-space: nowrap;
           text-align: center;
 
@@ -800,6 +992,16 @@ button:focus {
               justify-content: flex-end;
             }
           }
+          .file__size {
+            width: 40%;
+            color: rgb(33, 120, 179);
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: flex;
+            margin: 0 auto;
+            align-items: center;
+          }
+          
           .button {
             margin: 1px;
           }
@@ -807,16 +1009,26 @@ button:focus {
       }
     }
   }
-  .page-right {
-    width: 26%;
-    border-radius: 4px;
 
+  .page__bottom {
+    width: 100%;
+    border-radius: 4px;
+    margin-top: 20px;
     .widget__title {
       margin-top: 0;
       color: var(--primary);
+
+    }
+    .card__container{
+      display: grid;
+      width: 100%;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 20px;
     }
 
     .card {
+      width: 100%;
+
       box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
         rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
       padding: 1rem 0;
@@ -840,7 +1052,7 @@ button:focus {
         }
 
         .card__info {
-          font-size: 10px;
+          font-size: 14px;
           text-align: center;
           color: rgba(0, 0, 0, 0.54);
 
@@ -1084,7 +1296,7 @@ button:focus {
   }
 }
 
-.blog__tiles{
+.blog__tiles {
   display: grid;
   grid-template-columns: repeat(1, minmax(250px, 1fr));
   grid-gap: 24px;
@@ -1105,7 +1317,7 @@ button:focus {
   @media (max-width: 512px) {
     grid-template-columns: repeat(1, minmax(200px, 1fr));
   }
-  .blog__card{
+  .blog__card {
     display: flex;
     align-items: right;
     border-radius: 4px;
@@ -1118,18 +1330,17 @@ button:focus {
       box-shadow: 0px 0px 3px 3px var(--primary);
     }
 
-    img{
+    img {
       display: block;
       width: auto;
       max-height: 140px;
-      float:left;
-
+      float: left;
     }
-    .blog__info{
+    .blog__info {
       display: block;
       margin: 0;
 
-      .blog__title{
+      .blog__title {
         padding: 16px;
         cursor: pointer;
         font-weight: 500;
@@ -1138,24 +1349,23 @@ button:focus {
         letter-spacing: 0.0075em;
         height: auto;
 
-          &:hover {
-            color: var(--primary);
-          }
-
+        &:hover {
+          color: var(--primary);
+        }
       }
-      .blog__author{
+      .blog__author {
         padding-left: 16px;
         font-size: 1rem;
         letter-spacing: 0.0075em;
         height: auto;
       }
-      .blog__date{
+      .blog__date {
         padding-left: 16px;
         font-size: 1rem;
         letter-spacing: 0.0075em;
         height: auto;
       }
-      .blog__summary{
+      .blog__summary {
         padding-left: 16px;
         font-size: 1rem;
         letter-spacing: 0.0075em;
@@ -1164,7 +1374,6 @@ button:focus {
     }
   }
 }
-
 
 // Footer
 .main__footer {
@@ -1174,39 +1383,40 @@ button:focus {
   justify-content: space-between;
   align-items: center;
   margin: auto;
-  padding: 1.5rem 2rem;
+  padding: 1rem 2rem;
 
   .footer__left {
     margin: auto;
-    h1 {
-      margin: 0;
-      font-size: 3rem;
-      cursor: pointer;
+    display: inline-grid;
+    align-items: center;
+
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+    &:hover {
+      background: #1f74ad;
+    }
+
+    .netlify {
+      font-size: 2rem;
     }
   }
-
-  .footer_right {
+  .footer__right {
     margin: auto;
-    ul {
-      display: inline-grid;
-      align-items: center;
-
-      li {
-        padding: 2px 1.5rem;
-        font-size: 1rem;
-        cursor: pointer;
-        border-radius: 4px;
-        text-align: center;
-        line-height: 30px;
-        &:hover {
-          background: #1f74ad;
-        }
-      }
-
-      li.nav-active {
-        text-decoration: underline;
-      }
+    display: inline-grid;
+    align-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+    &:hover {
+      background: #1f74ad;
+    }
+    .icon {
+      margin-left: 4px;
+      font-size: 2rem;
+      vertical-align: middle;
     }
   }
 }
-
