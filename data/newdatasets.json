@@ -2,7 +2,7 @@
   {
     "id": "1",
     "Rank": 1,
-    "Name": "Combined Cycle Power Plant Data Set",
+    "Name": "Combined Cycle Power Plant",
     "Owner": "University of California Irvine",
     "URL": [
       "https://archive.ics.uci.edu/ml/machine-learning-databases/00294/CCPP.zip"
@@ -33,7 +33,7 @@
   {
     "id": "2",
     "Rank": 2,
-    "Name": "Steel Plates Faults Data Set",
+    "Name": "Steel Plates Faults",
     "Owner": "University of California Irvine",
     "URL": [
       "http://archive.ics.uci.edu/ml/machine-learning-databases/00198/Faults.NNA",
@@ -71,7 +71,7 @@
   {
     "id": "3",
     "Rank": 3,
-    "Name": "Appliances Energy Prediction Data Set",
+    "Name": "Appliances Energy Prediction",
     "Owner": "University of California Irvine",
     "URL": [
       "https://archive.ics.uci.edu/ml/machine-learning-databases/00374/energydata_complete.csv"
@@ -101,7 +101,7 @@
   {
     "id": "4",
     "Rank": 4,
-    "Name": "Experiments on Lithium-Ion batteries Data Set",
+    "Name": "Experiments on Lithium-Ion batteries",
     "Owner": "NASA",
     "URL": [
       "https://ti.arc.nasa.gov/c/5/, https://ti.arc.nasa.gov/c/9/",
@@ -201,7 +201,7 @@
   {
     "id": "6",
     "Rank": 6,
-    "Name": "Carbon Fiber Reinforced Polymer Composites Data Set",
+    "Name": "Carbon Fiber Reinforced Polymer Composites",
     "Owner": "NASA",
     "URL": [
       "https://ti.arc.nasa.gov/c/21/",
@@ -247,7 +247,7 @@
   {
     "id": "7",
     "Rank": 7,
-    "Name": "Milling Data Set",
+    "Name": "Milling",
     "Owner": "NASA",
     "URL": ["https://ti.arc.nasa.gov/c/4/"],
     "Short Summary": "Experiments on a milling machine for different speeds, feeds, and depth of cut. Records the wear of the milling insert, VB. The data set was provided by the BEST lab at UC Berkeley.",
@@ -275,7 +275,7 @@
   {
     "id": "8",
     "Rank": 8,
-    "Name": "Bearing Data Set",
+    "Name": "Bearing",
     "Owner": "NASA",
     "URL": ["https://ti.arc.nasa.gov/c/3/"],
     "Short Summary": "Experiments on bearings. The data set was provided by the Center for Intelligent Maintenance Systems (IMS), University of Cincinnati.",
@@ -338,7 +338,7 @@
   {
     "id": "10",
     "Rank": 10,
-    "Name": "Insulated-Gate Bipolar Transistor Accelerated Aging Data Set",
+    "Name": "Insulated-Gate Bipolar Transistor Accelerated Aging",
     "Owner": "NASA",
     "URL": ["https://ti.arc.nasa.gov/c/7/"],
     "Short Summary": "Preliminary data from thermal overstress accelerated aging using the aging and characterization system. The data set contains aging data from 6 devices, one device aged with DC gate bias and the rest aged with a squared signal gate bias. Several variables are recorded and in some cases, high-speed measurements of gate voltage, collector-emitter voltage and collector current are available. The data set is provided by the Prognostics CoE at NASA Ames.",
@@ -366,7 +366,7 @@
   {
     "id": "11",
     "Rank": 11,
-    "Name": "Trebuchet Data Set",
+    "Name": "Trebuchet",
     "Owner": "NASA",
     "URL": ["https://ti.arc.nasa.gov/c/8/"],
     "Short Summary": "Trajectories of different types of balls launched from a trebuchet with varying counter weights. Flights were filmed and extraction routines calculated position of data. Both raw video data and extracted trajectories are provided. Geometry and physical properties of the trebuchet are available.",
@@ -394,7 +394,7 @@
   {
     "id": "12",
     "Rank": 12,
-    "Name": "Bearing Data Set",
+    "Name": "Bearing",
     "Owner": "NASA",
     "URL": ["https://ti.arc.nasa.gov/c/18/"],
     "Short Summary": "Experiments on bearings' accelerated life tests provided by FEMTO-ST Institute, Besançon, France",
@@ -422,7 +422,7 @@
   {
     "id": "13",
     "Rank": 13,
-    "Name": "Randomized Battery Usage Data Set",
+    "Name": "Randomized Battery Usage",
     "Owner": "NASA",
     "URL": [
       "https://ti.arc.nasa.gov/c/25/",
@@ -492,7 +492,7 @@
   {
     "id": "14",
     "Rank": 14,
-    "Name": "Capacitor Electrical Stress Data Set",
+    "Name": "Capacitor Electrical Stress",
     "Owner": "NASA",
     "URL": [
       "https://ti.arc.nasa.gov/c/33/",
@@ -538,7 +538,7 @@
   {
     "id": "15",
     "Rank": 15,
-    "Name": "High-Intensity Radiated Field Battery Data Set",
+    "Name": "High-Intensity Radiated Field Battery",
     "Owner": "NASA",
     "URL": [
       "https://ti.arc.nasa.gov/c/38/",
@@ -615,7 +615,7 @@
   {
     "id": "16",
     "Rank": 16,
-    "Name": "Small Satellite Power Simulation Data Set",
+    "Name": "Small Satellite Power Simulation",
     "Owner": "NASA",
     "URL": ["https://ti.arc.nasa.gov/c/45/", "https://ti.arc.nasa.gov/c/46/"],
     "Short Summary": "Data collected from the simulated experiments on small satellite BP930 batteries using the MACCOR system",
@@ -650,7 +650,7 @@
   {
     "id": "17",
     "Rank": 17,
-    "Name": "MOSFET Thermal Overstress Aging Data Set",
+    "Name": "MOSFET Thermal Overstress Aging",
     "Owner": "NASA",
     "URL": ["https://ti.arc.nasa.gov/c/37/"],
     "Short Summary": "Run-to-failure experiments on Power MOSFETs under thermal overstress.",
