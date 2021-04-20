@@ -5,7 +5,7 @@
     "Date": "March 2021",
     "Summary": "Testing the blog functionality!",
     "IMG": "https://biteable.com/content/uploads/2018/01/Royalty-Free-Images-SM2-1200x630-c-center.jpg",
-    "URL": "/blogs/Test"
+    "URL": "/blog/Test"
   },
   {
     "Title": "My Second Blog Post!",
@@ -13,6 +13,6 @@
     "Date": "March 2021",
     "Summary": "Testing the blog functionality 2.0!",
     "IMG": "https://bforblogging.com/wp-content/uploads/2019/03/sites-for-free-stock-photos-download-free-images.png",
-    "URL": "/blogs/test2"
+    "URL": "/blog/test2"
   }
 ]
