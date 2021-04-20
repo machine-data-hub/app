@@ -29,7 +29,15 @@ In progress
 ---
 
 # Recent Updates
-### March 29, 2020
+### April 20, 2021
+1. Bryan's feedback implemented
+    * Filter and Sort buttons are just individual buttons. I hope to turn them into a more visually appealing bar by next week. 
+2. PageSpeed
+    * 95/100 on Mobile
+    * 97/100 on Website
+3. Generated Lighthouse Report
+
+### March 29, 2021
 1. 11/15 design changes implemented
     * What's not implemented
     * Blog function works locally, does not work on Netlify, cannot find any error codes on what is happening
