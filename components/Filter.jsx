@@ -1,281 +1,359 @@
-import { MdSearch, MdSettingsInputComponent } from "react-icons/md";
-import { BiSort } from "react-icons/bi";
-import { useState, useEffect, useRef } from "react";
-import {
-  handleSectorFilter,
-  handleTypeFilter,
-  handleLabeledFilter,
-} from "../utils/filter";
+import { useState, useEffect } from "react";
+import Layout from "../components/Layout";
+import List from "../components/List";
+import Search from "../components/Search";
+
+import Filter from "../components/Filter";
+
+import datasets from "../data/newdatasets.json";
+import { useSector } from "../context/SectorContext";
+import { useType } from "../context/TypeContext";
+import { useLabeled } from "../context/LabeledContext";
+import { useTimeSeries } from "../context/TimeSeriesContext";
+import { useSimulation } from "../context/SimulationContext";
+import { usePage } from "../context/PageContext";
+import { useSort } from "../context/SortContext";
 import { ASC, DATAADDED, DES, MOSTPOPULAR, DOWNLOAD } from "../utils/sort";
 
-let useClickOutside = (handler) => {
-  let ref = useRef();
+//---------------------------
+import { useCard } from "../context/CardContext";
+
+// Change page limit here
+const postPerPage = 20;
+
+export default function Home({ datasets, sectors, isServer, mLTypes }) {
+  const [list, setList] = useState([]); // state to store list of datasets
+  const [query, setQuery] = useState(""); // state to store keyword from input
+  const [sort, setSort] = useSort(); // state to store sort keyword
+
+  const [sectorList, setSecorList] = useSector([]); // state to store array of sectors
+  const [typeList, setTypeList] = useType([]); // state to store array of ml types
+  const [labeled, setLabeled] = useLabeled(); // state to store labeled keyword
+  const [timeSeries, setTimeSeries] = useTimeSeries(); // state to store array of sector
+  const [simulation, setSimulation] = useSimulation(); // state to store simulation keyword
+
+  // const [card, setCard] = useCard();
+
+  // handle automatic sorting for initial load
+  // default: by total downloads
+  const handleSort = (list) => {
+    const sorted = list.sort(
+      sort === "DATA_ADDED"
+        ? DATAADDED
+        : sort === "ASC"
+        ? ASC
+        : sort === "DES"
+        ? DES
+        : sort === "DOWNLOAD"
+        ? DOWNLOAD
+        : sort === "MOST_POPULAR"
+        ? MOSTPOPULAR
+        : DOWNLOAD
+    );
+    return sorted;
+  };
+
+  // Function to handle filter datasets by keyword from search box
+  const onChange = (datasets) => {
+    // filter when query is not empty
+    if (query !== "") {
+      const map = datasets.filter((v, i) => {
+        if (v.Owner.toLocaleLowerCase().includes(query.toLowerCase().trim())) {
+          return v.Owner.toLocaleLowerCase().includes(query.toLowerCase().trim());
+        }
+        return v.Name.toLocaleLowerCase().includes(query.toLowerCase().trim()); // filter datasets by string using includes()
+      });
+      setList(map);
+    } else {
+      setList(datasets);
+    }
+  };
+
+  // when query & datasets are changing -> re-render component and run onChange function to filter dataset by query
+  useEffect(() => {
+    onChange(datasets);
+  }, [query, datasets]);
+
+  // when datasets are changing -> run setList function to set state
+  useEffect(() => {
+    setList(datasets);
+  }, [datasets]);
+
+  // Function to handle dataset filter by labeled
+  const labeledFilter = (list) => {
+    // list = list of dataset
+    const filtered = list.filter((item) => item.Labeled === labeled);
+    return filtered;
+  };
+
+  // Function to handle dataset filter by sector
+  const sectorFilter = (array, filterList) => {
+    // array = list of dataset
+    // filterList = array of ml sector keyword
+    const filtered = array.filter((item) => {
+      return filterList.indexOf(item.Sector) >= 0;
+    });
+    return filtered;
+  };
+
+  const getUnique = (arr, comp) => {
+    const unique = arr
+      .map((e) => e[comp])
+      .map((e, i, final) => final.indexOf(e) === i && i)
+      .filter((e) => arr[e])
+      .map((e) => arr[e]);
+    return unique;
+  };
+
+  // Function to handle dataset filter by ml type
+  const typeFilter = (array, filterList) => {
+    // array = list of dataset
+    // filterList = array of ml type keyword
+    const filtered = [];
+    array.map((item) => {
+      item["ML Type"]?.map((tag) => {
+        if (filterList?.some((x) => x === tag)) {
+          filtered.push(item);
+        }
+      });
+    });
+
+    const final = getUnique(filtered, "id");
+    return final;
+  };
+
+  // Function to handle filter by LABELED, ML TYPE, and SECTOR LIST
+  const filterAll = (list) => {
+    // No filter -> return all datasets
+    if (!labeled && typeList.length === 0 && sectorList.length === 0) {
+      return list;
+    }
+
+    // All Filter
+    if (labeled && typeList.length !== 0 && sectorList.length !== 0) {
+      const labeledResult = labeledFilter(list); // filter dataset by label
+      const sectorFiltered = sectorFilter(labeledResult, sectorList); // filter dataset by sector
+
+      return typeFilter(sectorFiltered, typeList); // filter dataset by ml type -> return the final list
+    }
+
+    // handle filter by LABELED only
+    if (labeled && typeList.length === 0 && sectorList.length === 0) {
+      return labeledFilter(list); // filter dataset by labeled
+    }
+    // handle filter by SECTOR only
+    if (!labeled && typeList.length === 0 && sectorList.length !== 0) {
+      return sectorFilter(list, sectorList); // filter dataset by sector
+    }
+    // handle filter by ML TYPE only
+    if (!labeled && typeList.length !== 0 && sectorList.length == 0) {
+      return typeFilter(list, typeList); // filter dataset by ml type
+    }
+
+    // handle filter by LABELED and SECTOR only
+    if (labeled && typeList.length === 0 && sectorList.length !== 0) {
+      const labeledResult = labeledFilter(list); // filter dataset by labeled
+
+      return sectorFilter(labeledResult, sectorList); // filter dataset by sector -> return the final list
+    }
+    // handle filter by LABELED and ML TYPE only
+    if (labeled && typeList.length !== 0 && sectorList.length === 0) {
+      const labeledResult = labeledFilter(list); // filter dataset by labeled
+
+      return typeFilter(labeledResult, typeList); // filter dataset by ml type -> return the final list
+    }
+
+    // handle filter by SECTOR and TYPE only
+    if (!labeled && typeList.length !== 0 && sectorList.length !== 0) {
+      const sectorResult = sectorFilter(list, sectorList); // filter dataset by sector
+
+      return typeFilter(sectorResult, typeList); // filter dataset by ml type -> return the final list
+    }
+  };
+
+  // Function to handle filter by SIMULATION and TIMESERIES
+  const hanldeAllFilters = (list) => {
+    // if there is no SIMULATION & TIMESERIES filter -> retrun fillterAll function (datasets filtered by LABELED, ML TYPE, and SECTOR LIST)
+    if (!simulation && !timeSeries) {
+      return filterAll(list); // run filterAll() --- line 72
+    }
+
+    // handle filter by SIMULATION and TIMESERIES
+    if (simulation && timeSeries) {
+      const datas = filterAll(list); // run filterAll() --- line 72
+      const filteredSimulation = datas.filter(
+        (item) => item["Simulation (Yes/No)"] === "Yes"
+      ); // filter by simulation
+      const filteredTimeSeries = filteredSimulation.filter(
+        (item) => item["Time Series (Yes/No)"] === "Yes"
+      ); // filter by timeseries
+
+      return filteredTimeSeries;
+    }
+
+    // handle by SIMULATION filter only
+    if (simulation && !timeSeries) {
+      const datas = filterAll(list); // run filterAll() --- line 72
+      const filteredSimulation = datas.filter(
+        (item) => item["Simulation (Yes/No)"] === "Yes"
+      ); // filter by simulation
+
+      return filteredSimulation;
+    }
+
+    // handle filter by TIMESERIES only
+    if (!simulation && timeSeries) {
+      const datas = filterAll(list); // run filterAll() --- line 72
+      const filteredTimeSeries = datas.filter(
+        (item) => item["Time Series (Yes/No)"] === "Yes"
+      ); // filter by timeseries
+
+      return filteredTimeSeries;
+    }
+  };
 
   useEffect(() => {
-    let clickHandler = (event) => {
-      if (!ref.current.contains(event.target)) {
-        handler();
-      }
-    };
+    // Use effect to re-render component when sectorList, typeList, labeled, list, simulation, timeSeries are changing
+  }, [sectorList, typeList, labeled, list, simulation, timeSeries]);
 
-    let keyHandler = (event) => {
-      if (event.keyCode === 27) {
-        handler();
-      }
-    };
-    document.addEventListener("mousedown", clickHandler);
+  const [page, setPage] = usePage();
 
-    document.addEventListener("keydown", keyHandler);
-    return () => {
-      document.removeEventListener("mousedown", clickHandler);
-      document.removeEventListener("keydown", keyHandler);
-    };
-  });
-  return ref;
-};
+  useEffect(() => {
+    if (isServer === true) {
+      setPage("");
+      localStorage.removeItem("page");
+    }
+  }, [isServer]);
 
-const Filter = ({
-  sectors,
-  mLTypes,
+  // Function to handle pagination
+  const changePage = (current) => {
+    // current = pagination button value
 
-  setQuery,
-  list,
-  setList,
-
-  sort,
-  setSort,
-
-  sectorList,
-  setSecorList,
-
-  typeList,
-  setTypeList,
-
-  labeled,
-  setLabeled,
-
-  simulation,
-  setSimulation,
-
-  timeSeries,
-  setTimeSeries,
-
-  //--------
-  // card,
-  // setCard,
-}) => {
-  const handleSimulationFilter = () => {
-    if (simulation === "Yes") {
-      // if user has clicked the button -> empty the state
-      setSimulation("");
-    } else {
-      setSimulation("Yes"); // if user has not clicked the button -> set the state to Yes (filter by simulation is active)
+    // if pagination button value not equal to current page
+    if (current !== page) {
+      window.scrollTo({ top: 0, left: 0 }); // auto scroll to tope when pagination button is clicked
+      localStorage.setItem("page", current);
+      return setPage(current); // set current page
     }
   };
 
-  // function to handle timeseries state
-  const handleTimeSeriesFilter = () => {
-    if (timeSeries === "Yes") {
-      // if user has clicked the button (timeseries filter is active) -> empty the state
-      setTimeSeries("");
-    } else {
-      setTimeSeries("Yes"); // if user has not clicked the button -> set the state to Yes (filter by timeseries is active)
-    }
-  };
+  // Function to handle pagination
+  function paginate(array, page_size, page_number) {
+    // array = datasets list
+    const startSlice = (page_number - 1) * page_size;
+    const endSlice = page_number * page_size;
 
-  const [filterOpen, setFilterOpen] = useState(false); // State to toggle filter box
-  const [sorterOpen, setSorterOpen] = useState(false);
-  let clickRef = useClickOutside(() => {
-    setFilterOpen(false);
-    setSorterOpen(false);
-  });
+    return array.slice(startSlice, endSlice); // return the datasets after web slice the array
+  }
 
-  //  Function to handle sorting (by Date added, ascending, descending, total dowwnload, and total likes)
-  const onClickSort = (prop) => () => {
-    // prop = sorting type
-    // If sorting type is already clicked -> unclick the button and remove the sorting
-    if (sort === prop) {
-      setSort("");
-      const sorted = list.sort(DOWNLOAD);
-      setList(sorted);
-    } else {
-      // If sorting type is not clicked -> click the button and change sorting type
-      setSort(prop);
-      const sorted = list.sort(
-        prop === "DATA_ADDED"
-          ? DATAADDED
-          : prop === "ASC"
-          ? ASC
-          : prop === "DES"
-          ? DES
-          : prop === "DOWNLOAD"
-          ? DOWNLOAD
-          : prop === "MOST_POPULAR"
-          ? MOSTPOPULAR
-          : DOWNLOAD
-      );
-      setList(sorted);
+  // Count how many pages available
+  const totalPagination = Math.ceil(
+    hanldeAllFilters(list).length / postPerPage
+  );
+
+  useEffect(() => {
+    if (page > totalPagination) {
+      setPage(1);
     }
-  };
+  }, [totalPagination]);
 
   return (
-    <div className="search__feature">
-      <div className="input__wrapper" ref={clickRef}>
-        
-
-        <div className="search__bar">
-          <span className="icon__search">
-            <MdSearch />
-          </span>
-          <input
-            type="text"
-            placeholder="Enter dataset, ML Task, or other tags"
-            onChange={(e) => setQuery(e.target.value)}
-          />
-        </div>
-
-
-        <div className="filter__bar">
-          
-          <span
-            className={`icon__sort ${filterOpen ? "active" : ""}`}
-            onClick={() => setFilterOpen(!filterOpen)}
-          >
-            <BiSort /> Filter
-          </span>
-
-
-          {filterOpen && (
-            <div className="sort__wrapper">
-              <div className="field">
-                <h2>Filter By</h2>
-                <h3>Sector</h3>
-                <div className="buttonsSector">
-                  {sectors?.map((item, index) => (
-                    <button
-                      key={index}
-                      onClick={() =>
-                        handleSectorFilter(item, sectorList, setSecorList)
-                      }
-                      className={sectorList.includes(item) ? "active" : ""}
-                    >
-                      {item}
-                    </button>
-                  ))}
-                  <button
-                    onClick={() => handleSimulationFilter("Yes")}
-                    className={simulation === "" ? "" : "active"}
-                  >
-                    Simulation
-                  </button>
-                </div>
-              </div>
-              <div className="field">
-                <h3>ML Type</h3>
-                <div className="buttonsML">
-                  {mLTypes?.map((item, index) => (
-                    <button
-                      key={index}
-                      onClick={() =>
-                        handleTypeFilter(item, typeList, setTypeList)
-                      }
-                      className={typeList.includes(item) ? "active" : ""}
-                    >
-                      {item}
-                    </button>
-                  ))}
-                  <button
-                    onClick={() => handleTimeSeriesFilter("Yes")}
-                    className={timeSeries === "" ? "" : "active"}
-                  >
-                    Time Series
-                  </button>
-                </div>
-              </div>
-              <div className="field">
-                <h3>Labeled</h3>
-                <div className="buttonsLabeled">
-                  <button
-                    onClick={() => {
-                      labeled === "Yes"
-                        ? handleLabeledFilter("", setLabeled)
-                        : handleLabeledFilter("Yes", setLabeled);
-                    }}
-                    className={labeled === "Yes" ? "active" : ""}
-                  >
-                    Labeled
-                  </button>
-                  <button
-                    onClick={() => {
-                      labeled === "No"
-                        ? handleLabeledFilter("", setLabeled)
-                        : handleLabeledFilter("No", setLabeled);
-                    }}
-                    className={labeled === "No" ? "active" : ""}
-                  >
-                    Not Labeled
-                  </button>
-                </div>
-              </div>
+    <Layout title={`Machine Data Hub`}>
+      <Filter
+        sectors={sectors}
+        mLTypes={mLTypes}
+        setQuery={setQuery}
+        list={list}
+        setList={setList}
+        sort={sort}
+        setSort={setSort}
+        sectorList={sectorList}
+        setSecorList={setSecorList}
+        typeList={typeList}
+        setTypeList={setTypeList}
+        labeled={labeled}
+        setLabeled={setLabeled}
+        simulation={simulation}
+        setSimulation={setSimulation}
+        timeSeries={timeSeries}
+        setTimeSeries={setTimeSeries}
+      />
+      <List
+        // paginate(array, post per page, current page)
+        datasets={paginate(
+          handleSort(hanldeAllFilters(list)),
+          postPerPage,
+          page
+        )}
+        sectorList={sectorList}
+        setSecorList={setSecorList}
+        typeList={typeList}
+        setTypeList={setTypeList}
+        labeled={labeled}
+        setLabeled={setLabeled}
+        simulation={simulation}
+        setSimulation={setSimulation}
+        timeSeries={timeSeries}
+        setTimeSeries={setTimeSeries}
+        currentPage={page}
+        totalPage={totalPagination}
+        //---------------------------
+        // card={card}
+        // setCard={setCard}
+      />
+      <div className="pagination">
+        {/* mapping pagination button. index 0 = page 1 */}
+        {[...Array(totalPagination)].map((x, index) => {
+          return (
+            <div
+              className={`page ${
+                parseInt(index + 1) === parseInt(page) ? "active" : ""
+              }`}
+              key={index}
+              onClick={() => changePage(index + 1)}
+            >
+              {index + 1}
             </div>
-          )}
-        </div>
-
-
-        <div className="sort__bar">
-        <span
-            className={`icon__sort ${sorterOpen ? "active" : ""}`}
-            onClick={() => setSorterOpen(!sorterOpen)}
-          >
-            <BiSort /> Sort
-          </span>
-
-          {sorterOpen && (
-          <div className="sort__wrapper">
-            <div className="field">
-              <h2>Sort By</h2>
-              <div className="buttonsSort">
-                {/* activate a css class for clicked button */}
-                <button
-                  onClick={onClickSort("DOWNLOAD")}
-                  className={
-                    sort === "DOWNLOAD" ? "active" : sort === "" ? "active" : ""
-                  }
-                >
-                  Most Downloads
-                </button>
-                <button
-                  onClick={onClickSort("MOST_POPULAR")}
-                  className={sort === "MOST_POPULAR" ? "active" : ""}
-                >
-                  Most Likes
-                </button>
-                <button
-                  onClick={onClickSort("DATA_ADDED")}
-                  className={sort === "DATA_ADDED" ? "active" : ""}
-                >
-                  Date Added
-                </button>
-                <button
-                  onClick={onClickSort("ASC")}
-                  className={sort === "ASC" ? "active" : ""}
-                >
-                  A to Z
-                </button>
-                <button
-                  onClick={onClickSort("DES")}
-                  className={sort === "DES" ? "active" : ""}
-                >
-                  Z to A
-                </button>
-              </div>
-            </div>
-          </div>
-          )}
-        </div>
+          );
+        })}
       </div>
-    </div>
+    </Layout>
   );
-};
+}
 
-export default Filter;
+Home.getInitialProps = async (context) => {
+  // Get All Sector List
+  const sectorWrapper = [];
+  datasets.map((item) => {
+    // mapping through datasest to get sector list only
+    if (item.Sector) {
+      sectorWrapper.push(item.Sector);
+    }
+  });
+
+  const typeWrapper = [];
+  datasets.map((item) => {
+    // mapping through datasest to get sector list only
+    if (item["ML Type"].length > 0) {
+      typeWrapper.push(...item["ML Type"]);
+    }
+  });
+
+  const finalSector = sectorWrapper.filter(function (item, pos) {
+    return sectorWrapper.indexOf(item) == pos;
+  });
+
+  const finalMLType = typeWrapper.filter(function (item, pos) {
+    return typeWrapper.indexOf(item) == pos;
+  });
+
+  // sort all datasest by total download
+  const sortedDatasets = datasets.sort(DOWNLOAD);
+
+  return {
+    datasets: sortedDatasets,
+    sectors: finalSector,
+    mLTypes: finalMLType,
+    isServer: context.res ? true : false,
+  };
+};
