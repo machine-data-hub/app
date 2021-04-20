@@ -17,7 +17,7 @@ function PostTemplate({ content, data }) {
 
 PostTemplate.getInitialProps = async (context) => {
   const { slug } = context.query;
-  const content = await import(`../../public/${slug}.md`);
+  const content = await import(`../../blogcontent/${slug}.md`);
   const data = matter(content.default);
   return { ...data };
 };
