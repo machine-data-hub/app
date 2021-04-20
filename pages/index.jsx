@@ -111,7 +111,7 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
     // filterList = array of ml type keyword
     const filtered = [];
     array.map((item) => {
-      item.ML_Type?.map((tag) => {
+      item["ML Type"]?.map((tag) => {
         if (filterList?.some((x) => x === tag)) {
           filtered.push(item);
         }
