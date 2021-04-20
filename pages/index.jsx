@@ -3,8 +3,6 @@ import Layout from "../components/Layout";
 import List from "../components/List";
 import Search from "../components/Search";
 
-import Filter from "../components/Filter";
-
 import datasets from "../data/newdatasets.json";
 import { useSector } from "../context/SectorContext";
 import { useType } from "../context/TypeContext";
