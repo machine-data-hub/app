@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
-// import {createSuggestion} from "../api/suggestAPI";
-//import postIssues from "../lib/auth.js";
+import postIssue from "../lib/postset.js";
 
 
 const SuggesttDatasets = () => {
@@ -19,14 +18,17 @@ const SuggesttDatasets = () => {
       'URL': link,
     };
     // createSuggestion(newSuggestion)
+    const response = postIssue(newSuggestion);
+    alert(`Thank you for contributing!`);
   };
+
 
   return (
     <Layout title="About | Machine Data Hub">
       <div className="page__form">
         <div className="body">
           <p>Suggest a dataset to be added to the Data Hub!</p>
-          <form onClick={handleSubmit}>
+          <form>
             {/* auto update the state on keypress */}
             <input
               type="text"
@@ -46,7 +48,7 @@ const SuggesttDatasets = () => {
               placeholder="Enter a link to a dataset"
               onChange={(e) => setLink(e.target.value)}
             />
-            <button type="submit">
+            <button type="submit" onClick={handleSubmit}>
               Submit
             </button>
           </form>
