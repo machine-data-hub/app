@@ -171,7 +171,7 @@ const Filter = ({
                 </div>
               </div>
               <div className="field">
-                <h3>ML Type</h3>
+                <h3>Machine Learning Type</h3>
                 <div className="buttonsML">
                   {mLTypes?.map((item, index) => (
                     <button
