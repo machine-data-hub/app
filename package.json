@@ -10,10 +10,12 @@
   "dependencies": {
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
+    "@octokit/rest": "^18.5.2",
     "axios": "^0.21.1",
     "express": "^4.17.1",
     "formidable": "^1.2.2",
     "next": "10.0.7",
+    "octokit": "^1.0.3",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-icons": "^4.2.0",
