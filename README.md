@@ -30,7 +30,7 @@ In progress
 
 # Recent Updates
 ### April 27, 2021
-1. Suggesting data sets writes to team discussion. Speficically, it writes to the 'UW capstone team' discussion here.
+1. Suggesting data sets writes to team discussion. Speficically, it writes to the 'UW capstone team' discussion. Can easily switch to any discussion. Just needs the GitHub authentication token. 
 https://github.com/orgs/PHM-Data-Hub/teams
 
 
