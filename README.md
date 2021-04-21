@@ -29,6 +29,11 @@ In progress
 ---
 
 # Recent Updates
+### April 27, 2021
+1. Suggesting data sets writes to team discussion. Speficically, it writes to the 'UW capstone team' discussion here.
+https://github.com/orgs/PHM-Data-Hub/teams
+
+
 ### April 20, 2021
 1. Bryan's feedback implemented
     * Filter and Sort buttons are just individual buttons. I hope to turn them into a more visually appealing bar by next week. 
