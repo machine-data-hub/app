@@ -18,15 +18,20 @@ const SuggesttDatasets = () => {
       'URL': link,
     };
     postIssue(newSuggestion);
-    alert('Thank you for contributing!');
+    alert('Thank you for contributing!');    
+    resetText();
   };
+
+  const resetText = () => {
+    document.getElementById('suggestion-form').reset();
+  }
 
   return (
     <Layout title="About | Machine Data Hub">
       <div className="page__form">
         <div className="body">
           <p>Suggest a dataset to be added to the Data Hub!</p>
-          <form>
+          <form id='suggestion-form'>
             {/* auto update the state on keypress */}
             <input
               type="text"
