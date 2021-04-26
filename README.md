@@ -34,10 +34,15 @@ In progress
 https://github.com/orgs/PHM-Data-Hub/teams
 2. Colors updated
 3. Blog function semi-implemented --> Doesn't look great but functionally works. 
-4. Photos added
-5. Check LICENSE
-6. Whole tile clickable
-
+4. Check LICENSE
+5. Whole tile clickable
+6. Main Page Cards
+   i. Subtext lines on cards is now left justified. 
+   ii. Whole card is clickable. 
+   iii. Photos added
+7. Data set Cards
+   i. Suggested data sets cards changed to mimic cards on main page. 
+   ii. "About this data set" text has more spacing between text. 
 
 ### April 20, 2021
 1. Bryan's feedback implemented
