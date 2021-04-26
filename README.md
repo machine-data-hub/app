@@ -35,6 +35,7 @@ https://github.com/orgs/PHM-Data-Hub/teams
 2. Colors updated
 3. Blog function semi-implemented --> Doesn't look great but functionally works. 
 4. Photos added
+5. Check LICENSE
 
 
 ### April 20, 2021
