@@ -36,6 +36,7 @@ https://github.com/orgs/PHM-Data-Hub/teams
 3. Blog function semi-implemented --> Doesn't look great but functionally works. 
 4. Photos added
 5. Check LICENSE
+6. Whole tile clickable
 
 
 ### April 20, 2021
