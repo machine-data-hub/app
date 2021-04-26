@@ -10,16 +10,16 @@ const Footer = () => {
       <div className="footer__left">
         <a className="netlify" href="https://www.netlify.com">
           <img
-            src="https://www.netlify.com/img/global/badges/netlify-dark.svg" alt="Deploys by Netlify"
+            src="https://www.netlify.com/img/global/badges/netlify-dark.svg"
             alt="Deploys by Netlify"
           />
         </a>
       </div>
       <div className="footer__right">
         <Link href="https://github.com/PHM-Data-Hub">
-            <span className="icon">
-              <AiFillGithub />
-            </span>
+          <span className="icon">
+            <AiFillGithub />
+          </span>
         </Link>
       </div>
     </div>
