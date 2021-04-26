@@ -3,8 +3,6 @@ import Layout from "../components/Layout";
 import List from "../components/List";
 import Search from "../components/Search";
 
-import Filter from "../components/Filter";
-
 import datasets from "../data/newdatasets.json";
 import { useSector } from "../context/SectorContext";
 import { useType } from "../context/TypeContext";
@@ -58,10 +56,45 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
     // filter when query is not empty
     if (query !== "") {
       const map = datasets.filter((v, i) => {
+        var matchedSearch = false;
         if (v.Owner.toLocaleLowerCase().includes(query.toLowerCase().trim())) {
-          return v.Owner.toLocaleLowerCase().includes(query.toLowerCase().trim());
+          matchedSearch = true;
+          // return v.Owner.toLocaleLowerCase().includes(query.toLowerCase().trim());
         }
-        return v.Name.toLocaleLowerCase().includes(query.toLowerCase().trim()); // filter datasets by string using includes()
+
+        // ML tags
+        // tags = boolean array
+        v["ML Type"].map((entry) => {
+          if (entry.toLocaleLowerCase().includes(query.toLowerCase().trim())) {
+            matchedSearch = true;
+            //return entry.toLocaleLowerCase().includes(query.toLowerCase().trim());
+          }
+        });
+
+        // can't I use a switch statement? I couldn't figure it out :(
+        // time series
+        if (
+          v["Time Series"] === "Yes" &&
+          "time series".includes(query.toLowerCase().trim())
+        ) {
+          matchedSearch = true;
+        }
+        // labeled
+        if (
+          v["Labeled"] === "Yes" &&
+          "labeled".includes(query.toLowerCase().trim())
+        ) {
+          matchedSearch = true;
+        }
+         // simulation
+         if (
+          v["Simulation (Yes/No)"] === "Yes" &&
+          "simulation".includes(query.toLowerCase().trim())
+        ) {
+          matchedSearch = true;
+        }
+
+        return matchedSearch; //v.Name.toLocaleLowerCase().includes(query.toLowerCase().trim()) || tags.includes(true); // filter datasets by string using includes()
       });
       setList(map);
     } else {
@@ -259,7 +292,7 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
 
   return (
     <Layout title={`Machine Data Hub`}>
-      <Filter
+      <Search
         sectors={sectors}
         mLTypes={mLTypes}
         setQuery={setQuery}
