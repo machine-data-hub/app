@@ -476,7 +476,7 @@ button:focus {
     }
 }
 
-// Filter bar
+// Filter Bar
 .filter__bar {
     padding-top: 96px;
     position: relative;
@@ -487,143 +487,7 @@ button:focus {
     width: 100%;
     background-color: var(--seeThrough);
 
-    span {
-        position: absolute;
-        font-size: 1.25rem;
-        transform: translateY(1px);
-        color: var(--primary);
-        top: 60px;
-        left: 10px;
-    }
-
-    .icon__sort {
-        left: 1rem;
-        bottom: 1rem;
-        display: flex;
-
-        border-radius: 50%;
-        cursor: pointer;
-
-        &:hover {
-            background: #f4f4f4;
-            height: 24px;
-            font-weight: 500;
-        }
-
-        &.active {
-            background: #f4f4f4;
-        }
-    }
-
-    .sort__wrapper {
-        position: absolute;
-        top: 92px;
-        left: 0;
-        background: white;
-        padding: 2rem;
-        width: 50%;
-        z-index: 1;
-        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
-            rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
-
-        h2 {
-            margin-top: 0;
-            margin-bottom: 0.75rem;
-            font-size: 1.2rem;
-            color: var(--primary);
-        }
-        .field {
-            margin-bottom: 1.5rem;
-
-            .buttonsSort {
-                button {
-                    color: var(--primary);
-                    padding: 8px 16px;
-                    border-radius: 4px;
-                    margin-right: 8px;
-                    margin-bottom: 8px;
-                    font-size: 14px;
-                    border: 1px solid var(--primary);
-                    background: #fff;
-                }
-
-                button.active,
-                .active {
-                    background: var(--primary);
-                    color: white;
-                }
-            }
-
-            .buttonsSector {
-                button {
-                    color: var(--primary);
-                    padding: 8px 16px;
-                    border-radius: 4px;
-                    margin-right: 8px;
-                    margin-bottom: 8px;
-                    font-size: 14px;
-                    border: 1px solid var(--tetradic1);
-                    background: #fff;
-                }
-
-                button.active,
-                .active {
-                    background: var(--tetradic1);
-                    color: white;
-                }
-            }
-
-            .buttonsML {
-                button {
-                    color: var(--primary);
-                    padding: 8px 16px;
-                    border-radius: 4px;
-                    margin-right: 8px;
-                    margin-bottom: 8px;
-                    font-size: 14px;
-                    border: 1px solid var(--tetradic2);
-                    background: #fff;
-                }
-
-                button.active,
-                .active {
-                    background: var(--tetradic2);
-                    color: white;
-                }
-            }
-
-            h2 {
-                color: var(--primary);
-            }
-
-            .buttonsLabeled {
-                button {
-                    color: var(--primary);
-                    padding: 8px 16px;
-                    border-radius: 4px;
-                    margin-right: 8px;
-                    margin-bottom: 8px;
-                    font-size: 14px;
-                    border: 1px solid var(--tetradic3);
-                    background: #fff;
-                }
-
-                button.active,
-                .active {
-                    background: var(--tetradic3);
-                    color: white;
-                }
-            }
-
-            h3 {
-                color: var(--primary);
-                font-size: 16px;
-                font-weight: 400;
-            }
-        }
-    }
-
-    .sort__bar {
+    .filter__buttons {
         span {
             position: absolute;
             font-size: 1.25rem;
@@ -634,12 +498,149 @@ button:focus {
         }
 
         .icon__sort {
-          position: absolute;
-            right: 1rem;
+            position: absolute;
+            left: 10px;
             bottom: 1rem;
             display: flex;
             border-radius: 50%;
             cursor: pointer;
+
+            &:hover {
+                background: #F4F4F4;
+                height: 24px;
+                font-weight: 500;
+            }
+
+            &.active {
+                background: #f4f4f4;
+            }
+        }
+
+        .sort__wrapper {
+            position: absolute;
+            top: 92px;
+            left: 0;
+            background: white;
+            padding: 2rem;
+            width: 50%;
+            z-index: 1;
+            box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+                rgb(0 0 0 / 14%) 0px 1px 1px 0px,
+                rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+
+            h2 {
+                margin-top: 0;
+                margin-bottom: 0.75rem;
+                font-size: 1.2rem;
+                color: var(--primary);
+            }
+            .field {
+                margin-bottom: 1.5rem;
+                h2 {
+                    color: var(--primary);
+                }
+
+                h3 {
+                    color: var(--primary);
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+                .buttonsSort {
+                    button {
+                        color: var(--primary);
+                        padding: 8px 16px;
+                        border-radius: 4px;
+                        margin-right: 8px;
+                        margin-bottom: 8px;
+                        font-size: 14px;
+                        border: 1px solid var(--primary);
+                        background: #fff;
+                    }
+
+                    button.active,
+                    .active {
+                        background: var(--primary);
+                        color: white;
+                    }
+                }
+                .buttonsSector {
+                    button {
+                        color: var(--primary);
+                        padding: 8px 16px;
+                        border-radius: 4px;
+                        margin-right: 8px;
+                        margin-bottom: 8px;
+                        font-size: 14px;
+                        border: 1px solid var(--tetradic1);
+                        background: #fff;
+                    }
+
+                    button.active,
+                    .active {
+                        background: var(--tetradic1);
+                        color: white;
+                    }
+                }
+
+                .buttonsML {
+                    button {
+                        color: var(--primary);
+                        padding: 8px 16px;
+                        border-radius: 4px;
+                        margin-right: 8px;
+                        margin-bottom: 8px;
+                        font-size: 14px;
+                        border: 1px solid var(--tetradic2);
+                        background: #fff;
+                    }
+
+                    button.active,
+                    .active {
+                        background: var(--tetradic2);
+                        color: white;
+                    }
+                }
+
+                .buttonsLabeled {
+                    button {
+                        color: var(--primary);
+                        padding: 8px 16px;
+                        border-radius: 4px;
+                        margin-right: 8px;
+                        margin-bottom: 8px;
+                        font-size: 14px;
+                        border: 1px solid var(--tetradic3);
+                        background: #fff;
+                    }
+
+                    button.active,
+                    .active {
+                        background: var(--tetradic3);
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    // Sorting Button
+    .sort__bar {
+        float: right;
+        span {
+            position: absolute;
+            font-size: 1.25rem;
+            transform: translateY(1px);
+            color: var(--primary);
+            top: 60px;
+        }
+
+        .icon__sort {
+            position: absolute;
+            bottom: 1rem;
+            display: flex;
+            border-radius: 50%;
+            cursor: pointer;
+            right: 1rem;
 
             &:hover {
                 background: #f4f4f4;

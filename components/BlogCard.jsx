@@ -9,7 +9,7 @@ const BlogCard = ({ slug, title, img, author, date, content }) => {
                     <div className="blog__title">{title}</div>
                     <div className="blog__author">{author}</div>
                     <div className="blog__date">{date}</div>
-                    <div className="blog__summary">{content}</div>
+                    {/* <div className="blog__summary">{content}</div> */}
                 </div>
             </div>
         </Link>
