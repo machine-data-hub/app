@@ -15,7 +15,7 @@ const SuggesttDatasets = () => {
     var newSuggestion = {
       'title': title,
       'summary': summary,
-      'URL': link,
+      'url': link,
     };
     postIssue(newSuggestion);
     alert('Thank you for contributing!');    
