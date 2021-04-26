@@ -32,6 +32,9 @@ In progress
 ### April 27, 2021
 1. Suggesting data sets writes to team discussion. Speficically, it writes to the 'UW capstone team' discussion. Can easily switch to any discussion. Just needs the GitHub authentication token. 
 https://github.com/orgs/PHM-Data-Hub/teams
+2. Colors updated
+3. Blog function semi-implemented --> Doesn't look great but functionally works. 
+4. Photos added
 
 
 ### April 20, 2021
