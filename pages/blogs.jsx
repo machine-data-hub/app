@@ -5,9 +5,9 @@ import BlogCard from "../components/BlogCard";
 
 const BlogHome = ({ posts }) => {
   return (
-    <Layout>
+    <Layout title="Blogs | Machine Data Hub">
       <div className="blog__page">
-        <h1>Blogs</h1>
+        <h1> Blogs </h1>
         <div className="blog__tiles">
           {posts.map((item) => (
             <BlogCard key={item.slug} {...item} />

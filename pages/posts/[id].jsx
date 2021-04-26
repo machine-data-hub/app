@@ -104,6 +104,18 @@ const Posts = ({ data, similar }) => {
           <div className="card__container">
             {similar?.map((item, index) => (
               <div className="card" key={index}>
+                <div className="card__image">
+                                        {item.img_link ? (
+                                            <img
+                                                src={item.img_link}
+                                                alt="Dataset"
+                                            />
+                                        ) : (
+                                            <span>
+                                                <MdImage />
+                                            </span>
+                                        )}
+                                    </div>
                 <div className="card__title">
                   <Link href={`/posts/${item.id}`}>
                     <h2>{item.Name}</h2>
