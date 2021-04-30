@@ -123,18 +123,6 @@ const Search = ({
       <div className="input__wrapper" ref={clickRef}>
         
 
-        <div className="search__bar">
-          <span className="icon__search">
-            <MdSearch />
-          </span>
-          <input
-            type="text"
-            placeholder="Enter dataset, ML Task, or other tags"
-            onChange={(e) => setQuery(e.target.value)}
-          />
-        </div>
-
-
         <Filter         
         sectors={sectors}
         mLTypes={mLTypes}
@@ -156,6 +144,17 @@ const Search = ({
         
         timeSeries={timeSeries}
         setTimeSeries={setTimeSeries}/>
+    
+        <div className="search__bar">
+          <span className="icon__search">
+            <MdSearch />
+          </span>
+          <input
+            type="text"
+            placeholder="Enter dataset, ML Task, or other tags"
+            onChange={(e) => setQuery(e.target.value)}
+          />
+        </div>
       </div>
     </div>
   );
