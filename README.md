@@ -30,7 +30,11 @@ In progress
 
 # Recent Updates
 ### May 4, 2021
-1. 'See More' removed. 
+Main View
+   i. 'See More' removed
+Card View
+   i. 'See More' removed
+   ii. File size on the left hand side of the card removed --> replaced with file type (??? for unlabeled)
 
 
 ### April 27, 2021
