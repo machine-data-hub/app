@@ -20,7 +20,7 @@ dataset = mdh.fetch('Bearing Dataset') # feteches the dataset titled 'Bearing Da
 ```
 
 ## Contributing
-Not allowed at the moment
+Pull requests welcomed
 
 ## License
 In progress
@@ -29,6 +29,10 @@ In progress
 ---
 
 # Recent Updates
+### May 4, 2021
+1. 'See More' removed. 
+
+
 ### April 27, 2021
 1. Suggesting data sets writes to team discussion. Speficically, it writes to the 'UW capstone team' discussion. Can easily switch to any discussion. Just needs the GitHub authentication token. 
 https://github.com/orgs/PHM-Data-Hub/teams
