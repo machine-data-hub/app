@@ -1,28 +1,17 @@
-# Open Source Prognostics and Health Management Datahub for Machine Learning
+# Introduction
 
-Machine Data Hub is an open source data hub for storing prognostics and health management datasets for machine learning researchers and hobbyists. 
+Machine Data Hub is an open source data hub for locating prognostics and health management data sets for machine learnign reseachers and hobbyists.
 
-## Installation
+## Documentation
 
-Use the package [pip](https://github.com/PHM-Data-Hub/lib/) to install our Python client. 
+Use the package [pip](https://github.com/PHM-Data-Hub/lib/) to install [our Python client](https://machine-data-hub.readthedocs.io/en/latest/?badge=latest). 
 
 ```bash
 pip install machinedatahub
 ```
 
-## Commands
-
-```python
-import machinedatahub as mdh
-
-dataset = mdh.fetch('Bearing Dataset') # feteches the dataset titled 'Bearing Dataset' from Machinedatahub.ai
-
-```
-
 ## Contributing
-Pull requests welcomed
+Pull requests welcomed!
 
 ## License
 [MIT](https://github.com/PHM-Data-Hub/app/blob/main/LICENSE)
-
----
