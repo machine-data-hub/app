@@ -23,8 +23,7 @@ dataset = mdh.fetch('Bearing Dataset') # feteches the dataset titled 'Bearing Da
 Pull requests welcomed
 
 ## License
-In progress
-[MIT](https://github.com/PHM-Data-Hub/)
+[MIT](https://github.com/PHM-Data-Hub/app/blob/main/LICENSE)
 
 ---
 
