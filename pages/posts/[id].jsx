@@ -1,6 +1,6 @@
 import datasets from "../../data/newdatasets.json";
 import Layout from "../../components/Layout";
-import { MdFileDownload, MdFavorite } from "react-icons/md";
+import { MdFileDownload, MdFavorite, MdImage } from "react-icons/md";
 import { AiOutlineFile } from "react-icons/ai"
 import Link from "next/link";
 
