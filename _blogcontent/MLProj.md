@@ -1,6 +1,6 @@
 ---
-title: Machine Data Hub Tutorial
-date: May 2, 2021
+title: Remaining Useful Life Tutorial
+date: May 3, 2021
 author: Cecilia Barnes
 img: https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1532&q=80
 ---
@@ -22,7 +22,7 @@ Then, we need to get our dataset. Let's find what ID our dataset has in order to
 - type `mdh list` to view the datasets and their ID's
 
 We can see the dataset we want has an ID of 9. It also tell us that there are 2 available files. Now we can download the data (make sure you're in a directory where you want the data files to be)
-- type `mdh download 9` to download both files
+- type `mdh download 9 1` to download the first file of the 9th dataset
 
 
 ```python
@@ -87,7 +87,7 @@ f.close()
     
     Reference: A. Saxena, K. Goebel, D. Simon, and N. Eklund, Damage Propagation Modeling for Aircraft Engine Run-to-Failure Simulation, in the Proceedings of the Ist International Conference on Prognostics and Health Management (PHM08), Denver CO, Oct 2008.
     
-    
+
 
 ## Remaining useful life for each unit
 Next, lets read in the file with values of remaining useful life (target) for each unit in test data. We will just look at the first simulation, FD001.
@@ -99,13 +99,7 @@ RUL.columns = ['RUL']
 RUL.head()
 ```
 
-|             | RUL         |
-| ----------- | ----------- |
-| 0           | 112         |
-| 1           | 98          |
-| 2           | 69          |
-| 3           | 82          |
-| 4           | 91          |
+
 
 
 ## Training Data
@@ -120,19 +114,20 @@ units = train['unit']
 train.head()
 ```
 
+
+
+
 ## Test Data
 Last, we'll get the test set. In the test set, the time series ends some time prior to system failure.
 
 
 ```python
-test = pd.read_csv('CMAPSSData/test_FD001.txt', sep=" ", header=0)
+test = pd.read_csv('CMAPSSData/test_FD001.txt', sep=" ", header=None)
 cols = pd.DataFrame(test.columns)
-test = test.reset_index()
 test = test.iloc[:, :26]
 test.columns = ['unit', 'cycle', 'op1', 'op2','op3','sm1','sm2','sm3','sm4','sm5','sm6','sm7','sm8','sm9','sm10','sm11','sm12','sm13','sm14','sm15','sm16','sm17','sm18','sm19','sm20','sm21']
 test.head()
 ```
-
 
 
 # Data Processing
@@ -195,7 +190,7 @@ from sklearn.model_selection import train_test_split, cross_val_score
 
 
 ```python
-# PCA on training data
+# fitting PCA on training data, transforming training and testing data
 
 # setting index to be unit so unit is not used as a column in PCA
 train_data = train_x.set_index("unit")
@@ -228,7 +223,6 @@ train_df.insert(0, "Unit", units, True)
 train_df.insert(1, "RUL", rul_lst, True)
 train_df.head()
 ```
-
 
 
 
@@ -308,11 +302,11 @@ print('Validation R^2: ', r2_score(y_validate, y_hat))
 print('Validation MSE: ', mean_squared_error(y_validate, y_hat))
 ```
 
-    Training Cross Validation Score:  [0.61888783 0.51910232 0.52509406 0.50398413 0.54484442]
-    Validation Cross Validation Score:  [0.62130808 0.70276807 0.6365071  0.58836818 0.65409291]
-    Validation R^2:  0.6441113493820093
-    Validation MSE:  1210.5676649503364
-    
+    Training Cross Validation Score:  [0.65181542 0.60621829 0.56514893 0.52319301 0.51774096]
+    Validation Cross Validation Score:  [0.72617618 0.42561359 0.30175429 0.70016344 0.42958844]
+    Validation R^2:  0.5254642642582465
+    Validation MSE:  2437.895634893165
+
 
 ### Plotting Predicted vs True Values
 Ideally, all values would be close to a regressed diagonal line and fairly symmetric.
@@ -320,12 +314,13 @@ Ideally, all values would be close to a regressed diagonal line and fairly symme
 
 ```python
 _ = plt.scatter(y_hat, y_validate)
+_ = plt.plot([0, 350], [0, 350], "r")
 _ = plt.xlabel("Predicted Remaining Useful Life")
 _ = plt.ylabel("True Remaining Useful Life")
 ```
 
 
-![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProj/output_37_0.png?raw=true)
+![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProjMarkdown/output_37_0.png?raw=true)
 
 
 This plot shows a clear curve in the data which suggests we may be able to transform the data to get better performance. Let's try taking the log of the RUL to fix this.
@@ -347,21 +342,22 @@ print('Validation R^2: ', r2_score(log_y_validate, y_hat))
 print('Validation MSE: ', mean_squared_error(log_y_validate, y_hat))
 ```
 
-    Training Cross Validation Score:  [0.6843762  0.48298152 0.52494506 0.49042283 0.53431165]
-    Validation Cross Validation Score:  [0.74860496 0.82045964 0.75158326 0.7985775  0.74473338]
-    Validation R^2:  0.7850075068462503
-    Validation MSE:  0.19969205333878723
-    
+    Training Cross Validation Score:  [0.65181542 0.60621829 0.56514893 0.52319301 0.51774096]
+    Validation Cross Validation Score:  [0.86189994 0.57916562 0.62127333 0.84606404 0.71891191]
+    Validation R^2:  0.7119259657778766
+    Validation MSE:  0.2747472045111408
+
 
 
 ```python
 _ = plt.scatter(y_hat, log_y_validate)
-_ = plt.xlabel("Predicted Remaining Useful Life")
-_ = plt.ylabel("True Remaining Useful Life")
+_ = plt.plot([0, 6], [0, 6], "r")
+_ = plt.xlabel("Predicted Log of Remaining Useful Life")
+_ = plt.ylabel("True Log of Remaining Useful Life")
 ```
 
 
-![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProj/output_41_0.png?raw=true)
+![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProjMarkdown/output_41_0.png?raw=true)
 
 
 As you can tell, after the transformation of the data, we got a much more reasonable plot along the diagonal.
@@ -390,23 +386,24 @@ print('Validation R^2: ', r2_score(y_validate, y_hat))
 print('Validation MSE: ', mean_squared_error(y_validate, y_hat))
 ```
 
-    Training Cross Validation Score:  [ 0.28143897 -0.22866613  0.19483353  0.25713716  0.2325802 ]
-    Validation Cross Validation Score:  [0.34024985 0.52856838 0.53486471 0.44669762 0.37379607]
-    Validation R^2:  0.08818845235594164
-    Validation MSE:  3101.5587998928477
-    
+    Training Cross Validation Score:  [0.3314608  0.03284172 0.17224829 0.25248153 0.28469372]
+    Validation Cross Validation Score:  [ 0.21143813  0.00097633 -0.03242251  0.25507367 -0.23748143]
+    Validation R^2:  0.15272460204742866
+    Validation MSE:  4352.820743820744
+
 
 ### Plotting Predicted vs True Values
 
 
 ```python
 _ = plt.scatter(y_hat, y_validate)
+_ = plt.plot([0, 350], [0, 350], "r")
 _ = plt.xlabel("Predicted Remaining Useful Life")
 _ = plt.ylabel("True Remaining Useful Life")
 ```
 
 
-![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProj/output_48_0.png?raw=true)
+![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProjMarkdown/output_48_0.png?raw=true)
 
 
 While this plot is symmetric, after 50 or so cycles it it's performance drastically decreases. Let's try using the transformed data like we did with linear regression.
@@ -420,18 +417,19 @@ print('Validation Cross Validation Score: ', cross_val_score(dt_reg, X_validate,
 print('Validation R^2: ', r2_score(log_y_validate, y_hat))
 print('Validation MSE: ', mean_squared_error(log_y_validate, y_hat))
 _ = plt.scatter(y_hat, log_y_validate)
-_ = plt.xlabel("Predicted Remaining Useful Life")
-_ = plt.ylabel("True Remaining Useful Life")
+_ = plt.plot([0, 6], [0, 6], "r")
+_ = plt.xlabel("Predicted Log of Remaining Useful Life")
+_ = plt.ylabel("True Log of Remaining Useful Life")
 ```
 
-    Training Cross Validation Score:  [0.72973727 0.6480436  0.68146065 0.66505042 0.69095523]
-    Validation Cross Validation Score:  [0.78726213 0.7947421  0.76833736 0.77769533 0.71148907]
-    Validation R^2:  0.7183242358854427
-    Validation MSE:  0.2616296545367393
-    
+    Training Cross Validation Score:  [0.77366425 0.7180512  0.73196486 0.68458347 0.67246177]
+    Validation Cross Validation Score:  [0.72003447 0.55813942 0.4954202  0.74433481 0.60379024]
+    Validation R^2:  0.680685900000316
+    Validation MSE:  0.3045420479245905
 
 
-![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProj/output_50_1.png?raw=true)
+
+![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProjMarkdown/output_50_1.png?raw=true)
 
 
 While the model does better with the transformed data, Linear Regression still has better performance.
@@ -462,23 +460,24 @@ print('Validation R^2: ', r2_score(y_validate, y_hat))
 print('Validation MSE: ', mean_squared_error(y_validate, y_hat))
 ```
 
-    Training Cross Validation Score:  [ 0.28883114 -0.21458172  0.19487784  0.25546268  0.24428478]
-    Validation Cross Validation Score:  [0.34349352 0.5442117  0.51178566 0.44814695 0.38882129]
-    Validation R^2:  0.10459372500207498
-    Validation MSE:  3045.7556924725423
-    
+    Training Cross Validation Score:  [0.33669568 0.06067125 0.19325714 0.25780171 0.29606065]
+    Validation Cross Validation Score:  [ 0.19072975 -0.01737705 -0.04616889  0.28963416 -0.31215523]
+    Validation R^2:  0.132442225711644
+    Validation MSE:  4457.020097020097
+
 
 ### Plotting Predicted vs True Values
 
 
 ```python
 _ = plt.scatter(y_hat, y_validate)
+_ = plt.plot([0, 350], [0, 350], "r")
 _ = plt.xlabel("Predicted Remaining Useful Life")
 _ = plt.ylabel("True Remaining Useful Life")
 ```
 
 
-![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProj/output_58_0.png?raw=true)
+![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProjMarkdown/output_58_0.png?raw=true)
 
 
 While this plot is symmetric, after 50 or so cycles it it's performance drastically decreases. Let's try using the transformed data like we did with linear regression.
@@ -492,24 +491,127 @@ print('Validation Cross Validation Score: ', cross_val_score(dt_reg, X_validate,
 print('Validation R^2: ', r2_score(log_y_validate, y_hat))
 print('Validation MSE: ', mean_squared_error(log_y_validate, y_hat))
 _ = plt.scatter(y_hat, log_y_validate)
-_ = plt.xlabel("Predicted Remaining Useful Life")
-_ = plt.ylabel("True Remaining Useful Life")
+_ = plt.plot([0, 6], [0, 6], "r")
+_ = plt.xlabel("Predicted Log of Remaining Useful Life")
+_ = plt.ylabel("True Log of Remaining Useful Life")
 ```
 
-    Training Cross Validation Score:  [0.73253373 0.64522721 0.67724421 0.65945721 0.69504003]
-    Validation Cross Validation Score:  [0.78597315 0.79044844 0.77744998 0.79253128 0.70937272]
-    Validation R^2:  0.7167862091273351
-    Validation MSE:  0.2630582240505449
-    
+    Training Cross Validation Score:  [0.77184865 0.71060796 0.73260798 0.68050613 0.67374973]
+    Validation Cross Validation Score:  [0.72126975 0.55465672 0.50704406 0.7478887  0.59853228]
+    Validation R^2:  0.6802101443785232
+    Validation MSE:  0.3049957942244644
 
 
-![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProj/output_60_1.png?raw=true)
+
+![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProjMarkdown/output_60_1.png?raw=true)
 
 
 While the model does better with the transformed data, Linear Regression still has the best performance.
 
+# Trying Our Model On Test Data
+Now that we've used the training data to find the best model, it's time to test our model on the test data! Remember, from the documentation we read in at the beginning, "In the test set, the time series ends some time prior to system failure." Let's take a look at the test data to see what we have..
+
+
+```python
+test.head()
+```
+
+
+We also have the correct outputs saved in `RUL`, but if you remember, our best model was fit on the log(y), so we need to transform the correct `RUL` outputs in order to correctly compare our predictions with the true remaining useful life.
+
+
+```python
+# taking log of y values
+y_test = np.log(RUL)
+```
+
+
+```python
+#test_grp = train["cycle"].groupby(test["unit"])
+#test_rul_lst = [j for i in test["unit"].unique() for j in np.array(test_grp.get_group(i)[::-1])]
+
+```
+
+### Using our model to predict RUL for test data
+Earlier, when we trained the PCA on the training data, we transformed the test data with it and saved it as `test_df` which is the dataframe we will use as our input, X.
+
+
+```python
+# Test Data with PCA (fit on training data) applied 
+test_df.head()
+```
+
+Now, we use the model we trained above on the training data to predict the remaining useful life of the test data.
+
+
+```python
+# predict remaining useful life
+y_hat_test = reg.predict(test_df)
+
+#make predictions into a dataframe
+y_hat_test = pd.DataFrame(y_hat_test)
+
+# add unit column back in so that we know which predictions go with which unit
+y_hat_test.insert(0, "unit", test["unit"])
+```
+
+Since our model actually makes a prediction for each row of data, we can plot our predictions and see if the remaining useful life plot looks like it is changing for each unit. By plotting the first 400 predictions for each row, it is clear that out model is correctly predicting that for each unit, the remaining useful life is decreasing over time.
+
+
+```python
+_ = plt.plot(y_hat_test[0][0:400])
+```
+
+
+![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProjMarkdown/output_72_0.png?raw=true)
+
+
+Ultimately, we want a prediction output of one value for each unit that tell us the remaining useful life for each unit in the data. Right now, we have one prediction per row of data, and each unit has many rows. To get just one prediction per unit, we will loop through `y_hat_test` dataframe of the predictions, and grab the last prediction for each unit since that will tell us the final number of cycles for the remaining useful life.. 
+
+
+```python
+rul_pred = []
+
+# loop through all units
+for each in range(1,101):
+    # get data for one unit at a time
+    unit_data = y_hat_test[y_hat_test["unit"] == each]
+    
+    # get last prediction for that unit and add it to the list of predictions
+    rul_pred.append(unit_data.tail(1).iloc[0][0])
+rul_pred = pd.DataFrame(rul_pred)
+```
+
+
+```python
+rul_pred.head()
+```
+
+
+```python
+print('Training Cross Validation Score: ', cross_val_score(reg, rul_pred, y_test, cv=5))
+print('Validation Cross Validation Score: ', cross_val_score(reg, rul_pred, y_test, cv=5))
+print('Validation R^2: ', r2_score(y_test, rul_pred))
+print('Validation MSE: ', mean_squared_error(y_test, rul_pred))
+```
+
+    Training Cross Validation Score:  [0.47533422 0.82207707 0.66695714 0.80961257 0.80561609]
+    Validation Cross Validation Score:  [0.47533422 0.82207707 0.66695714 0.80961257 0.80561609]
+    Validation R^2:  0.7423429266648431
+    Validation MSE:  0.18018159916559606
 
 
 
+```python
+_ = plt.scatter(rul_pred, y_test)
+_ = plt.plot([0, 6], [0, 6], "r")
+_ = plt.xlabel("Predicted Log of Remaining Useful Life")
+_ = plt.ylabel("True Log of Remaining Useful Life")
+```
 
 
+![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProjMarkdown/output_77_0.png?raw=true)
+
+
+# Conclusion
+In this tutorial, we wanted to be able to predict a machine's remaining useful life given sensor measurements and operational settings over time in cycles. To do this, we read in the data, processed it, split it into training, validation, and test sets, applied dimensionality reduction, and finally ran three different models on the training and validation data. Then, we looked to the model accuracy metrics to decide on a model to move forward with for predictions. When looking at r-squared, linear regression was the best model with an r-squared of 71% compared to 68% for the other two models. When applying our model to the test data, we get an r-squared of 74% which is slightly better performance than it was on the training set. Now you can go forward knowing how many cycle's are left in this simulated engine's life!
