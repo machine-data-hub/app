@@ -2,8 +2,6 @@ import Layout from "../../components/Layout";
 import { getAllPosts } from '../../lib/blogData';
 import renderToString from 'next-mdx-remote/render-to-string';
 import hydrate from 'next-mdx-remote/hydrate';
-import ReactMarkdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 
 const BlogPost = (props) => {
 
