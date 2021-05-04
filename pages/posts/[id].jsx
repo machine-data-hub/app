@@ -1,6 +1,7 @@
 import datasets from "../../data/newdatasets.json";
 import Layout from "../../components/Layout";
 import { MdFileDownload, MdFavorite } from "react-icons/md";
+import { AiOutlineFile } from "react-icons/ai"
 import Link from "next/link";
 
 const Posts = ({ data, similar }) => {
@@ -23,7 +24,13 @@ const Posts = ({ data, similar }) => {
                                 <div>Acquired: January 20, 2021</div>
                             </div>
                             <div className="info">
-                                <span>{data["File Size"]}</span>
+                                <div className="card__details">
+                                    <div>
+                                        <span className="icon__download"><AiOutlineFile/></span>
+                                        {data['File Type']}
+                                    </div>
+                                </div>
+                                {/* <span>{data["File Size"]}</span> */}
                                 {data.Attributes &&
                                 data.Attributes !== "N/A" ? (
                                     <span>{data.Attributes} Attributes</span>
@@ -188,11 +195,11 @@ const Posts = ({ data, similar }) => {
                                         </div>
                                     )}
                                 </div>
-                                <div className="card__footer">
+                                {/* <div className="card__footer">
                                     <Link href={`/posts/${item.id}`}>
                                         <span>SEE MORE &gt;</span>
                                     </Link>
-                                </div>
+                                </div> */}
                             </div>
                         ))}
                     </div>

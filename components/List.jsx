@@ -273,12 +273,6 @@ const List = ({
                                     </div>
                                 )}
                             </div>
-
-                            <Link href={`/posts/${item.id}`}>
-                                <div className="card__footer">
-                                    <span>`SEE `MORE!</span>
-                                </div>
-                            </Link>
                         </li>
                     ))
                 }

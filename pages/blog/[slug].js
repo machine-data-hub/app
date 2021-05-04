@@ -1,7 +1,9 @@
 import Layout from "../../components/Layout";
 import { getAllPosts } from '../../lib/blogData';
 import renderToString from 'next-mdx-remote/render-to-string';
-import hydrate from 'next-mdx-remote/hydrate'
+import hydrate from 'next-mdx-remote/hydrate';
+import ReactMarkdown from "react-markdown";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 
 const BlogPost = (props) => {
 
@@ -9,9 +11,13 @@ const BlogPost = (props) => {
 
     return (
         <Layout>
+          <div className="blog__container">
             <div className="blog__title">{props.title}</div>
+            <div className="blog__author">{props.author}</div>
             <div className="blog__date">{props.date}</div>
+
             <div className="prose">{hydrated}</div>
+          </div>
         </Layout>
     );
 }
