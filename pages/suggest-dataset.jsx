@@ -1,8 +1,6 @@
 import Layout from "../components/Layout";
 import postIssue from "../lib/postSet";
 import { useState, useEffect, useRef } from "react";
-import Link from "next";
-import { AiFillGithub } from "react-icons/ai"
 
 let useClickOutside = (handler) => {
   let ref = useRef();
@@ -61,14 +59,14 @@ const SuggesttDatasets = () => {
       <div className="page__form">
         <div className="body">
           {/*MODAL*/}
-          <div
+          <div ref={clickRef}
             className={`modal ${modalStatus ? "active" : ""}`}
             onClick={() => setModalStatus(!modalStatus)}
           />
           {modalStatus && (
             <div className="message">
 
-              <div className="message__text"  ref={clickRef}>
+              <div className="message__text" >
                 <h2> Thank you for contributing!</h2>
               </div>
               
