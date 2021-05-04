@@ -7,6 +7,7 @@ import {
     handleTypeFilter,
     handleLabeledFilter,
 } from "../utils/filter";
+import { ASC, DATAADDED, DES, MOSTPOPULAR, DOWNLOAD } from "../utils/sort";
 
 let useClickOutside = (handler) => {
     let ref = useRef();
@@ -40,6 +41,9 @@ const Filter = ({
 
     sort,
     setSort,
+
+    list, 
+    setList,
 
     sectorList,
     setSecorList,

@@ -60,63 +60,7 @@ const Search = ({
   timeSeries,
   setTimeSeries,
 
-  //--------
-  // card,
-  // setCard,
 }) => {
-  const handleSimulationFilter = () => {
-    if (simulation === "Yes") {
-      // if user has clicked the button -> empty the state
-      setSimulation("");
-    } else {
-      setSimulation("Yes"); // if user has not clicked the button -> set the state to Yes (filter by simulation is active)
-    }
-  };
-
-  // function to handle timeseries state
-  const handleTimeSeriesFilter = () => {
-    if (timeSeries === "Yes") {
-      // if user has clicked the button (timeseries filter is active) -> empty the state
-      setTimeSeries("");
-    } else {
-      setTimeSeries("Yes"); // if user has not clicked the button -> set the state to Yes (filter by timeseries is active)
-    }
-  };
-
-  const [filterOpen, setFilterOpen] = useState(false); // State to toggle filter box
-  const [sorterOpen, setSorterOpen] = useState(false);
-  let clickRef = useClickOutside(() => {
-    setFilterOpen(false);
-    setSorterOpen(false);
-  });
-
-  //  Function to handle sorting (by Date added, ascending, descending, total dowwnload, and total likes)
-  const onClickSort = (prop) => () => {
-    // prop = sorting type
-    // If sorting type is already clicked -> unclick the button and remove the sorting
-    if (sort === prop) {
-      setSort("");
-      const sorted = list.sort(DOWNLOAD);
-      setList(sorted);
-    } else {
-      // If sorting type is not clicked -> click the button and change sorting type
-      setSort(prop);
-      const sorted = list.sort(
-        prop === "DATA_ADDED"
-          ? DATAADDED
-          : prop === "ASC"
-          ? ASC
-          : prop === "DES"
-          ? DES
-          : prop === "DOWNLOAD"
-          ? DOWNLOAD
-          : prop === "MOST_POPULAR"
-          ? MOSTPOPULAR
-          : DOWNLOAD
-      );
-      setList(sorted);
-    }
-  };
 
   return (
     <div className="search__feature">
@@ -124,7 +68,7 @@ const Search = ({
         <div className="big__word">Explore</div>
         <div className="description">popular prognostics and health mangement data sets. <a href="/getting-started">Click here</a> to learn more about Machine Data Hub. </div>
       </div>
-      <div className="input__wrapper" ref={clickRef}>
+      <div className="input__wrapper">
         
         <Filter         
         sectors={sectors}
@@ -132,6 +76,9 @@ const Search = ({
 
         sort={sort}
         setSort={setSort}
+
+        list={list}
+        setList={setList}
         
         sectorList={sectorList}
         setSecorList={setSecorList}

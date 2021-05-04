@@ -58,15 +58,22 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
       const map = datasets.filter((v, i) => {
         var matchedSearch = false;
         if (v.Owner.toLocaleLowerCase().includes(query.toLowerCase().trim())) {
-          matchedSearch = true;
+          return true;
           // return v.Owner.toLocaleLowerCase().includes(query.toLowerCase().trim());
+        }
+
+        if (v.Name.toLocaleLowerCase().includes(query.toLowerCase().trim())) {
+          return true;
+        }
+        if (v["Short Summary"].toLocaleLowerCase().includes(query.toLowerCase().trim())) {
+          return true;
         }
 
         // ML tags
         // tags = boolean array
         v["ML Type"].map((entry) => {
           if (entry.toLocaleLowerCase().includes(query.toLowerCase().trim())) {
-            matchedSearch = true;
+            return true;
             //return entry.toLocaleLowerCase().includes(query.toLowerCase().trim());
           }
         });
@@ -77,24 +84,25 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
           v["Time Series"] === "Yes" &&
           "time series".includes(query.toLowerCase().trim())
         ) {
-          matchedSearch = true;
+          return true;
         }
         // labeled
         if (
           v["Labeled"] === "Yes" &&
           "labeled".includes(query.toLowerCase().trim())
         ) {
-          matchedSearch = true;
+          return true;
         }
          // simulation
          if (
           v["Simulation (Yes/No)"] === "Yes" &&
           "simulation".includes(query.toLowerCase().trim())
         ) {
-          matchedSearch = true;
+          return true;
         }
 
-        return matchedSearch; //v.Name.toLocaleLowerCase().includes(query.toLowerCase().trim()) || tags.includes(true); // filter datasets by string using includes()
+
+        return false; //v.Name.toLocaleLowerCase().includes(query.toLowerCase().trim()) || tags.includes(true); // filter datasets by string using includes()
       });
       setList(map);
     } else {
