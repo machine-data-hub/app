@@ -4,9 +4,20 @@
   --primary: rgb(33, 120, 179);
   --dark: rgb(21, 92, 139);
 
-  --tetradic1: #2790d7;
-  --tetradic2: #6fb5e4;
-  --tetradic3: #0d3047;
+  --tetradic1: #7eb7b2;
+  --tetradic2: #d95657;
+  --tetradic3: #ab7aa2;
+
+  --grayBlue: #5479a9;
+  --grayOrange: #ea8b18;
+  --grayRed: #d95657;
+  --grayCyan: #7eb7b2;
+  --grayGreen: #62a149;
+  --grayYellow: #e9c83b;
+  --grayPurple: #ab7aa2;
+  --grayPink: #f89ca6;
+  --grayBrown: #99755d;
+  --gray: #b9b0ac;
 
   --accents-1: #ddd;
   --accents-2: #747f86;
@@ -274,6 +285,7 @@ button:focus {
         rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
       &:hover {
         box-shadow: 0px 0px 3px 3px var(--primary);
+        cursor: pointer;
       }
 
       .card__image {
@@ -299,7 +311,6 @@ button:focus {
 
       .card__title {
         padding: 16px;
-        cursor: pointer;
 
         h2 {
           text-align: center;
@@ -318,9 +329,9 @@ button:focus {
 
       .card__info {
         font-size: 14px;
-        text-align: center;
+        text-align: left;
         color: rgba(0, 0, 0, 0.54);
-
+        letter-spacing: 0.1px;
         span {
           margin: 0 3px;
         }
@@ -368,7 +379,6 @@ button:focus {
           margin-right: 8px;
           margin-bottom: 8px;
           font-size: 12px;
-          cursor: pointer;
 
           &:hover {
             background: rgb(21, 92, 139);
@@ -385,7 +395,6 @@ button:focus {
 
         .buttonsLabeled {
           background: var(--tetradic3);
-
         }
       }
 
@@ -415,6 +424,46 @@ button:focus {
   padding-top: 120px;
   padding-bottom: 120px;
   position: relative;
+
+  .welcome__text {
+    margin: 0 auto;
+    display: flex;
+    width: 66%;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (max-width: 1024px) {
+      width: 84%;
+    }
+
+    .big__word {
+      color: var(--primary);
+      font-size: 32px;
+      font-weight: 300;
+      display: block;
+      margin-top: 0.67em;
+      margin-bottom: 0.67em;
+    }
+
+    .description {
+      vertical-align: baseline;
+      top: 32px;
+      font-size: 18px;
+      font-weight: 300px;
+      padding-bottom: 5.67em;
+
+      a {
+        text-decoration: none;
+        color: var(--primary);
+        font-weight: 500px;
+
+        &:hover {
+          font-weight: bold;
+        }
+      }
+    }
+  }
 
   .input__wrapper {
     margin: 0 auto;
@@ -450,289 +499,6 @@ button:focus {
         top: 15px;
       }
     }
-
-    .filter__bar {
-      display: absolute;
-      height: 96px;
-
-      span {
-        position: absolute;
-        font-size: 1.25rem;
-        transform: translateY(1px);
-        color: var(--primary);
-        top: 60px;
-        left: 10px;
-      }
-
-      .icon__sort {
-        left: 1rem;
-        bottom: 1rem;
-        display: flex;
-
-        border-radius: 50%;
-        cursor: pointer;
-  
-        &:hover {
-          background: #f4f4f4;
-          height: 24px;
-          font-weight: 500;
-        }
-  
-        &.active {
-          background: #f4f4f4;
-        }
-      }
-
-      .sort__wrapper {
-        position: absolute;
-        top: 92px;
-        right: 0;
-        background: white;
-        padding: 2rem;
-        width: 100%;
-        z-index: 1;
-        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
-          rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
-
-        h2 {
-          margin-top: 0;
-          margin-bottom: 0.75rem;
-          font-size: 1.2rem;
-          color: var(--primary);
-        }
-        .field {
-          margin-bottom: 1.5rem;
-
-          .buttonsSort {
-            button {
-              color: var(--primary);
-              padding: 8px 16px;
-              border-radius: 4px;
-              margin-right: 8px;
-              margin-bottom: 8px;
-              font-size: 14px;
-              border: 1px solid var(--primary);
-              background: #fff;
-            }
-
-            button.active,
-            .active {
-              background: var(--primary);
-              color: white;
-            }
-          }
-
-          .buttonsSector {
-            button {
-              color: var(--primary);
-              padding: 8px 16px;
-              border-radius: 4px;
-              margin-right: 8px;
-              margin-bottom: 8px;
-              font-size: 14px;
-              border: 1px solid var(--tetradic1);
-              background: #fff;
-            }
-
-            button.active,
-            .active {
-              background: var(--tetradic1);
-              color: white;
-            }
-          }
-
-          .buttonsML {
-            button {
-              color: var(--primary);
-              padding: 8px 16px;
-              border-radius: 4px;
-              margin-right: 8px;
-              margin-bottom: 8px;
-              font-size: 14px;
-              border: 1px solid var(--tetradic2);
-              background: #fff;
-            }
-
-            button.active,
-            .active {
-              background: var(--tetradic2);
-              color: white;
-            }
-          }
-
-          h2 {
-            color: var(--primary);
-          }
-
-          .buttonsLabeled {
-            button {
-              color: var(--primary);
-              padding: 8px 16px;
-              border-radius: 4px;
-              margin-right: 8px;
-              margin-bottom: 8px;
-              font-size: 14px;
-              border: 1px solid var(--tetradic3);
-              background: #fff;
-            }
-
-            button.active,
-            .active {
-              background: var(--tetradic3);
-              color: white;
-            }
-          }
-
-          h3 {
-            color: var(--primary);
-            font-size: 16px;
-            font-weight: 400;
-          }
-        }
-      }
-    }
-
-    .sort__bar {
-      display: relative;
-      height: 96px;
-      padding: 16px 16px 16px 48px;
-      width: 100%;
-
-      span {
-        position: absolute;
-        font-size: 1.25rem;
-        transform: translateY(1px);
-        color: var(--primary);
-        top: 90px;
-      }
-
-      .icon__sort {
-        left: 1rem;
-        bottom: 1rem;
-        display: flex;
-        border-radius: 50%;
-        cursor: pointer;
-
-        &:hover {
-          background: #f4f4f4;
-          height: 24px;
-          font-weight: 500;
-        }
-  
-        &.active {
-          background: #f4f4f4;
-        }
-      }
-
-      .sort__wrapper {
-        position: absolute;
-        top: 52px;
-        right: 0;
-        background: white;
-        padding: 2rem;
-        width: 100%;
-        z-index: 1;
-        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
-          rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
-
-        h2 {
-          margin-top: 0;
-          margin-bottom: 0.75rem;
-          font-size: 1.2rem;
-          color: var(--primary);
-        }
-        .field {
-          margin-bottom: 1.5rem;
-
-          .buttonsSort {
-            button {
-              color: var(--primary);
-              padding: 8px 16px;
-              border-radius: 4px;
-              margin-right: 8px;
-              margin-bottom: 8px;
-              font-size: 14px;
-              border: 1px solid var(--primary);
-              background: #fff;
-            }
-
-            button.active,
-            .active {
-              background: var(--primary);
-              color: white;
-            }
-          }
-
-          .buttonsSector {
-            button {
-              color: var(--primary);
-              padding: 8px 16px;
-              border-radius: 4px;
-              margin-right: 8px;
-              margin-bottom: 8px;
-              font-size: 14px;
-              border: 1px solid var(--tetradic1);
-              background: #fff;
-            }
-
-            button.active,
-            .active {
-              background: var(--tetradic1);
-              color: white;
-            }
-          }
-
-          .buttonsML {
-            button {
-              color: var(--primary);
-              padding: 8px 16px;
-              border-radius: 4px;
-              margin-right: 8px;
-              margin-bottom: 8px;
-              font-size: 14px;
-              border: 1px solid var(--tetradic2);
-              background: #fff;
-            }
-
-            button.active,
-            .active {
-              background: var(--tetradic2);
-              color: white;
-            }
-          }
-
-          h2 {
-            color: var(--primary);
-          }
-
-          .buttonsLabeled {
-            button {
-              color: var(--primary);
-              padding: 8px 16px;
-              border-radius: 4px;
-              margin-right: 8px;
-              margin-bottom: 8px;
-              font-size: 14px;
-              border: 1px solid var(--tetradic3);
-              background: #fff;
-            }
-
-            button.active,
-            .active {
-              background: var(--tetradic3);
-              color: white;
-            }
-          }
-
-          h3 {
-            color: var(--primary);
-            font-size: 16px;
-            font-weight: 400;
-          }
-        }
-      }
-    }
-
     input {
       width: 100%;
       padding: 1rem;
@@ -748,13 +514,308 @@ button:focus {
   }
 }
 
+// Filter Bar
+.filter__bar {
+  padding-top: 96px;
+  position: relative;
+  display: absolute;
+  grid-template-columns: 100px 100px;
+  column-gap: 200px;
+  height: 48px;
+  width: 100%;
+  background-color: var(--seeThrough);
+
+  .filter__buttons {
+    span {
+      position: absolute;
+      font-size: 1.25rem;
+      transform: translateY(1px);
+      color: var(--primary);
+      top: 60px;
+      left: 10px;
+    }
+
+    .icon__sort {
+      position: absolute;
+      left: 10px;
+      bottom: 1rem;
+      display: flex;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &:hover {
+        background: #f4f4f4;
+        height: 24px;
+        font-weight: 500;
+      }
+
+      &.active {
+        background: #f4f4f4;
+      }
+    }
+
+    .sort__wrapper {
+      position: absolute;
+      top: 92px;
+      left: 0;
+      background: white;
+      padding: 2rem;
+      width: 50%;
+      z-index: 1;
+      box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+        rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+
+      h2 {
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+        font-size: 1.2rem;
+        color: var(--primary);
+      }
+      .field {
+        margin-bottom: 1.5rem;
+        h2 {
+          color: var(--primary);
+        }
+
+        h3 {
+          color: var(--primary);
+          font-size: 16px;
+          font-weight: 400;
+        }
+        .buttonsSort {
+          button {
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            border: 1px solid var(--primary);
+            background: #fff;
+          }
+
+          button.active,
+          .active {
+            background: var(--primary);
+            color: white;
+          }
+        }
+        .buttonsSector {
+          button {
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            border: 1px solid var(--tetradic1);
+            background: #fff;
+          }
+
+          button.active,
+          .active {
+            background: var(--tetradic1);
+            color: white;
+          }
+        }
+
+        .buttonsML {
+          button {
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            border: 1px solid var(--tetradic2);
+            background: #fff;
+          }
+
+          button.active,
+          .active {
+            background: var(--tetradic2);
+            color: white;
+          }
+        }
+
+        .buttonsLabeled {
+          button {
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            border: 1px solid var(--tetradic3);
+            background: #fff;
+          }
+
+          button.active,
+          .active {
+            background: var(--tetradic3);
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  // Sorting Button
+  .sort__bar {
+    float: right;
+    span {
+      position: absolute;
+      font-size: 1.25rem;
+      transform: translateY(1px);
+      color: var(--primary);
+      top: 60px;
+    }
+
+    .icon__sort {
+      position: absolute;
+      bottom: 1rem;
+      display: flex;
+      border-radius: 50%;
+      cursor: pointer;
+      right: 1rem;
+
+      &:hover {
+        background: #f4f4f4;
+        height: 24px;
+        font-weight: 500;
+      }
+
+      &.active {
+        background: #f4f4f4;
+      }
+    }
+
+    .sort__wrapper {
+      position: absolute;
+      top: 92px;
+      right: 0;
+      background: white;
+      padding: 2rem;
+      width: 50%;
+      z-index: 1;
+      box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+        rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+
+      h2 {
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+        font-size: 1.2rem;
+        color: var(--primary);
+      }
+      .field {
+        margin-bottom: 1.5rem;
+
+        .buttonsSort {
+          button {
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            border: 1px solid var(--primary);
+            background: #fff;
+          }
+
+          button.active,
+          .active {
+            background: var(--primary);
+            color: white;
+          }
+        }
+
+        .buttonsSector {
+          button {
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            border: 1px solid var(--tetradic1);
+            background: #fff;
+          }
+
+          button.active,
+          .active {
+            background: var(--tetradic1);
+            color: white;
+          }
+        }
+
+        .buttonsML {
+          button {
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            border: 1px solid var(--tetradic2);
+            background: #fff;
+          }
+
+          button.active,
+          .active {
+            background: var(--tetradic2);
+            color: white;
+          }
+        }
+
+        h2 {
+          color: var(--primary);
+        }
+
+        .buttonsLabeled {
+          button {
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 14px;
+            border: 1px solid var(--tetradic3);
+            background: #fff;
+          }
+
+          button.active,
+          .active {
+            background: var(--tetradic3);
+            color: white;
+          }
+        }
+
+        h3 {
+          color: var(--primary);
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
 // Page - About
 .page__about {
   padding: 4rem 2rem;
+  height: 100vh;
 
   h1 {
     color: var(--primary);
     font-size: 1.5rem;
+  }
+
+  .examples {
+    li {
+      margin-top: 0.33em;
+      margin-bottom: 0.33em;
+      margin-left: 2.33em;
+    }
   }
 
   .body {
@@ -790,7 +851,6 @@ button:focus {
   padding-top: 4rem;
   justify-content: space-between;
 
-  
   .content__head {
     background: #ddd;
   }
@@ -939,6 +999,7 @@ button:focus {
           margin-top: 0;
           color: var(--dark);
           color: black;
+          letter-spacing: 0.2px;
         }
 
         a {
@@ -1003,7 +1064,7 @@ button:focus {
             margin: 0 auto;
             align-items: center;
           }
-          
+
           .button {
             margin: 1px;
           }
@@ -1019,9 +1080,8 @@ button:focus {
     .widget__title {
       margin-top: 0;
       color: var(--primary);
-
     }
-    .card__container{
+    .card__container {
       display: grid;
       width: 100%;
       grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -1029,12 +1089,40 @@ button:focus {
     }
 
     .card {
-      width: 100%;
-
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 4px;
+      overflow: hidden;
       box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
         rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
-      padding: 1rem 0;
-      margin-bottom: 1.5rem;
+
+      &:hover {
+        box-shadow: 0px 0px 3px 3px var(--primary);
+        cursor: pointer;
+      }
+
+      .card__image {
+        width: 100%;
+        height: 140px;
+        background: #f4f4f4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+          color: #ddd;
+          font-size: 4rem;
+          display: flex;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
 
       .card__title {
         padding: 16px;
@@ -1042,11 +1130,10 @@ button:focus {
         h2 {
           font-size: 1.25rem;
           font-weight: 500;
-          text-align: center;
+          text-align: left;
           padding-left: 8px;
           padding-right: 8px;
           margin-top: 0;
-          cursor: pointer;
 
           &:hover {
             color: var(--primary);
@@ -1055,9 +1142,9 @@ button:focus {
 
         .card__info {
           font-size: 14px;
-          text-align: center;
+          text-align: left;
           color: rgba(0, 0, 0, 0.54);
-
+          letter-spacing: 0.1px;
           span {
             margin: 0 3px;
           }
@@ -1095,6 +1182,7 @@ button:focus {
         width: 100%;
         padding: 1rem;
         flex-wrap: wrap;
+        min-height: 60px;
         display: flex;
         align-items: flex-start;
 
@@ -1124,13 +1212,17 @@ button:focus {
         display: flex;
         justify-content: flex-end;
         width: 100%;
-        padding: 0 1rem;
+        padding: 0 1rem 1rem 1rem;
 
         span {
           font-size: 0.9rem;
           color: var(--primary);
           font-weight: 600;
           cursor: pointer;
+
+          &:hover {
+            color: rgb(21, 92, 139);
+          }
         }
       }
     }
@@ -1242,10 +1334,54 @@ button:focus {
   justify-content: center;
   align-items: center;
   padding-top: 4rem;
+  height: 100vh;
 
   .body {
     display: flex;
     flex-direction: column;
+
+    .modal {
+      .active {
+        background: #f4f4f4;
+        position: absolute;
+        left: 10px;
+        bottom: 1rem;
+        display: flex;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .inactive {
+        display: none;
+      }
+    }
+
+    .message {
+      .message__text {
+        padding: 20px;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 250px;
+        width: 400px;
+        background-color: rgb(255, 255, 255, 1);
+        z-index: 1002;
+        color: var(--primary);
+        font-size: 35px;
+      }
+      .visable__modal {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: black;
+        opacity: 0.75;
+        z-index: 1001;
+      }
+    }
   }
 
   p {
@@ -1298,82 +1434,136 @@ button:focus {
   }
 }
 
-.blog__tiles {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(250px, 1fr));
-  grid-gap: 24px;
-  margin: 10px 10px 10px 10px;
+.blog__page {
+  height: 100vh;
+  padding: 4rem 2rem;
 
-  @media (max-width: 1200px) {
+  max-width: 1000px;
+  h1 {
+    color: var(--primary);
+    font-size: 1.5rem;
+  }
+  .blog__tiles {
+    display: grid;
     grid-template-columns: repeat(1, minmax(250px, 1fr));
-  }
+    grid-gap: 24px;
+    margin: 10px 10px 10px 0px;
 
-  @media (max-width: 860px) {
-    grid-template-columns: repeat(1, minmax(250px, 1fr));
-  }
-
-  @media (max-width: 600px) {
-    grid-template-columns: repeat(1, minmax(200px, 1fr));
-  }
-
-  @media (max-width: 512px) {
-    grid-template-columns: repeat(1, minmax(200px, 1fr));
-  }
-  .blog__card {
-    display: flex;
-    align-items: right;
-    border-radius: 4px;
-    overflow: visible;
-    max-width: 100%;
-    max-height: 140px;
-    box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
-      rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
-    &:hover {
-      box-shadow: 0px 0px 3px 3px var(--primary);
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(1, minmax(250px, 1fr));
     }
 
-    img {
-      display: block;
-      width: auto;
-      max-height: 140px;
-      float: left;
+    @media (max-width: 860px) {
+      grid-template-columns: repeat(1, minmax(250px, 1fr));
     }
-    .blog__info {
-      display: block;
-      margin: 0;
 
-      .blog__title {
-        padding: 16px;
-        cursor: pointer;
-        font-weight: 500;
-        font-size: 1.2rem;
-        line-height: 1.6;
-        letter-spacing: 0.0075em;
-        height: auto;
+    @media (max-width: 600px) {
+      grid-template-columns: repeat(1, minmax(200px, 1fr));
+    }
 
-        &:hover {
-          color: var(--primary);
+    @media (max-width: 512px) {
+      grid-template-columns: repeat(1, minmax(200px, 1fr));
+    }
+    .blog__card {
+      display: flex;
+      align-items: right;
+      border-radius: 4px;
+      overflow: visible;
+      max-width: 100%;
+      max-height: 200px;
+      box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+        rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+      &:hover {
+        box-shadow: 0px 0px 3px 3px var(--primary);
+      }
+
+      img {
+        display: block;
+        width: auto;
+        max-height: 140px;
+        float: left;
+      }
+      .blog__info {
+        display: block;
+        margin: 0;
+
+        .blog__title {
+          padding: 16px;
+          cursor: pointer;
+          font-weight: 500;
+          font-size: 1.2rem;
+          line-height: 1.6;
+          letter-spacing: 0.0075em;
+          height: auto;
+        }
+        .blog__author {
+          padding-left: 16px;
+          font-size: 1rem;
+          letter-spacing: 0.0075em;
+          height: auto;
+        }
+        .blog__date {
+          padding-left: 16px;
+          font-size: 1rem;
+          letter-spacing: 0.0075em;
+          height: auto;
+        }
+        .blog__summary {
+          padding-left: 16px;
+          font-size: 1rem;
+          letter-spacing: 0.0075em;
+          height: auto;
         }
       }
-      .blog__author {
-        padding-left: 16px;
-        font-size: 1rem;
-        letter-spacing: 0.0075em;
-        height: auto;
-      }
-      .blog__date {
-        padding-left: 16px;
-        font-size: 1rem;
-        letter-spacing: 0.0075em;
-        height: auto;
-      }
-      .blog__summary {
-        padding-left: 16px;
-        font-size: 1rem;
-        letter-spacing: 0.0075em;
-        height: auto;
+
+      &:hover {
+        color: var(--primary);
       }
     }
+  }
+}
+
+.blog__container {
+  height: auto;
+
+  .blog__title {
+    font-weight: 500;
+    font-size: 2.5rem;
+    letter-spacing: 0.0075em;
+    color: var(--primary);
+    padding-top: 1.34em;
+    padding-bottom: 0.67em;
+  }
+  .blog__author {
+    font-size: 1.5rem;
+    padding-top: 0.67em;
+    padding-bottom: 0.67em;
+    font-weight: 300;
+    letter-spacing: 0.0075em;
+    height: auto;
+  }
+  .blog__date {
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.0075em;
+    height: auto;
+    padding-bottom: 0.67em;
+  }
+
+  pre{
+    white-space:pre-wrap; 
+    word-wrap:break-word;
+    max-width: 1280px;
+  }
+
+  h1 {
+    padding-top: 0.67em;
+    font-size: 2rem;
+  }
+
+  h2{
+    font-size: 1.75rem;
+    font-weight: 400;
   }
 }
 

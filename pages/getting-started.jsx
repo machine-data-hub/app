@@ -2,9 +2,9 @@ import Layout from "../components/Layout";
 import teams from "../data/team.json";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 
-const About = () => {
+const GettingStarted = () => {
   return (
-    <Layout title="About | Machine Data Hub">
+    <Layout title="Getting Started | Machine Data Hub">
       <div className="page__about">
         <h1>About Machine Data Hub</h1>
         <div className="body">
@@ -32,44 +32,29 @@ const About = () => {
             to download.
           </p>
         </div>
-        <h1>Meet Our Teams</h1>
+
+        <h1>Blogs</h1> 
         <div className="body">
-          <ul className="team__list">
-            {
-              // map trough teams.json file and return the list
-              teams?.map((item, index) => (
-                <li key={index}>
-                  <div className="team__image">
-                    {/* if image exists, return img tag. if doesn't exist, return empty div */}
-                    {item.profile_pict ? (
-                      <img src={item.profile_pict} alt="Profile" />
-                    ) : (
-                      ""
-                    )}
-                  </div>
-                  <div className="team__details">
-                    <div className="team__name">{item.name}</div>
-                    <div className="team__summary">{item.summary}</div>
-                    <a
-                      className="profile_text"
-                      href={`https://${item.linkedin_url}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <span className="icon__download">
-                        <AiFillLinkedin />
-                      </span>
-                      {item["LinkedInShort"]}
-                    </a>
-                  </div>
-                </li>
-              ))
-            }
-          </ul>
+            Three blogs were developed to help navigate the possibilities of Machine Data Hub.
+            <div className="examples">
+                <li>
+            <a href="/blog/MLProj"> Remaining Useful Life Example</a>
+            </li><li>
+            <a href="/blog/MLExample"> Power Plant Output Example</a>
+            </li><li>
+            <a href="/blog/ApplianceEnergy"> Appliance Energy Consumption</a>
+            </li>
+            </div>
+        </div>
+
+        <h1>GitHub</h1>
+        <div className="body">
+            Pull requests welcomed. {`\n`}
+            File issues <a href="https://github.com/PHM-Data-Hub/app/issues">here</a>.
         </div>
       </div>
     </Layout>
   );
 };
 
-export default About;
+export default GettingStarted;

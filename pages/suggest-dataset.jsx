@@ -1,32 +1,81 @@
-import { useState } from "react";
 import Layout from "../components/Layout";
-// import {createSuggestion} from "../api/suggestAPI";
-//import postIssues from "../lib/auth.js";
+import postIssue from "../lib/postSet";
+import { useState, useEffect, useRef } from "react";
 
+let useClickOutside = (handler) => {
+  let ref = useRef();
+
+  useEffect(() => {
+    let clickHandler = (event) => {
+      if (!ref.current.contains(event.target)) {
+        handler();
+      }
+    };
+
+    let keyHandler = (event) => {
+      if (event.keyCode === 27) {
+        handler();
+      }
+    };
+    document.addEventListener("mousedown", clickHandler);
+
+    document.addEventListener("keydown", keyHandler);
+    return () => {
+      document.removeEventListener("mousedown", clickHandler);
+      document.removeEventListener("keydown", keyHandler);
+    };
+  });
+  return ref;
+};
 
 const SuggesttDatasets = () => {
   // Title, Summary, and Dataset Link
   const [title, setTitle] = useState();
   const [summary, setSummary] = useState();
   const [link, setLink] = useState();
+  const [modalStatus, setModalStatus] = useState(false);
+  let clickRef = useClickOutside(() => {
+    setModalStatus(false);
+  });
 
   // Function to be executed when user presses enter or click the submit button
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     var newSuggestion = {
-      'title': title,
-      'summary': summary,
-      'URL': link,
+      title: title,
+      summary: summary,
+      url: link,
     };
-    // createSuggestion(newSuggestion)
+    postIssue(newSuggestion).then(setModalStatus(true));
+    resetText();
+  };
+
+  const resetText = () => {
+    document.getElementById("suggestion-form").reset();
   };
 
   return (
     <Layout title="About | Machine Data Hub">
       <div className="page__form">
         <div className="body">
+          {/*MODAL*/}
+          <div ref={clickRef}
+            className={`modal ${modalStatus ? "active" : ""}`}
+            onClick={() => setModalStatus(!modalStatus)}
+          />
+          {modalStatus && (
+            <div className="message">
+
+              <div className="message__text" >
+                <h2> Thank you for contributing!</h2>
+              </div>
+              
+              <div className="visable__modal" />
+            </div>
+          )}
+
           <p>Suggest a dataset to be added to the Data Hub!</p>
-          <form onClick={handleSubmit}>
+          <form id="suggestion-form">
             {/* auto update the state on keypress */}
             <input
               type="text"
@@ -46,7 +95,7 @@ const SuggesttDatasets = () => {
               placeholder="Enter a link to a dataset"
               onChange={(e) => setLink(e.target.value)}
             />
-            <button type="submit">
+            <button type="submit" onClick={handleSubmit}>
               Submit
             </button>
           </form>

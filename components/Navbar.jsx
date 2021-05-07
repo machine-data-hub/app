@@ -8,7 +8,7 @@ const Navbar = () => {
 
   const handleSticky = () => {
     const offset = window.scrollY;
-    if (offset > 25) {
+    if (offset > 3) {
       setScrolled(true);
     } else {
       setScrolled(false);
@@ -35,9 +35,19 @@ const Navbar = () => {
                 Home
               </li>
             </Link>
+            <Link href="/getting-started">
+              <li className={router.pathname === "/getting-started" ? "nav-active" : ""}>
+                Getting Started
+              </li>
+            </Link>
             <Link href="/about">
               <li className={router.pathname === "/about" ? "nav-active" : ""}>
                 About
+              </li>
+            </Link>
+            <Link href="/blogs">
+              <li className={router.pathname === "/blogs" ? "nav-active" : ""}>
+                Blogs
               </li>
             </Link>
             <Link href="/suggest-dataset">
