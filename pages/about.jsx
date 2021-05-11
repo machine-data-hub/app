@@ -21,7 +21,7 @@ const About = () => {
               <AiFillGithub />
             </span>
           </a>
-          Do you have a dataset you want to see on Machine Data Hub? Suggest them 
+          Do you have a dataset you want to see on Machine Data Hub? Suggest them {" "}
           <a href="/suggest-dataset" className="gitURL">
             here!
           </a>
