@@ -1601,9 +1601,6 @@ button:focus {
     cursor: pointer;
     border-radius: 4px;
     text-align: center;
-    &:hover {
-      background: #1f74ad;
-    }
 
     .netlify {
       font-size: 2rem;
@@ -1613,17 +1610,26 @@ button:focus {
     margin: auto;
     display: inline-grid;
     align-items: center;
-    font-size: 1rem;
     cursor: pointer;
     border-radius: 4px;
     text-align: center;
-    &:hover {
-      background: #1f74ad;
-    }
+
     .icon {
       margin-left: 4px;
-      font-size: 2rem;
       vertical-align: middle;
+      margin-bottom: 10px;
+      &:hover {
+        color: var(--grayRed);
+      }
+    }
+
+    .footer__text{
+      font-size: 1.0rem;
+      height: auto;
+      width: auto;
+      &:hover {
+        color: var(--grayRed);
+      }
     }
   }
 }

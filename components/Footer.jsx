@@ -18,7 +18,12 @@ const Footer = () => {
       <div className="footer__right">
         <Link href="https://github.com/machine-data-hub">
           <span className="icon">
-            <AiFillGithub />
+            <AiFillGithub size={28}/>
+          </span>
+        </Link>
+        <Link href="/suggest-dataset">
+          <span className="footer__text">
+            Suggest A Dataset
           </span>
         </Link>
       </div>

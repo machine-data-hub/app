@@ -21,6 +21,10 @@ const About = () => {
               <AiFillGithub />
             </span>
           </a>
+          Do you have a dataset you want to see on Machine Data Hub? Suggest them 
+          <a href="/suggest-dataset" className="gitURL">
+            here!
+          </a>
           <p>
             If you are interested in using our Python package, you can install
             it the PyPI package in the near future using{" "}
