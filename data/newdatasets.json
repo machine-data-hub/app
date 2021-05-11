@@ -1233,35 +1233,6 @@
     ]
   },
   {
-    "id": "46",
-    "Rank": 46,
-    "Name": "Bar Crawl: Detecting Heavy Drinking Data Set",
-    "Owner": "Jackson A Killian, Danielle R Madden, John Clapp",
-    "URL": ["https://archive.ics.uci.edu/ml/machine-learning-databases/00515/data.zip"],
-    "Summary": "Accelerometer data was collected from smartphones at a sampling rate of 40Hz (file: all_accelerometer_data_pids_13.csv). The file contains 5 columns: a timestamp, a participant ID, and a sample from each axis of the accelerometer. Data was collected from a mix of 11 iPhones and 2 Android phones as noted in phone_types.csv. TAC data was collected using SCRAM [2] ankle bracelets and was collected at 30 minute intervals. The raw TAC readings are in the raw_tac directory. TAC readings which are more readily usable for processing are in clean_tac directory and have two columns: a timestamp and TAC reading. The cleaned TAC readings: (1) were processed with a zero-phase low-pass filter to smooth noise without shifting phase; (2) were shifted backwards by 45 minutes so the labels more closely match the true intoxication of the participant (since alcohol takes about 45 minutes to exit through the skin.)",
-    "Date Donated": "April 22, 2021",
-    "Sector": "Life",
-    "ML Type": ["Classification", "Regression"],
-    "Labeled": "Yes",
-    "Time Series": "",
-    "Simulation (Yes/No)": "",
-    "Attributes": 3,
-    "Instances": 14057567,
-    "Downloads": 76410,
-    "Likes": 0,
-    "File Size": "153 MB",
-    "File Type": "csv",
-    "Datasets": [
-      {
-        "Name": "Dataset 1",
-        "URL": "https://archive.ics.uci.edu/ml/machine-learning-databases/00515/data.zip",
-        "Likes": 0,
-        "Downloads": 76410,
-        "File Size": "153 MB"
-      }
-    ]
-  },
-  {
     "id": "48",
     "Rank": 48,
     "Name": "WISDM Smartphone and Smartwatch Activity and Biometrics Dataset Data Set",
