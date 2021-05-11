@@ -29,7 +29,7 @@ const GettingStarted = () => {
         <h1>Download CLI</h1>
         <div className="body">
           The machinedatahub Python package allows users to maneuver Machine
-          Data Hub from a local Python environemnt. The package can be installed
+          Data Hub from a local Python environment. The package can be installed
           in the near future using
           <a
             href="https://machine-data-hub.readthedocs.io/en/latest/?badge=latest"
