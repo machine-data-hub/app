@@ -102,6 +102,41 @@ RUL.head()
 
 
 
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr className="text-align: right;">
+      <th></th>
+      <th>RUL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>112</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>98</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>69</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>91</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
 ## Training Data
 Now we'll read in the simulation data. In this training set, the fault grows in magnitude until system failure (run-to-failure data).
 
@@ -117,6 +152,162 @@ train.head()
 
 
 
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr className="text-align: right;">
+      <th></th>
+      <th>unit</th>
+      <th>cycle</th>
+      <th>op1</th>
+      <th>op2</th>
+      <th>op3</th>
+      <th>sm1</th>
+      <th>sm2</th>
+      <th>sm3</th>
+      <th>sm4</th>
+      <th>sm5</th>
+      <th>...</th>
+      <th>sm12</th>
+      <th>sm13</th>
+      <th>sm14</th>
+      <th>sm15</th>
+      <th>sm16</th>
+      <th>sm17</th>
+      <th>sm18</th>
+      <th>sm19</th>
+      <th>sm20</th>
+      <th>sm21</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>-0.0007</td>
+      <td>-0.0004</td>
+      <td>100.0</td>
+      <td>518.67</td>
+      <td>641.82</td>
+      <td>1589.70</td>
+      <td>1400.60</td>
+      <td>14.62</td>
+      <td>...</td>
+      <td>521.66</td>
+      <td>2388.02</td>
+      <td>8138.62</td>
+      <td>8.4195</td>
+      <td>0.03</td>
+      <td>392</td>
+      <td>2388</td>
+      <td>100.0</td>
+      <td>39.06</td>
+      <td>23.4190</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>2</td>
+      <td>0.0019</td>
+      <td>-0.0003</td>
+      <td>100.0</td>
+      <td>518.67</td>
+      <td>642.15</td>
+      <td>1591.82</td>
+      <td>1403.14</td>
+      <td>14.62</td>
+      <td>...</td>
+      <td>522.28</td>
+      <td>2388.07</td>
+      <td>8131.49</td>
+      <td>8.4318</td>
+      <td>0.03</td>
+      <td>392</td>
+      <td>2388</td>
+      <td>100.0</td>
+      <td>39.00</td>
+      <td>23.4236</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>3</td>
+      <td>-0.0043</td>
+      <td>0.0003</td>
+      <td>100.0</td>
+      <td>518.67</td>
+      <td>642.35</td>
+      <td>1587.99</td>
+      <td>1404.20</td>
+      <td>14.62</td>
+      <td>...</td>
+      <td>522.42</td>
+      <td>2388.03</td>
+      <td>8133.23</td>
+      <td>8.4178</td>
+      <td>0.03</td>
+      <td>390</td>
+      <td>2388</td>
+      <td>100.0</td>
+      <td>38.95</td>
+      <td>23.3442</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>4</td>
+      <td>0.0007</td>
+      <td>0.0000</td>
+      <td>100.0</td>
+      <td>518.67</td>
+      <td>642.35</td>
+      <td>1582.79</td>
+      <td>1401.87</td>
+      <td>14.62</td>
+      <td>...</td>
+      <td>522.86</td>
+      <td>2388.08</td>
+      <td>8133.83</td>
+      <td>8.3682</td>
+      <td>0.03</td>
+      <td>392</td>
+      <td>2388</td>
+      <td>100.0</td>
+      <td>38.88</td>
+      <td>23.3739</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>5</td>
+      <td>-0.0019</td>
+      <td>-0.0002</td>
+      <td>100.0</td>
+      <td>518.67</td>
+      <td>642.37</td>
+      <td>1582.85</td>
+      <td>1406.22</td>
+      <td>14.62</td>
+      <td>...</td>
+      <td>522.19</td>
+      <td>2388.04</td>
+      <td>8133.80</td>
+      <td>8.4294</td>
+      <td>0.03</td>
+      <td>393</td>
+      <td>2388</td>
+      <td>100.0</td>
+      <td>38.90</td>
+      <td>23.4044</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 26 columns</p>
+</div>
+
+
+
 ## Test Data
 Last, we'll get the test set. In the test set, the time series ends some time prior to system failure.
 
@@ -128,6 +319,164 @@ test = test.iloc[:, :26]
 test.columns = ['unit', 'cycle', 'op1', 'op2','op3','sm1','sm2','sm3','sm4','sm5','sm6','sm7','sm8','sm9','sm10','sm11','sm12','sm13','sm14','sm15','sm16','sm17','sm18','sm19','sm20','sm21']
 test.head()
 ```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr className="text-align: right;">
+      <th></th>
+      <th>unit</th>
+      <th>cycle</th>
+      <th>op1</th>
+      <th>op2</th>
+      <th>op3</th>
+      <th>sm1</th>
+      <th>sm2</th>
+      <th>sm3</th>
+      <th>sm4</th>
+      <th>sm5</th>
+      <th>...</th>
+      <th>sm12</th>
+      <th>sm13</th>
+      <th>sm14</th>
+      <th>sm15</th>
+      <th>sm16</th>
+      <th>sm17</th>
+      <th>sm18</th>
+      <th>sm19</th>
+      <th>sm20</th>
+      <th>sm21</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0.0023</td>
+      <td>0.0003</td>
+      <td>100.0</td>
+      <td>518.67</td>
+      <td>643.02</td>
+      <td>1585.29</td>
+      <td>1398.21</td>
+      <td>14.62</td>
+      <td>...</td>
+      <td>521.72</td>
+      <td>2388.03</td>
+      <td>8125.55</td>
+      <td>8.4052</td>
+      <td>0.03</td>
+      <td>392</td>
+      <td>2388</td>
+      <td>100.0</td>
+      <td>38.86</td>
+      <td>23.3735</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>2</td>
+      <td>-0.0027</td>
+      <td>-0.0003</td>
+      <td>100.0</td>
+      <td>518.67</td>
+      <td>641.71</td>
+      <td>1588.45</td>
+      <td>1395.42</td>
+      <td>14.62</td>
+      <td>...</td>
+      <td>522.16</td>
+      <td>2388.06</td>
+      <td>8139.62</td>
+      <td>8.3803</td>
+      <td>0.03</td>
+      <td>393</td>
+      <td>2388</td>
+      <td>100.0</td>
+      <td>39.02</td>
+      <td>23.3916</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>3</td>
+      <td>0.0003</td>
+      <td>0.0001</td>
+      <td>100.0</td>
+      <td>518.67</td>
+      <td>642.46</td>
+      <td>1586.94</td>
+      <td>1401.34</td>
+      <td>14.62</td>
+      <td>...</td>
+      <td>521.97</td>
+      <td>2388.03</td>
+      <td>8130.10</td>
+      <td>8.4441</td>
+      <td>0.03</td>
+      <td>393</td>
+      <td>2388</td>
+      <td>100.0</td>
+      <td>39.08</td>
+      <td>23.4166</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>4</td>
+      <td>0.0042</td>
+      <td>0.0000</td>
+      <td>100.0</td>
+      <td>518.67</td>
+      <td>642.44</td>
+      <td>1584.12</td>
+      <td>1406.42</td>
+      <td>14.62</td>
+      <td>...</td>
+      <td>521.38</td>
+      <td>2388.05</td>
+      <td>8132.90</td>
+      <td>8.3917</td>
+      <td>0.03</td>
+      <td>391</td>
+      <td>2388</td>
+      <td>100.0</td>
+      <td>39.00</td>
+      <td>23.3737</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>5</td>
+      <td>0.0014</td>
+      <td>0.0000</td>
+      <td>100.0</td>
+      <td>518.67</td>
+      <td>642.51</td>
+      <td>1587.19</td>
+      <td>1401.92</td>
+      <td>14.62</td>
+      <td>...</td>
+      <td>522.15</td>
+      <td>2388.03</td>
+      <td>8129.54</td>
+      <td>8.4031</td>
+      <td>0.03</td>
+      <td>390</td>
+      <td>2388</td>
+      <td>100.0</td>
+      <td>38.99</td>
+      <td>23.4130</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 26 columns</p>
+</div>
+
 
 
 # Data Processing
@@ -226,6 +575,114 @@ train_df.head()
 
 
 
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr className="text-align: right;">
+      <th></th>
+      <th>Unit</th>
+      <th>RUL</th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>192</td>
+      <td>-0.410290</td>
+      <td>0.329588</td>
+      <td>-0.062926</td>
+      <td>-0.034272</td>
+      <td>0.039837</td>
+      <td>0.150101</td>
+      <td>-0.061206</td>
+      <td>-0.044378</td>
+      <td>-0.039456</td>
+      <td>0.066469</td>
+      <td>0.060335</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>191</td>
+      <td>-0.334079</td>
+      <td>0.245318</td>
+      <td>-0.083213</td>
+      <td>-0.020121</td>
+      <td>-0.109669</td>
+      <td>0.088208</td>
+      <td>-0.113706</td>
+      <td>-0.072674</td>
+      <td>-0.013043</td>
+      <td>0.068331</td>
+      <td>0.007763</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>190</td>
+      <td>-0.415501</td>
+      <td>-0.251669</td>
+      <td>-0.054831</td>
+      <td>-0.033593</td>
+      <td>0.246061</td>
+      <td>-0.010257</td>
+      <td>-0.056753</td>
+      <td>0.078662</td>
+      <td>0.145056</td>
+      <td>0.057986</td>
+      <td>0.003087</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>189</td>
+      <td>-0.517311</td>
+      <td>-0.005695</td>
+      <td>-0.087794</td>
+      <td>-0.027715</td>
+      <td>-0.042761</td>
+      <td>-0.058995</td>
+      <td>0.027378</td>
+      <td>0.043045</td>
+      <td>0.011939</td>
+      <td>-0.166043</td>
+      <td>-0.041628</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>188</td>
+      <td>-0.345767</td>
+      <td>0.164130</td>
+      <td>-0.043195</td>
+      <td>-0.036834</td>
+      <td>0.104798</td>
+      <td>-0.030646</td>
+      <td>0.082129</td>
+      <td>-0.092327</td>
+      <td>-0.030043</td>
+      <td>0.006404</td>
+      <td>-0.026205</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
 ## Splitting into Train and Validate Sets
 First, we will split up the data randomly by units. We don't want random rows of units being selected for train and validate sets, but rather want to keep all the data for each unit together.
 
@@ -318,7 +775,6 @@ _ = plt.plot([0, 350], [0, 350], "r")
 _ = plt.xlabel("Predicted Remaining Useful Life")
 _ = plt.ylabel("True Remaining Useful Life")
 ```
-
 
 ![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProjMarkdown/output_37_0.png?raw=true)
 
@@ -502,7 +958,6 @@ _ = plt.ylabel("True Log of Remaining Useful Life")
     Validation MSE:  0.3049957942244644
 
 
-
 ![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProjMarkdown/output_60_1.png?raw=true)
 
 
@@ -515,6 +970,164 @@ Now that we've used the training data to find the best model, it's time to test 
 ```python
 test.head()
 ```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr className="text-align: right;">
+      <th></th>
+      <th>unit</th>
+      <th>cycle</th>
+      <th>op1</th>
+      <th>op2</th>
+      <th>op3</th>
+      <th>sm1</th>
+      <th>sm2</th>
+      <th>sm3</th>
+      <th>sm4</th>
+      <th>sm5</th>
+      <th>...</th>
+      <th>sm12</th>
+      <th>sm13</th>
+      <th>sm14</th>
+      <th>sm15</th>
+      <th>sm16</th>
+      <th>sm17</th>
+      <th>sm18</th>
+      <th>sm19</th>
+      <th>sm20</th>
+      <th>sm21</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0.0023</td>
+      <td>0.0003</td>
+      <td>100.0</td>
+      <td>518.67</td>
+      <td>643.02</td>
+      <td>1585.29</td>
+      <td>1398.21</td>
+      <td>14.62</td>
+      <td>...</td>
+      <td>521.72</td>
+      <td>2388.03</td>
+      <td>8125.55</td>
+      <td>8.4052</td>
+      <td>0.03</td>
+      <td>392</td>
+      <td>2388</td>
+      <td>100.0</td>
+      <td>38.86</td>
+      <td>23.3735</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>2</td>
+      <td>-0.0027</td>
+      <td>-0.0003</td>
+      <td>100.0</td>
+      <td>518.67</td>
+      <td>641.71</td>
+      <td>1588.45</td>
+      <td>1395.42</td>
+      <td>14.62</td>
+      <td>...</td>
+      <td>522.16</td>
+      <td>2388.06</td>
+      <td>8139.62</td>
+      <td>8.3803</td>
+      <td>0.03</td>
+      <td>393</td>
+      <td>2388</td>
+      <td>100.0</td>
+      <td>39.02</td>
+      <td>23.3916</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>3</td>
+      <td>0.0003</td>
+      <td>0.0001</td>
+      <td>100.0</td>
+      <td>518.67</td>
+      <td>642.46</td>
+      <td>1586.94</td>
+      <td>1401.34</td>
+      <td>14.62</td>
+      <td>...</td>
+      <td>521.97</td>
+      <td>2388.03</td>
+      <td>8130.10</td>
+      <td>8.4441</td>
+      <td>0.03</td>
+      <td>393</td>
+      <td>2388</td>
+      <td>100.0</td>
+      <td>39.08</td>
+      <td>23.4166</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>4</td>
+      <td>0.0042</td>
+      <td>0.0000</td>
+      <td>100.0</td>
+      <td>518.67</td>
+      <td>642.44</td>
+      <td>1584.12</td>
+      <td>1406.42</td>
+      <td>14.62</td>
+      <td>...</td>
+      <td>521.38</td>
+      <td>2388.05</td>
+      <td>8132.90</td>
+      <td>8.3917</td>
+      <td>0.03</td>
+      <td>391</td>
+      <td>2388</td>
+      <td>100.0</td>
+      <td>39.00</td>
+      <td>23.3737</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>5</td>
+      <td>0.0014</td>
+      <td>0.0000</td>
+      <td>100.0</td>
+      <td>518.67</td>
+      <td>642.51</td>
+      <td>1587.19</td>
+      <td>1401.92</td>
+      <td>14.62</td>
+      <td>...</td>
+      <td>522.15</td>
+      <td>2388.03</td>
+      <td>8129.54</td>
+      <td>8.4031</td>
+      <td>0.03</td>
+      <td>390</td>
+      <td>2388</td>
+      <td>100.0</td>
+      <td>38.99</td>
+      <td>23.4130</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 26 columns</p>
+</div>
+
 
 
 We also have the correct outputs saved in `RUL`, but if you remember, our best model was fit on the log(y), so we need to transform the correct `RUL` outputs in order to correctly compare our predictions with the true remaining useful life.
@@ -540,6 +1153,104 @@ Earlier, when we trained the PCA on the training data, we transformed the test d
 # Test Data with PCA (fit on training data) applied 
 test_df.head()
 ```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr className="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.330564</td>
+      <td>-0.253382</td>
+      <td>-0.078112</td>
+      <td>-0.013062</td>
+      <td>-0.131955</td>
+      <td>-0.198630</td>
+      <td>-0.038849</td>
+      <td>0.006940</td>
+      <td>0.035415</td>
+      <td>-0.066983</td>
+      <td>-0.067194</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.513213</td>
+      <td>0.246559</td>
+      <td>-0.014673</td>
+      <td>-0.054873</td>
+      <td>0.153201</td>
+      <td>0.153750</td>
+      <td>-0.026192</td>
+      <td>0.019489</td>
+      <td>-0.104102</td>
+      <td>-0.089667</td>
+      <td>-0.003584</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.317142</td>
+      <td>-0.086241</td>
+      <td>-0.040033</td>
+      <td>-0.030177</td>
+      <td>-0.017871</td>
+      <td>-0.034501</td>
+      <td>-0.026490</td>
+      <td>-0.076152</td>
+      <td>-0.103111</td>
+      <td>0.122481</td>
+      <td>-0.006456</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.375733</td>
+      <td>-0.005388</td>
+      <td>-0.104104</td>
+      <td>-0.009910</td>
+      <td>-0.242595</td>
+      <td>-0.052442</td>
+      <td>-0.008140</td>
+      <td>0.036093</td>
+      <td>0.044614</td>
+      <td>-0.020611</td>
+      <td>0.144782</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.467751</td>
+      <td>-0.005154</td>
+      <td>-0.085730</td>
+      <td>-0.023812</td>
+      <td>-0.082489</td>
+      <td>-0.073847</td>
+      <td>-0.099955</td>
+      <td>0.017419</td>
+      <td>0.118853</td>
+      <td>0.026453</td>
+      <td>0.055897</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
 
 Now, we use the model we trained above on the training data to predict the remaining useful life of the test data.
 
@@ -588,6 +1299,44 @@ rul_pred.head()
 ```
 
 
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr className="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.276372</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.661821</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.047469</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.276243</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4.430838</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
 ```python
 print('Training Cross Validation Score: ', cross_val_score(reg, rul_pred, y_test, cv=5))
 print('Validation Cross Validation Score: ', cross_val_score(reg, rul_pred, y_test, cv=5))
@@ -615,3 +1364,8 @@ _ = plt.ylabel("True Log of Remaining Useful Life")
 
 # Conclusion
 In this tutorial, we wanted to be able to predict a machine's remaining useful life given sensor measurements and operational settings over time in cycles. To do this, we read in the data, processed it, split it into training, validation, and test sets, applied dimensionality reduction, and finally ran three different models on the training and validation data. Then, we looked to the model accuracy metrics to decide on a model to move forward with for predictions. When looking at r-squared, linear regression was the best model with an r-squared of 71% compared to 68% for the other two models. When applying our model to the test data, we get an r-squared of 74% which is slightly better performance than it was on the training set. Now you can go forward knowing how many cycle's are left in this simulated engine's life!
+
+
+```python
+
+```

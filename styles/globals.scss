@@ -1580,6 +1580,17 @@ button:focus {
     font-size: 1.75rem;
     font-weight: 400;
   }
+  .dataframe tbody tr th:only-of-type {
+    vertical-align: middle;
+}
+
+.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
 }
 
 // Footer
