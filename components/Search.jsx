@@ -66,7 +66,7 @@ const Search = ({
     <div className="search__feature">
       <div className="welcome__text">
         <div className="big__word">Explore</div>
-        <div className="description">popular prognostics and health mangement data sets. <a href="/getting-started">Click here</a> to learn more about Machine Data Hub. </div>
+        <div className="description">popular prognostics and health management data sets. <a href="/getting-started">Click here</a> to learn more about Machine Data Hub. </div>
       </div>
       <div className="input__wrapper">
         
