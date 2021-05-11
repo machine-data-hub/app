@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import List from "../components/List";
 import Search from "../components/Search";
-
 import datasets from "../data/newdatasets.json";
 import { useSector } from "../context/SectorContext";
 import { useType } from "../context/TypeContext";
@@ -56,7 +55,6 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
     // filter when query is not empty
     if (query !== "") {
       const map = datasets.filter((v, i) => {
-        var matchedSearch = false;
         if (v.Owner.toLocaleLowerCase().includes(query.toLowerCase().trim())) {
           return true;
           // return v.Owner.toLocaleLowerCase().includes(query.toLowerCase().trim());
@@ -71,12 +69,15 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
 
         // ML tags
         // tags = boolean array
-        v["ML Type"].map((entry) => {
-          if (entry.toLocaleLowerCase().includes(query.toLowerCase().trim())) {
+        for (var i = 0; i < v["ML Type"].length; i++) {
+          if( v["ML Type"][i].toLocaleLowerCase().includes(query.toLocaleLowerCase().trim())) {
             return true;
-            //return entry.toLocaleLowerCase().includes(query.toLowerCase().trim());
           }
-        });
+        }
+        // v["ML Type"].map((entry) => {
+        //   if (entry.toLocaleLowerCase().includes(query.toLowerCase().trim())) {
+        //     return true;
+        //   }});
 
         // can't I use a switch statement? I couldn't figure it out :(
         // time series
@@ -100,9 +101,7 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
         ) {
           return true;
         }
-
-
-        return false; //v.Name.toLocaleLowerCase().includes(query.toLowerCase().trim()) || tags.includes(true); // filter datasets by string using includes()
+        return false; 
       });
       setList(map);
     } else {
