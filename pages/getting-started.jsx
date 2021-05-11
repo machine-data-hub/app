@@ -18,7 +18,7 @@ const GettingStarted = () => {
             art Machine Learning and Artificial Intelligence techniques to
             engineering domains more accessible to any interested researcher.
           </p>
-          <a href="https://github.com/PHM-Data-Hub" className="gitURL">
+          <a href="https://github.com/machine-data-hub" className="gitURL">
             You can view our code here!{" "}
             <span className="icon__download">
               <AiFillGithub />
