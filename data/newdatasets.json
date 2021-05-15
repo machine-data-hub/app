@@ -20,7 +20,7 @@
     "Downloads": 191037,
     "Likes": 0,
     "File Size": "3.7 MB",
-    "img_link": "https://www.miga.org/sites/default/files/2018-06/power-plant-bright-blue-sky.jpg",
+    "img_link": "/images/power-plant-bright-blue-sky.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -53,7 +53,7 @@
     "Downloads": 87458,
     "Likes": 0,
     "File Size": "299 KB",
-    "img_link": "https://images.unsplash.com/photo-1607049582789-3b2dd51ac95e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80",
+    "img_link": "/images/steel.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -92,7 +92,7 @@
     "Downloads": 140905,
     "Likes": 0,
     "File Size": "11.4 MB",
-    "img_link": "https://images.unsplash.com/photo-1611581372056-30cf28a7bd2e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
+    "img_link": "/images/power.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -128,7 +128,7 @@
     "Downloads": 31861,
     "Likes": 0,
     "File Size": "56.5 MB",
-    "img_link": "https://images.unsplash.com/photo-1612965110642-d2ed35011901?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1267&q=80",
+    "img_link": "/images/battery.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -195,7 +195,7 @@
     "Downloads": 0,
     "Likes": 0,
     "File Size": "191.1 MB",
-    "img_link": "https://images.unsplash.com/photo-1612965110642-d2ed35011901?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1267&q=80",
+    "img_link": "/images/battery.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -229,7 +229,7 @@
     "Downloads": 9549,
     "Likes": 0,
     "File Size": "--.- MB",
-    "img_link": "https://images.unsplash.com/photo-1501820434261-5bb046afcf6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
+    "img_link": "/images/simulation.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -273,7 +273,7 @@
     "Downloads": 16112,
     "Likes": 0,
     "File Size": "--.- MB",
-    "img_link": "https://images.unsplash.com/photo-1501820434261-5bb046afcf6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
+    "img_link": "/images/simulation.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -303,7 +303,7 @@
     "Downloads": 53221,
     "Likes": 0,
     "File Size": "--.- MB",
-    "img_link": "https://images.unsplash.com/photo-1501820434261-5bb046afcf6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
+    "img_link": "/images/simulation.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -333,7 +333,7 @@
     "Downloads": 65700,
     "Likes": 0,
     "File Size": "--.- MB",
-    "img_link": "https://images.unsplash.com/photo-1572997457609-cda718c2ce05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1435&q=80",
+    "img_link": "/images/automotive.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -370,7 +370,7 @@
     "Downloads": 0,
     "Likes": 0,
     "File Size": "--.- MB",
-    "img_link": "https://images.unsplash.com/photo-1572997457609-cda718c2ce05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1435&q=80",
+    "img_link": "/images/automotive.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -400,7 +400,7 @@
     "Downloads": 9279,
     "Likes": 0,
     "File Size": "--.- MB",
-    "img_link": "https://images.unsplash.com/photo-1501820434261-5bb046afcf6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
+    "img_link": "/images/simulation.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -430,7 +430,7 @@
     "Downloads": 0,
     "Likes": 0,
     "File Size": "--.- MB",
-    "img_link": "https://images.unsplash.com/photo-1585166059782-f28143545183?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+    "img_link": "/images/mechanical.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -467,7 +467,7 @@
     "Downloads": 0,
     "Likes": 0,
     "File Size": "--.- MB",
-    "img_link": "https://images.unsplash.com/photo-1612965110642-d2ed35011901?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1267&q=80",
+    "img_link": "/images/battery.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -536,7 +536,7 @@
     "Downloads": 0,
     "Likes": 0,
     "File Size": "--.- MB",
-    "img_link": "https://images.unsplash.com/photo-1611581372056-30cf28a7bd2e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
+    "img_link": "/images/power.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -587,7 +587,7 @@
     "Downloads": 0,
     "Likes": 0,
     "File Size": "--.- MB",
-    "img_link": "https://images.unsplash.com/photo-1612965110642-d2ed35011901?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1267&q=80",
+    "img_link": "/images/battery.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -659,7 +659,7 @@
     "Downloads": 0,
     "Likes": 0,
     "File Size": "--.- MB",
-    "img_link": "https://images.unsplash.com/photo-1501820434261-5bb046afcf6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
+    "img_link": "/images/simulation.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -709,7 +709,7 @@
   {
     "id": "19",
     "Rank": 19,
-    "Name": "UK-DALE dataset",
+    "Name": "UK-DALE",
     "Owner": "Jack-Kelly",
     "URL": [
       "https://data.ukedc.rl.ac.uk/browse/edc/efficiency/residential/EnergyConsumption/Domestic/UK-DALE-2017/UK-DALE-2017-16kHz"
@@ -741,7 +741,7 @@
   {
     "id": "20",
     "Rank": 20,
-    "Name": "Electricity Consumption and Occupancy Data Set",
+    "Name": "Electricity Consumption and Occupancy",
     "Owner": "ETH Zurich",
     "URL": [
       "http://data-archive.ethz.ch/delivery/DeliveryManagerServlet?dps_pid=IE594964"
@@ -760,6 +760,7 @@
     "Likes": 0,
     "File Size": "",
     "File Type": "csv, mat",
+    "img_link": "/images/power.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -773,7 +774,7 @@
   {
     "id": "21",
     "Rank": 21,
-    "Name": "GreenD: Energy Metering Data Set",
+    "Name": "GreenD: Energy Metering",
     "Owner": "Unknown",
     "URL": ["https://sourceforge.net/projects/greend/files/latest/download"],
     "Short Summary": "N/A",
@@ -790,7 +791,7 @@
     "Likes": 0,
     "File Size": "1.8 GB",
     "File Type": "csv",
-
+    "img_link": "/images/power.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -821,6 +822,7 @@
     "Likes": 0,
     "File Size": "567.1 KB",
     "File Type": "txt",
+    "img_link": "/images/mechanical.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -851,6 +853,7 @@
     "Likes": 0,
     "File Size": "12 MB",
     "File Type": "csv",
+    "img_link": "/images/mechanical.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -864,7 +867,7 @@
   {
     "id": "24",
     "Rank": 24,
-    "Name": "Gas Sensor Array Under Dynamic Gas Mixtures Data S",
+    "Name": "Gas Sensor Array Under Dynamic Gas Mixtures",
     "Owner": "UC Irvine",
     "URL": ["https://archive.ics.uci.edu/ml/machine-learning-databases/00322/data.zip"],
     "Short Summary": "N/A",
@@ -894,7 +897,7 @@
   {
     "id": "25",
     "Rank": 25,
-    "Name": "Gas Sensor Arrays in Open Sampling Settings Data Set",
+    "Name": "Gas Sensor Arrays in Open Sampling Settings",
     "Owner": "UCSD",
     "URL": ["https://archive.ics.uci.edu/ml/machine-learning-databases/00251/WTD_upload.zip"],
     "Short Summary": "N/A",
@@ -954,7 +957,7 @@
   {
     "id": "27",
     "Rank": 27,
-    "Name": "Superconductivity Data Set",
+    "Name": "Superconductivity",
     "Owner": "University of Pennsylvania",
     "URL": ["http://archive.ics.uci.edu/ml/machine-learning-databases/00464/superconduct.zip"],
     "Short Summary": "N/A",
@@ -984,7 +987,7 @@
   {
     "id": "28",
     "Rank": 28,
-    "Name": "Semiconductor Manufacturing Process Data Set",
+    "Name": "Semiconductor Manufacturing Process",
     "Owner": "UC Irvine",
     "URL": "http://archive.ics.uci.edu/ml/machine-learning-databases/secom/",
     "Short Summary": "N/A",
@@ -1014,7 +1017,7 @@
   {
     "id": "29",
     "Rank": 29,
-    "Name": "Automobile Data Set",
+    "Name": "Automobile",
     "Owner": "Jeffrey C. Schlimmer",
     "URL": ["http://archive.ics.uci.edu/ml/machine-learning-databases/autos/"],
     "Short Summary": "N/A",
@@ -1031,6 +1034,7 @@
     "Likes": 0,
     "File Size": "26 KB",
     "File Type": "raw text",
+    "img_link": "/images/automotive.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -1044,7 +1048,7 @@
   {
     "id": "30",
     "Rank": 30,
-    "Name": "Car Evaluation Data Set",
+    "Name": "Car Evaluation",
     "Owner": "Marko Bohanec",
     "URL": ["http://archive.ics.uci.edu/ml/machine-learning-databases/car/"],
     "Short Summary": "N/A",
@@ -1074,7 +1078,7 @@
   {
     "id": "33",
     "Rank": 33,
-    "Name": "Seoul Bike Sharing Demand Data Set",
+    "Name": "Seoul Bike Sharing Demand",
     "Owner": "SOUTH KOREA PUBLIC HOLIDAYS",
     "URL": ["http://archive.ics.uci.edu/ml/machine-learning-databases/00560/SeoulBikeData.csv"],
     "Short Summary": "N/A",
@@ -1104,7 +1108,7 @@
   {
     "id": "35",
     "Rank": 35,
-    "Name": "Chemical Composition of Ceramic Samples Data Set",
+    "Name": "Chemical Composition of Ceramic Samples",
     "Owner": "Ziyang He, Maolin Zhang, Haozhe Zhang",
     "URL": ["http://archive.ics.uci.edu/ml/machine-learning-databases/00583/Chemical%20Composion%20of%20Ceramic.csv"],
     "Short Summary": "N/A",
@@ -1134,7 +1138,7 @@
   {
     "id": "42",
     "Rank": 42,
-    "Name": "Algerian Forest Fires Data Set",
+    "Name": "Algerian Forest Fires",
     "Owner": "Faroudja ABID",
     "URL": ["https://archive.ics.uci.edu/ml/machine-learning-databases/00547/Algerian_forest_fires_dataset_UPDATE.csv"],
     "Short Summary": "N/A",
@@ -1163,7 +1167,7 @@
   {
     "id": "43",
     "Rank": 43,
-    "Name": "Internet Firewall Data Set",
+    "Name": "Internet Firewall",
     "Owner": "Fatih Ertam, Firat University, Turkey",
     "URL": [ "https://archive.ics.uci.edu/ml/machine-learning-databases/00542/log2.csv"],
     "Short Summary": "N/A",
@@ -1193,7 +1197,7 @@
   {
     "id": "44",
     "Rank": 44,
-    "Name": "Pedestrian in Traffic Data Set",
+    "Name": "Pedestrian in Traffic",
     "Owner": "Claudia Blaiotta, Bosch Center for Artificial Intelligence",
     "URL": ["https://archive.ics.uci.edu/ml/machine-learning-databases/00536/pedestrian_traffic_data.zip"],
     "Short Summary": "N/A",
@@ -1223,7 +1227,7 @@
   {
     "id": "45",
     "Rank": 45,
-    "Name": "Deepfakes: Medical Image Tamper Detection Data Set",
+    "Name": "Deepfakes: Medical Image Tamper Detection",
     "Owner": "Yisroel Mirsky, Ben-Gurion University of the Negev",
     "URL": ["https://archive.ics.uci.edu/ml/machine-learning-databases/00520/data.zip"],
     "Short Summary": "N/A",
@@ -1253,7 +1257,7 @@
   {
     "id": "48",
     "Rank": 48,
-    "Name": "WISDM Smartphone and Smartwatch Activity and Biometrics Dataset Data Set",
+    "Name": "WISDM Smartphone and Smartwatch Activity and Biometrics Dataset",
     "Owner": "Dr. Gary Weiss, Computer and Information Sciences Department, Fordham University",
     "URL": ["https://archive.ics.uci.edu/ml/machine-learning-databases/00507/wisdm-dataset.zip"],
     "Short Summary": "N/A",
@@ -1283,7 +1287,7 @@
   {
     "id": "50",
     "Rank": 50,
-    "Name": "Beijing Multi-Site Air-Quality Data Data Set",
+    "Name": "Beijing Multi-Site Air-Quality Data",
     "Owner": "Song Xi Chen, Guanghua School of Management, Center for Statistical Science, Peking University",
     "URL": ["https://archive.ics.uci.edu/ml/machine-learning-databases/00501/PRSA2017_Data_20130301-20170228.zip"],
     "Short Summary": "N/A",
@@ -1317,7 +1321,7 @@
     "Owner": "UNIVERSITY OF MICHIGAN SMART LAB",
     "URL": ["https://github.com/wesleybeckner/ds_for_engineers/tree/main/data/mill_tool_wear"],
     "Short Summary": "N/A",
-    "Summary": "A series of machining experiments were run on 2\" x 2\" x 1.5\" wax blocks in a CNC milling machine in the System-level Manufacturing and Automation Research Testbed (SMART) at the University of Michigan. Machining data was collected from a CNC machine for variations of tool condition, feed rate, and clamping pressure. Each experiment produced a finished wax part with an \"S\" shape - S for smart manufacturing - carved into the top face, as shown in test_artifact.jpg",
+    "Summary": "A series of machining experiments were run on 2\" x 2\" x 1.5\" wax blocks in a CNC milling machine in the System-level Manufacturing and Automation Research Testbed (SMART) at the University of Michigan. Machining data was collected from a CNC machine for variations of tool condition, feed rate, and clamping pressure. Each experiment produced a finished wax part with an \"S\" shape - S for smart manufacturing - carved into the top face, as shown in test_artifact.gif",
     "Date Donated": "April 29, 2021",
     "Sector": "Mechanical",
     "ML Type": ["Prediction"],
@@ -1330,6 +1334,7 @@
     "Likes": 0,
     "File Size": "11.6 MB",
     "File Type": "csv",
+    "img_link": "/images/mechanical.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",

@@ -55,7 +55,7 @@ const GettingStarted = () => {
           </p>
           <div className="started__image-box">
             <img
-              src="https://github.com/machine-data-hub/Examples/blob/main/images/MainPage.png?raw=true"
+              src="/images/MainPage.gif"
               class="started__image"
               title="Main Page"
               alt="Main Page"
@@ -67,7 +67,7 @@ const GettingStarted = () => {
           </p>
           <div className="started__image-box">
             <img
-              src="https://github.com/machine-data-hub/Examples/blob/main/images/Sorter.png?raw=true"
+              src="/images/Sorter.gif"
               class="started__image"
               title="Sorter Page"
               alt="Sorter Page"
@@ -79,7 +79,7 @@ const GettingStarted = () => {
           the main card. These cards are suggested using similar tags.
           <div className="started__image-box">
             <img
-              src="https://github.com/machine-data-hub/Examples/blob/main/images/FocusedDataset.png?raw=true"
+              src="/images/FocusedDataset.gif"
               class="started__image"
               title="Sorter Page"
               alt="Sorter Page"

@@ -3,6 +3,7 @@ title: Remaining Useful Life Tutorial
 date: May 3, 2021
 author: Cecilia Barnes
 img: https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1532&q=80
+summary: Remaining Useful Life prediction can be highly useful in maintenence of machines. Today, we will be using data from NASA's...
 ---
 ---
 # Remaining Useful Life Prediction
@@ -776,7 +777,7 @@ _ = plt.xlabel("Predicted Remaining Useful Life")
 _ = plt.ylabel("True Remaining Useful Life")
 ```
 
-![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProjMarkdown/output_37_0.png?raw=true)
+<img src="/images/MLProjMarkdown/output_37_0.gif"/>
 
 
 This plot shows a clear curve in the data which suggests we may be able to transform the data to get better performance. Let's try taking the log of the RUL to fix this.
@@ -813,8 +814,7 @@ _ = plt.ylabel("True Log of Remaining Useful Life")
 ```
 
 
-![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProjMarkdown/output_41_0.png?raw=true)
-
+<img src="/images/MLProjMarkdown/output_41_0.gif"/>
 
 As you can tell, after the transformation of the data, we got a much more reasonable plot along the diagonal.
 
@@ -859,7 +859,7 @@ _ = plt.ylabel("True Remaining Useful Life")
 ```
 
 
-![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProjMarkdown/output_48_0.png?raw=true)
+<img src="/images/MLProjMarkdown/output_48_0.gif"/>
 
 
 While this plot is symmetric, after 50 or so cycles it it's performance drastically decreases. Let's try using the transformed data like we did with linear regression.
@@ -884,8 +884,7 @@ _ = plt.ylabel("True Log of Remaining Useful Life")
     Validation MSE:  0.3045420479245905
 
 
-
-![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProjMarkdown/output_50_1.png?raw=true)
+<img src="/images/MLProjMarkdown/output_50_1.gif"/>
 
 
 While the model does better with the transformed data, Linear Regression still has better performance.
@@ -932,8 +931,7 @@ _ = plt.xlabel("Predicted Remaining Useful Life")
 _ = plt.ylabel("True Remaining Useful Life")
 ```
 
-
-![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProjMarkdown/output_58_0.png?raw=true)
+<img src="/images/MLProjMarkdown/output_58_0.gif"/>
 
 
 While this plot is symmetric, after 50 or so cycles it it's performance drastically decreases. Let's try using the transformed data like we did with linear regression.
@@ -957,8 +955,7 @@ _ = plt.ylabel("True Log of Remaining Useful Life")
     Validation R^2:  0.6802101443785232
     Validation MSE:  0.3049957942244644
 
-
-![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProjMarkdown/output_60_1.png?raw=true)
+<img src="/images/MLProjMarkdown/output_60_1.gif"/>
 
 
 While the model does better with the transformed data, Linear Regression still has the best performance.
@@ -1273,8 +1270,7 @@ Since our model actually makes a prediction for each row of data, we can plot ou
 _ = plt.plot(y_hat_test[0][0:400])
 ```
 
-
-![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProjMarkdown/output_72_0.png?raw=true)
+<img src="/images/MLProjMarkdown/output_72_0.gif"/>
 
 
 Ultimately, we want a prediction output of one value for each unit that tell us the remaining useful life for each unit in the data. Right now, we have one prediction per row of data, and each unit has many rows. To get just one prediction per unit, we will loop through `y_hat_test` dataframe of the predictions, and grab the last prediction for each unit since that will tell us the final number of cycles for the remaining useful life.. 
@@ -1358,8 +1354,7 @@ _ = plt.xlabel("Predicted Log of Remaining Useful Life")
 _ = plt.ylabel("True Log of Remaining Useful Life")
 ```
 
-
-![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLProjMarkdown/output_77_0.png?raw=true)
+<img src="/images/MLProjMarkdown/output_77_0.gif"/>
 
 
 # Conclusion
