@@ -1664,7 +1664,7 @@ button:focus {
   margin: auto;
   padding: 1rem 2rem;
 
-  .footer__left {
+  .container {
     margin: auto;
     display: inline-grid;
     align-items: center;
@@ -1677,14 +1677,6 @@ button:focus {
     .netlify {
       font-size: 2rem;
     }
-  }
-  .footer__right {
-    margin: auto;
-    display: inline-grid;
-    align-items: center;
-    cursor: pointer;
-    border-radius: 4px;
-    text-align: center;
 
     .icon {
       margin-left: 4px;
@@ -1694,14 +1686,9 @@ button:focus {
         color: var(--grayRed);
       }
     }
-
-    .footer__text{
-      font-size: 1.0rem;
-      height: auto;
-      width: auto;
-      &:hover {
-        color: var(--grayRed);
-      }
+    &:hover {
+      box-shadow: 0px 0px 3px 3px var(--primary);
+      color: var(--accents-1);
     }
   }
 }

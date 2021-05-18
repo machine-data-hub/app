@@ -696,6 +696,7 @@
     "Downloads": 0,
     "Likes": 0,
     "File Size": "--.- MB",
+    "img_link": "/images/circuit.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -728,6 +729,7 @@
     "Likes": 0,
     "File Size": "3.5 GB",
     "File Type": "csv",
+    "img_link": "/images/power.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -884,6 +886,7 @@
     "Likes": 0,
     "File Size": "352 MB",
     "File Type": "txt",
+    "img_link": "/images/simulation.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -914,6 +917,7 @@
     "Likes": 0,
     "File Size": "7.8 GB",
     "File Type": "",
+    "img_link": "/images/simulation.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -944,6 +948,7 @@
     "Likes": 0,
     "File Size": "9.6 MB",
     "File Type": "dat",
+    "img_link": "/images/simulation.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -974,6 +979,7 @@
     "Likes": 0,
     "File Size": "8.3 MB",
     "File Type": "csv",
+    "img_link": "/images/circuit.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -1004,6 +1010,7 @@
     "Likes": 0,
     "File Size": "5.2 MB",
     "File Type": "raw text",
+    "img_link": "/images/circuit.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -1065,6 +1072,7 @@
     "Likes": 0,
     "File Size": "50.7 KB",
     "File Type": "raw text",
+    "img_link": "/images/automotive.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -1095,6 +1103,7 @@
     "Likes": 0,
     "File Size": "591 KB",
     "File Type": "csv",
+    "img_link": "/images/automotive.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -1125,6 +1134,7 @@
     "Likes": 0,
     "File Size": "9 KB",
     "File Type": "csv",
+    "img_link": "/images/circuit.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -1155,6 +1165,7 @@
     "Likes": 0,
     "File Size": "15 KB",
     "File Type": "csv",
+    "img_link": "/images/simulation.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -1184,6 +1195,7 @@
     "Likes": 0,
     "File Size": "2.7 MB",
     "File Type": "csv",
+    "img_link": "/images/circuit.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -1214,6 +1226,7 @@
     "Likes": 0,
     "File Size": "708 KB",
     "File Type": "csv",
+    "img_link": "/images/automotive.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -1244,6 +1257,7 @@
     "Likes": 0,
     "File Size": "6 GB",
     "File Type": "csv",
+    "img_link": "/images/circuit.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -1274,6 +1288,7 @@
     "Likes": 0,
     "File Size": "295 MB",
     "File Type": "txt",
+    "img_link": "/images/circuit.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -1304,6 +1319,7 @@
     "Likes": 0,
     "File Size": "7.59 MB",
     "File Type": "csv",
+    "img_link": "/images/simulation.gif",
     "Datasets": [
       {
         "Name": "Dataset 1",
@@ -1342,36 +1358,6 @@
         "Likes": 0,
         "Downloads": 0,
         "File Size": "11.6 MB"
-      }
-    ]
-  },
-  {
-    "id": 52,
-    "Rank": 52,
-    "Name": "Truffle Margin",
-    "Owner": "",
-    "URL": ["https://github.com/wesleybeckner/ds_for_engineers/tree/main/data/truffle_margin"],
-    "Short Summary": "N/A",
-    "Summary": "",
-    "Date Donated": "April 29, 2021",
-    "Sector": "Life",
-    "ML Type": ["Prediction", "Analysis"],
-    "Labeled": "",
-    "Time Series": "Yes",
-    "Simulation (Yes/No)": "",
-    "Attributes": 9,
-    "Instances": 2506,
-    "Downloads": "",
-    "Likes": 0,
-    "File Size": "477 KB",
-    "File Type": "csv, xlsx",
-    "Datasets": [
-      {
-        "Name": "Dataset 1",
-        "URL": "https://github.com/wesleybeckner/ds_for_engineers/tree/main/data/truffle_margin",
-        "Likes": 0,
-        "Downloads": 0,
-        "File Size": "477 KB"
       }
     ]
   }
