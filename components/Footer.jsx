@@ -18,15 +18,15 @@ const Footer = () => {
       </div>
       <div className="container">
         <Link href="/suggest-dataset">
-          <span className="footer__text">
-            <FaFileUpload size={28}/>
+          <span className="icon">
+            <FaFileUpload size={32}/>
           </span>
         </Link>
       </div>
       <div className="container">
         <Link href="https://github.com/machine-data-hub">
           <span className="icon">
-            <AiFillGithub size={28}/>
+            <AiFillGithub size={32}/>
           </span>
         </Link>
         </div>
