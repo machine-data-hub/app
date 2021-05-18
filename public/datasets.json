@@ -20,10 +20,10 @@
     "Downloads": 191037,
     "Likes": 0,
     "File Size": "3.7 MB",
-    "img_link": "https://www.miga.org/sites/default/files/2018-06/power-plant-bright-blue-sky.jpg",
+    "img_link": "/images/power-plant-bright-blue-sky.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://archive.ics.uci.edu/ml/machine-learning-databases/00294/CCPP.zip",
         "Likes": 0,
         "Downloads": 191037,
@@ -52,18 +52,18 @@
     "Instances": 1941,
     "Downloads": 87458,
     "Likes": 0,
-    "File Size": "299 KB",
-    "img_link": "https://images.unsplash.com/photo-1607049582789-3b2dd51ac95e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80",
+    "File Size": "599 KB",
+    "img_link": "/images/steel.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "http://archive.ics.uci.edu/ml/machine-learning-databases/00198/Faults.NNA",
         "Likes": 0,
         "Downloads": 87458,
         "File Size": "299 KB"
       },
       {
-        "Name": "Dataset 2",
+        "Name": "File 2",
         "URL": "http://archive.ics.uci.edu/ml/machine-learning-databases/00198/Faults27x7_var",
         "Likes": 0,
         "Downloads": 87459,
@@ -92,10 +92,10 @@
     "Downloads": 140905,
     "Likes": 0,
     "File Size": "11.4 MB",
-    "img_link": "https://images.unsplash.com/photo-1611581372056-30cf28a7bd2e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
+    "img_link": "/images/power.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://archive.ics.uci.edu/ml/machine-learning-databases/00374/energydata_complete.csv",
         "Likes": 0,
         "Downloads": 140905,
@@ -127,46 +127,46 @@
     "Instances": "N/A",
     "Downloads": 31861,
     "Likes": 0,
-    "File Size": "56.5 MB",
-    "img_link": "https://images.unsplash.com/photo-1612965110642-d2ed35011901?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1267&q=80",
+    "File Size": "209.6 MB",
+    "img_link": "/images/battery.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://ti.arc.nasa.gov/c/5/",
         "Likes": "0",
         "Downloads": 31861,
         "File Size": "56.5 MB"
       },
       {
-        "Name": "Dataset 2",
+        "Name": "File 2",
         "URL": "https://ti.arc.nasa.gov/c/9/",
         "Likes": "0",
         "Downloads": 15882,
         "File Size": "11.1 MB"
       },
       {
-        "Name": "Dataset 3",
+        "Name": "File 3",
         "URL": "https://ti.arc.nasa.gov/c/14/",
         "Likes": "0",
         "Downloads": 12899,
         "File Size": "93.7 MB"
       },
       {
-        "Name": "Dataset 4",
+        "Name": "File 4",
         "URL": "https://ti.arc.nasa.gov/c/15/",
         "Likes": "0",
         "Downloads": 9803,
         "File Size": "14.7 MB"
       },
       {
-        "Name": "Dataset 5",
+        "Name": "File 5",
         "URL": "https://ti.arc.nasa.gov/c/16/",
         "Likes": "0",
         "Downloads": 10494,
         "File Size": "8.7 MB"
       },
       {
-        "Name": "Dataset 6",
+        "Name": "File 6",
         "URL": "https://ti.arc.nasa.gov/c/17/",
         "Likes": "0",
         "Downloads": 11068,
@@ -195,10 +195,10 @@
     "Downloads": 0,
     "Likes": 0,
     "File Size": "191.1 MB",
-    "img_link": "https://images.unsplash.com/photo-1612965110642-d2ed35011901?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1267&q=80",
+    "img_link": "/images/battery.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://md-datasets-cache-zipfiles-prod.s3.eu-west-1.amazonaws.com/wykht8y7tg-1.zip",
         "Likes": 0,
         "Downloads": 0,
@@ -229,24 +229,24 @@
     "Downloads": 9549,
     "Likes": 0,
     "File Size": "--.- MB",
-    "img_link": "https://images.unsplash.com/photo-1501820434261-5bb046afcf6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
+    "img_link": "/images/simulation.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://ti.arc.nasa.gov/c/21/",
         "Likes": 0,
         "Downloads": 9549,
         "File Size": "--.- MB"
       },
       {
-        "Name": "Dataset 2",
+        "Name": "File 2",
         "URL": "https://ti.arc.nasa.gov/c/20/",
         "Likes": 0,
         "Downloads": 4832,
         "File Size": "--.- MB"
       },
       {
-        "Name": "Dataset 3",
+        "Name": "File 3",
         "URL": "https://ti.arc.nasa.gov/c/19/",
         "Likes": 0,
         "Downloads": 4852,
@@ -273,10 +273,10 @@
     "Downloads": 16112,
     "Likes": 0,
     "File Size": "--.- MB",
-    "img_link": "https://images.unsplash.com/photo-1501820434261-5bb046afcf6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
+    "img_link": "/images/simulation.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://ti.arc.nasa.gov/c/4/",
         "Likes": 0,
         "Downloads": 0,
@@ -303,10 +303,10 @@
     "Downloads": 53221,
     "Likes": 0,
     "File Size": "--.- MB",
-    "img_link": "https://images.unsplash.com/photo-1501820434261-5bb046afcf6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
+    "img_link": "/images/simulation.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://ti.arc.nasa.gov/c/3/",
         "Likes": 0,
         "Downloads": 0,
@@ -333,17 +333,17 @@
     "Downloads": 65700,
     "Likes": 0,
     "File Size": "--.- MB",
-    "img_link": "https://images.unsplash.com/photo-1572997457609-cda718c2ce05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1435&q=80",
+    "img_link": "/images/automotive.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://ti.arc.nasa.gov/c/6/",
         "Likes": 0,
         "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
-        "Name": "Dataset 2",
+        "Name": "File 2",
         "URL": "https://ti.arc.nasa.gov/c/47/",
         "Likes": 0,
         "Downloads": 0,
@@ -370,10 +370,10 @@
     "Downloads": 0,
     "Likes": 0,
     "File Size": "--.- MB",
-    "img_link": "https://images.unsplash.com/photo-1572997457609-cda718c2ce05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1435&q=80",
+    "img_link": "/images/automotive.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://ti.arc.nasa.gov/c/7/",
         "Likes": 0,
         "Downloads": 0,
@@ -400,10 +400,10 @@
     "Downloads": 9279,
     "Likes": 0,
     "File Size": "--.- MB",
-    "img_link": "https://images.unsplash.com/photo-1501820434261-5bb046afcf6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
+    "img_link": "/images/simulation.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://ti.arc.nasa.gov/c/8/",
         "Likes": 0,
         "Downloads": 0,
@@ -430,10 +430,10 @@
     "Downloads": 0,
     "Likes": 0,
     "File Size": "--.- MB",
-    "img_link": "https://images.unsplash.com/photo-1585166059782-f28143545183?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+    "img_link": "/images/mechanical.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://ti.arc.nasa.gov/c/18/",
         "Likes": 0,
         "Downloads": 0,
@@ -467,45 +467,45 @@
     "Downloads": 0,
     "Likes": 0,
     "File Size": "--.- MB",
-    "img_link": "https://images.unsplash.com/photo-1612965110642-d2ed35011901?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1267&q=80",
+    "img_link": "/images/battery.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://ti.arc.nasa.gov/c/25/",
         "Likes": "0",
         "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
-        "Name": "Dataset 2",
+        "Name": "File 2",
         "URL": "https://ti.arc.nasa.gov/c/26/",
         "Likes": "0",
         "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
-        "Name": "Dataset 3",
+        "Name": "File 3",
         "URL": "https://ti.arc.nasa.gov/c/27/",
         "Likes": "0",
         "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
-        "Name": "Dataset 4",
+        "Name": "File 4",
         "URL": "https://ti.arc.nasa.gov/c/28/",
         "Likes": "0",
         "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
-        "Name": "Dataset 5",
+        "Name": "File 5",
         "URL": "https://ti.arc.nasa.gov/c/29/",
         "Likes": "0",
         "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
-        "Name": "Dataset 6",
+        "Name": "File 6",
         "URL": "https://ti.arc.nasa.gov/c/30/",
         "Likes": "0",
         "Downloads": 0,
@@ -536,24 +536,24 @@
     "Downloads": 0,
     "Likes": 0,
     "File Size": "--.- MB",
-    "img_link": "https://images.unsplash.com/photo-1611581372056-30cf28a7bd2e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
+    "img_link": "/images/power.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://ti.arc.nasa.gov/c/33/",
         "Likes": 0,
         "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
-        "Name": "Dataset 2",
+        "Name": "File 2",
         "URL": "https://ti.arc.nasa.gov/c/34/",
         "Likes": 0,
         "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
-        "Name": "Dataset 3",
+        "Name": "File 3",
         "URL": "https://ti.arc.nasa.gov/c/35/",
         "Likes": 0,
         "Downloads": 0,
@@ -587,52 +587,52 @@
     "Downloads": 0,
     "Likes": 0,
     "File Size": "--.- MB",
-    "img_link": "https://images.unsplash.com/photo-1612965110642-d2ed35011901?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1267&q=80",
+    "img_link": "/images/battery.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://ti.arc.nasa.gov/c/38/",
         "Likes": "0",
         "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
-        "Name": "Dataset 2",
+        "Name": "File 2",
         "URL": "https://ti.arc.nasa.gov/c/39/",
         "Likes": "0",
         "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
-        "Name": "Dataset 3",
+        "Name": "File 3",
         "URL": "https://ti.arc.nasa.gov/c/40/",
         "Likes": "0",
         "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
-        "Name": "Dataset 4",
+        "Name": "File 4",
         "URL": "https://ti.arc.nasa.gov/c/41/",
         "Likes": "0",
         "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
-        "Name": "Dataset 5",
+        "Name": "File 5",
         "URL": "https://ti.arc.nasa.gov/c/42/",
         "Likes": "0",
         "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
-        "Name": "Dataset 6",
+        "Name": "File 6",
         "URL": "https://ti.arc.nasa.gov/c/43/",
         "Likes": "0",
         "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
-        "Name": "Dataset 7",
+        "Name": "File 7",
         "URL": "https://ti.arc.nasa.gov/c/44/",
         "Likes": "0",
         "Downloads": 0,
@@ -659,17 +659,17 @@
     "Downloads": 0,
     "Likes": 0,
     "File Size": "--.- MB",
-    "img_link": "https://images.unsplash.com/photo-1501820434261-5bb046afcf6b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80",
+    "img_link": "/images/simulation.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://ti.arc.nasa.gov/c/45/",
         "Likes": 0,
         "Downloads": 0,
         "File Size": "--.- MB"
       },
       {
-        "Name": "Dataset 2",
+        "Name": "File 2",
         "URL": "https://ti.arc.nasa.gov/c/46/",
         "Likes": 0,
         "Downloads": 0,
@@ -696,9 +696,10 @@
     "Downloads": 0,
     "Likes": 0,
     "File Size": "--.- MB",
+    "img_link": "/images/circuit.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://ti.arc.nasa.gov/c/37/",
         "Likes": 0,
         "Downloads": 0,
@@ -709,12 +710,12 @@
   {
     "id": "19",
     "Rank": 19,
-    "Name": "UK-DALE dataset",
+    "Name": "UK-DALE",
     "Owner": "Jack-Kelly",
     "URL": [
       "https://data.ukedc.rl.ac.uk/browse/edc/efficiency/residential/EnergyConsumption/Domestic/UK-DALE-2017/UK-DALE-2017-16kHz"
     ],
-    "Short Summary": "N/A",
+    "Short Summary": " N/A ",
     "Summary": "This dataset records the power demand from five houses. In each house, both the whole-house mains power demand every six seconds as well as power demand from individual appliances every six seconds are recorded. In three of the five houses (houses 1, 2 and 5) the whole-house voltage and current at 16 kHz are recorded.",
     "Date Donated": "March 20, 2021",
     "Sector": "Semicon",
@@ -728,9 +729,10 @@
     "Likes": 0,
     "File Size": "3.5 GB",
     "File Type": "csv",
+    "img_link": "/images/power.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://data.ukedc.rl.ac.uk/browse/edc/efficiency/residential/EnergyConsumption/Domestic/UK-DALE-2017/UK-DALE-2017-16kHz",
         "Likes": 0,
         "Downloads": 0,
@@ -741,11 +743,12 @@
   {
     "id": "20",
     "Rank": 20,
-    "Name": "Electricity Consumption and Occupancy Data Set",
+    "Name": "Electricity Consumption and Occupancy",
     "Owner": "ETH Zurich",
     "URL": [
       "http://data-archive.ethz.ch/delivery/DeliveryManagerServlet?dps_pid=IE594964"
     ],
+    "Short Summary": "",
     "Summary": "The ECO (Electricity Consumption and Occupancy) data set is a comprehensive open-source (Creative Commons License CC BY 4.0) data set for non-intrusive load monitoring and occupancy detection research. It was collected in 6 Swiss households over a period of 8 months",
     "Date Donated": "March 20, 2021",
     "Sector": "Power",
@@ -759,9 +762,10 @@
     "Likes": 0,
     "File Size": "",
     "File Type": "csv, mat",
+    "img_link": "/images/power.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "http://data-archive.ethz.ch/delivery/DeliveryManagerServlet?dps_pid=IE594964",
         "Likes": 0,
         "Downloads": 0,
@@ -772,8 +776,8 @@
   {
     "id": "21",
     "Rank": 21,
-    "Name": "GreenD: Energy Metering Data Set",
-    "Owner": "",
+    "Name": "GreenD: Energy Metering",
+    "Owner": "Unknown",
     "URL": ["https://sourceforge.net/projects/greend/files/latest/download"],
     "Short Summary": "N/A",
     "Summary": "GREEND is an energy dataset containing power measurements collected from multiple households in Austria and Italy. It provides detailed energy profiles on a per dvice basis with a sampling rate of 1 Hz",
@@ -789,10 +793,10 @@
     "Likes": 0,
     "File Size": "1.8 GB",
     "File Type": "csv",
-
+    "img_link": "/images/power.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL":  "https://sourceforge.net/projects/greend/files/latest/download",
         "Likes": 0,
         "Downloads": 0,
@@ -820,9 +824,10 @@
     "Likes": 0,
     "File Size": "567.1 KB",
     "File Type": "txt",
+    "img_link": "/images/mechanical.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://archive.ics.uci.edu/ml/machine-learning-databases/00316/UCI%20CBM%20Dataset.zip",
         "Likes": 0,
         "Downloads": 0,
@@ -850,9 +855,10 @@
     "Likes": 0,
     "File Size": "12 MB",
     "File Type": "csv",
+    "img_link": "/images/mechanical.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://www.kaggle.com/shasun/tool-wear-detection-in-cnc-mill/download",
         "Likes": 0,
         "Downloads": 0,
@@ -863,7 +869,7 @@
   {
     "id": "24",
     "Rank": 24,
-    "Name": "Gas Sensor Array Under Dynamic Gas Mixtures Data S",
+    "Name": "Gas Sensor Array Under Dynamic Gas Mixtures",
     "Owner": "UC Irvine",
     "URL": ["https://archive.ics.uci.edu/ml/machine-learning-databases/00322/data.zip"],
     "Short Summary": "N/A",
@@ -880,9 +886,10 @@
     "Likes": 0,
     "File Size": "352 MB",
     "File Type": "txt",
+    "img_link": "/images/simulation.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://archive.ics.uci.edu/ml/machine-learning-databases/00322/data.zip",
         "Likes": 0,
         "Downloads": 4178504,
@@ -893,7 +900,7 @@
   {
     "id": "25",
     "Rank": 25,
-    "Name": "Gas Sensor Arrays in Open Sampling Settings Data Set",
+    "Name": "Gas Sensor Arrays in Open Sampling Settings",
     "Owner": "UCSD",
     "URL": ["https://archive.ics.uci.edu/ml/machine-learning-databases/00251/WTD_upload.zip"],
     "Short Summary": "N/A",
@@ -910,9 +917,10 @@
     "Likes": 0,
     "File Size": "7.8 GB",
     "File Type": "",
+    "img_link": "/images/simulation.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://archive.ics.uci.edu/ml/machine-learning-databases/00251/WTD_upload.zip",
         "Likes": 0,
         "Downloads": 49881,
@@ -940,9 +948,10 @@
     "Likes": 0,
     "File Size": "9.6 MB",
     "File Type": "dat",
+    "img_link": "/images/simulation.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://archive.ics.uci.edu/ml/machine-learning-databases/00270/driftdataset.zip",
         "Likes": 0,
         "Downloads": 76002,
@@ -953,7 +962,7 @@
   {
     "id": "27",
     "Rank": 27,
-    "Name": "Superconductivity Data Set",
+    "Name": "Superconductivity",
     "Owner": "University of Pennsylvania",
     "URL": ["http://archive.ics.uci.edu/ml/machine-learning-databases/00464/superconduct.zip"],
     "Short Summary": "N/A",
@@ -970,9 +979,10 @@
     "Likes": 0,
     "File Size": "8.3 MB",
     "File Type": "csv",
+    "img_link": "/images/circuit.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "http://archive.ics.uci.edu/ml/machine-learning-databases/00464/superconduct.zip",
         "Likes": 0,
         "Downloads": 52005,
@@ -983,7 +993,7 @@
   {
     "id": "28",
     "Rank": 28,
-    "Name": "Semiconductor Manufacturing Process Data Set",
+    "Name": "Semiconductor Manufacturing Process",
     "Owner": "UC Irvine",
     "URL": "http://archive.ics.uci.edu/ml/machine-learning-databases/secom/",
     "Short Summary": "N/A",
@@ -1000,9 +1010,10 @@
     "Likes": 0,
     "File Size": "5.2 MB",
     "File Type": "raw text",
+    "img_link": "/images/circuit.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "http://archive.ics.uci.edu/ml/machine-learning-databases/secom/",
         "Likes": 0,
         "Downloads": 134392,
@@ -1013,7 +1024,7 @@
   {
     "id": "29",
     "Rank": 29,
-    "Name": "Automobile Data Set",
+    "Name": "Automobile",
     "Owner": "Jeffrey C. Schlimmer",
     "URL": ["http://archive.ics.uci.edu/ml/machine-learning-databases/autos/"],
     "Short Summary": "N/A",
@@ -1030,9 +1041,10 @@
     "Likes": 0,
     "File Size": "26 KB",
     "File Type": "raw text",
+    "img_link": "/images/automotive.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "http://archive.ics.uci.edu/ml/machine-learning-databases/autos/",
         "Likes": 0,
         "Downloads": 602179,
@@ -1043,7 +1055,7 @@
   {
     "id": "30",
     "Rank": 30,
-    "Name": "Car Evaluation Data Set",
+    "Name": "Car Evaluation",
     "Owner": "Marko Bohanec",
     "URL": ["http://archive.ics.uci.edu/ml/machine-learning-databases/car/"],
     "Short Summary": "N/A",
@@ -1060,9 +1072,10 @@
     "Likes": 0,
     "File Size": "50.7 KB",
     "File Type": "raw text",
+    "img_link": "/images/automotive.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "http://archive.ics.uci.edu/ml/machine-learning-databases/car/",
         "Likes": 0,
         "Downloads": 1353016,
@@ -1073,7 +1086,7 @@
   {
     "id": "33",
     "Rank": 33,
-    "Name": "Seoul Bike Sharing Demand Data Set",
+    "Name": "Seoul Bike Sharing Demand",
     "Owner": "SOUTH KOREA PUBLIC HOLIDAYS",
     "URL": ["http://archive.ics.uci.edu/ml/machine-learning-databases/00560/SeoulBikeData.csv"],
     "Short Summary": "N/A",
@@ -1090,9 +1103,10 @@
     "Likes": 0,
     "File Size": "591 KB",
     "File Type": "csv",
+    "img_link": "/images/automotive.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "http://archive.ics.uci.edu/ml/machine-learning-databases/00560/SeoulBikeData.csv",
         "Likes": 0,
         "Downloads": 23008,
@@ -1103,7 +1117,7 @@
   {
     "id": "35",
     "Rank": 35,
-    "Name": "Chemical Composition of Ceramic Samples Data Set",
+    "Name": "Chemical Composition of Ceramic Samples",
     "Owner": "Ziyang He, Maolin Zhang, Haozhe Zhang",
     "URL": ["http://archive.ics.uci.edu/ml/machine-learning-databases/00583/Chemical%20Composion%20of%20Ceramic.csv"],
     "Short Summary": "N/A",
@@ -1120,9 +1134,10 @@
     "Likes": 0,
     "File Size": "9 KB",
     "File Type": "csv",
+    "img_link": "/images/circuit.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "http://archive.ics.uci.edu/ml/machine-learning-databases/00583/Chemical%20Composion%20of%20Ceramic.csv",
         "Likes": 0,
         "Downloads": 958,
@@ -1133,7 +1148,7 @@
   {
     "id": "42",
     "Rank": 42,
-    "Name": "Algerian Forest Fires Data Set",
+    "Name": "Algerian Forest Fires",
     "Owner": "Faroudja ABID",
     "URL": ["https://archive.ics.uci.edu/ml/machine-learning-databases/00547/Algerian_forest_fires_dataset_UPDATE.csv"],
     "Short Summary": "N/A",
@@ -1150,9 +1165,10 @@
     "Likes": 0,
     "File Size": "15 KB",
     "File Type": "csv",
+    "img_link": "/images/simulation.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://archive.ics.uci.edu/ml/machine-learning-databases/00547/Algerian_forest_fires_dataset_UPDATE.csv",
         "Downloads": 17670,
         "File Size": "15 KB"
@@ -1162,7 +1178,7 @@
   {
     "id": "43",
     "Rank": 43,
-    "Name": "Internet Firewall Data Set",
+    "Name": "Internet Firewall",
     "Owner": "Fatih Ertam, Firat University, Turkey",
     "URL": [ "https://archive.ics.uci.edu/ml/machine-learning-databases/00542/log2.csv"],
     "Short Summary": "N/A",
@@ -1179,9 +1195,10 @@
     "Likes": 0,
     "File Size": "2.7 MB",
     "File Type": "csv",
+    "img_link": "/images/circuit.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://archive.ics.uci.edu/ml/machine-learning-databases/00542/log2.csv",
         "Likes": 0,
         "Downloads": 9631,
@@ -1192,7 +1209,7 @@
   {
     "id": "44",
     "Rank": 44,
-    "Name": "Pedestrian in Traffic Data Set",
+    "Name": "Pedestrian in Traffic",
     "Owner": "Claudia Blaiotta, Bosch Center for Artificial Intelligence",
     "URL": ["https://archive.ics.uci.edu/ml/machine-learning-databases/00536/pedestrian_traffic_data.zip"],
     "Short Summary": "N/A",
@@ -1209,9 +1226,10 @@
     "Likes": 0,
     "File Size": "708 KB",
     "File Type": "csv",
+    "img_link": "/images/automotive.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://archive.ics.uci.edu/ml/machine-learning-databases/00536/pedestrian_traffic_data.zip",
         "Likes": 0,
         "Downloads": 11602,
@@ -1222,7 +1240,7 @@
   {
     "id": "45",
     "Rank": 45,
-    "Name": "Deepfakes: Medical Image Tamper Detection Data Set",
+    "Name": "Deepfakes: Medical Image Tamper Detection",
     "Owner": "Yisroel Mirsky, Ben-Gurion University of the Negev",
     "URL": ["https://archive.ics.uci.edu/ml/machine-learning-databases/00520/data.zip"],
     "Short Summary": "N/A",
@@ -1239,9 +1257,10 @@
     "Likes": 0,
     "File Size": "6 GB",
     "File Type": "csv",
+    "img_link": "/images/circuit.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://archive.ics.uci.edu/ml/machine-learning-databases/00520/data.zip",
         "Likes": 0,
         "Downloads": 10085,
@@ -1252,7 +1271,7 @@
   {
     "id": "48",
     "Rank": 48,
-    "Name": "WISDM Smartphone and Smartwatch Activity and Biometrics Dataset Data Set",
+    "Name": "WISDM Smartphone and Smartwatch Activity and Biometrics Dataset",
     "Owner": "Dr. Gary Weiss, Computer and Information Sciences Department, Fordham University",
     "URL": ["https://archive.ics.uci.edu/ml/machine-learning-databases/00507/wisdm-dataset.zip"],
     "Short Summary": "N/A",
@@ -1269,9 +1288,10 @@
     "Likes": 0,
     "File Size": "295 MB",
     "File Type": "txt",
+    "img_link": "/images/circuit.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://archive.ics.uci.edu/ml/machine-learning-databases/00507/wisdm-dataset.zip",
         "Likes": 0,
         "Downloads": 67690,
@@ -1282,7 +1302,7 @@
   {
     "id": "50",
     "Rank": 50,
-    "Name": "Beijing Multi-Site Air-Quality Data Data Set",
+    "Name": "Beijing Multi-Site Air-Quality Data",
     "Owner": "Song Xi Chen, Guanghua School of Management, Center for Statistical Science, Peking University",
     "URL": ["https://archive.ics.uci.edu/ml/machine-learning-databases/00501/PRSA2017_Data_20130301-20170228.zip"],
     "Short Summary": "N/A",
@@ -1299,9 +1319,10 @@
     "Likes": 0,
     "File Size": "7.59 MB",
     "File Type": "csv",
+    "img_link": "/images/simulation.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://archive.ics.uci.edu/ml/machine-learning-databases/00501/PRSA2017_Data_20130301-20170228.zip",
         "Likes": 0,
         "Downloads": 61753,
@@ -1329,43 +1350,14 @@
     "Likes": 0,
     "File Size": "11.6 MB",
     "File Type": "csv",
+    "img_link": "/images/mechanical.jpg",
     "Datasets": [
       {
-        "Name": "Dataset 1",
+        "Name": "File 1",
         "URL": "https://github.com/wesleybeckner/ds_for_engineers/tree/main/data/mill_tool_wear",
         "Likes": 0,
         "Downloads": 0,
         "File Size": "11.6 MB"
-      }
-    ]
-  },
-  {
-    "id": 52,
-    "Rank": 52,
-    "Name": "Truffle Margin",
-    "Owner": "",
-    "URL": ["https://github.com/wesleybeckner/ds_for_engineers/tree/main/data/truffle_margin"],
-    "Short Summary": "N/A",
-    "Summary": "",
-    "Date Donated": "April 29, 2021",
-    "Sector": "Life",
-    "ML Type": ["Prediction", "Analysis"],
-    "Labeled": "",
-    "Time Series": "Yes",
-    "Simulation (Yes/No)": "",
-    "Attributes": 9,
-    "Instances": 2506,
-    "Downloads": "",
-    "Likes": 0,
-    "File Size": "477 KB",
-    "File Type": "csv, xlsx",
-    "Datasets": [
-      {
-        "Name": "Dataset 1",
-        "URL": "https://github.com/wesleybeckner/ds_for_engineers/tree/main/data/truffle_margin",
-        "Likes": 0,
-        "Downloads": 0,
-        "File Size": "477 KB"
       }
     ]
   }
