@@ -1037,10 +1037,12 @@ button:focus {
           white-space: nowrap;
           text-align: center;
           justify-content: space-between;
+          margin-bottom: 0.67rem;
 
           .more_name {
             font-size: 1rem;
             margin-right: 0.5rem;
+            letter-spacing: .75px;
           }
 
           div {
@@ -1141,11 +1143,12 @@ button:focus {
 
       .card__title {
         padding: 16px;
+        text-align: center;
 
         h2 {
           font-size: 1.25rem;
           font-weight: 500;
-          text-align: left;
+          text-align: center;
           padding-left: 8px;
           padding-right: 8px;
           margin-top: 0;
