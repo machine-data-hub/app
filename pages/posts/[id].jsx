@@ -11,13 +11,13 @@ const Posts = ({ data, similar }) => {
         <div className="page__top">
           <div className="content__head">
             <h1>{data.Name}</h1>
-            {data.img_link ? <img src={data.img_link} alt="Laptop" /> : ""}
+            {data.ImgLink ? <img src={data.ImgLink} alt="Laptop" /> : ""}
           </div>
           <div className="content__body">
             <div className="content__left">
               <div className="head">
                 <div>Dataset from: {data.Owner}</div>
-                <div>Acquired: January 20, 2021</div>
+                <div>Acquired: {data.DateDonated}</div>
               </div>
               <div className="info">
                 <div className="card__details">
@@ -25,7 +25,7 @@ const Posts = ({ data, similar }) => {
                     <span className="icon__download">
                       <AiOutlineFile />
                     </span>
-                    {data["File Type"]}
+                    {data.FileType}
                   </div>
                 </div>
                 {/* <span>{data["File Size"]}</span> */}
@@ -56,8 +56,8 @@ const Posts = ({ data, similar }) => {
               </div>
               <div className="tags">
                 {data.Sector && <div className="sector">{data.Sector}</div>}
-                {data["ML Type"] &&
-                  data["ML Type"]?.map((x, i) => (
+                {data.MLType &&
+                  data.MLType?.map((x, i) => (
                     <div key={i} className="ML">
                       {x}
                     </div>
@@ -65,24 +65,24 @@ const Posts = ({ data, similar }) => {
                 {data.Labeled === "Yes" && (
                   <div className="labeled">Labeled</div>
                 )}
-                {data["Time Series"] === "Yes" && (
+                {data.TimeSeries === "Yes" && (
                   <div className="ML">Time Series</div>
                 )}
-                {data["Simulation (Yes/No)"] === "Yes" && (
+                {data.Simulation === "Yes" && (
                   <div className="sector">Simulation</div>
                 )}
               </div>
               <div className="more">
                 <div>More info:</div>
-                <a href={data["Web Page (for reference, not metadata)"]}>
-                  {data["Web Page (for reference, not metadata)"]}
+                <a href={data.URL}>
+                  {data.URL}
                 </a>
               </div>
             </div>
             <div className="content__right">
               <h3>About this dataset</h3>
-              <p>{data["Short Summary"]}</p>
-              {data["Datasets"].map((set) => (
+              <p>{data.ShortSummary}</p>
+              {data.Datasets.map((set) => (
                 <div className="more_datasets">
                   <div className="more_name">{set.Name}</div>
                   <div>
@@ -98,7 +98,7 @@ const Posts = ({ data, similar }) => {
                     {set.Downloads} Downloads
                   </div>
                   <div>
-                    <div className="file__size">{set["File Size"]} </div>
+                    <div className="file__size">{set.FileSize} </div>
                   </div>
                   <a href={set.URL}>
                     <button className="button" type="button">
@@ -116,8 +116,8 @@ const Posts = ({ data, similar }) => {
             {similar?.map((item, index) => (
               <div className="card" key={index}>
                 <div className="card__image">
-                  {item.img_link ? (
-                    <img src={item.img_link} alt="Dataset" />
+                  {item.ImgLink ? (
+                    <img src={item.ImgLink} alt="Dataset" />
                   ) : (
                     <span>
                       <MdImage />
@@ -128,28 +128,14 @@ const Posts = ({ data, similar }) => {
                   <Link href={`/posts/${item.id}`}>
                     <h2>{item.Name}</h2>
                   </Link>
-                  <div className="card__info">{item["One Line"]}</div>
+                  <div className="card__info">{item.OneLine}</div>
                 </div>
-                {/* <div className="card__details">
-                <div>
-                  <span className="icon__download">
-                    <MdFileDownload />
-                  </span>
-                  {item.Downloads} Downloads
-                </div>
-                <div>
-                  <span>
-                    <MdFavorite />
-                  </span>
-                  {item.Likes} Likes
-                </div>
-              </div> */}
                 <div className="card__tags">
                   {item.Sector && (
                     <div className="buttonsSector">{item.Sector}</div>
                   )}
-                  {item["ML Type"] &&
-                    data["ML Type"].map((x, i) => (
+                  {item.MLType &&
+                    data.MLType.map((x, i) => (
                       <div className="buttonsML" key={i}>
                         {x}
                       </div>
@@ -157,18 +143,13 @@ const Posts = ({ data, similar }) => {
                   {item.Labeled === "Yes" && (
                     <div className="buttonsLabeled">Labeled</div>
                   )}
-                  {item["Time Series"] === "Yes" && (
+                  {item.TimeSeries === "Yes" && (
                     <div className="buttonsML">Time Series</div>
                   )}
-                  {item["Simulation (Yes/No)"] === "Yes" && (
+                  {item.Simulation === "Yes" && (
                     <div buttons="buttonsSector">Simulation</div>
                   )}
                 </div>
-                {/* <div className="card__footer">
-                                    <Link href={`/posts/${item.id}`}>
-                                        <span>SEE MORE &gt;</span>
-                                    </Link>
-                                </div> */}
               </div>
             ))}
           </div>
@@ -192,16 +173,16 @@ Posts.getInitialProps = async ({ query: { id } }) => {
   // Get similar datasets
   const filteredDatasets = datasets.filter((item) => item.id !== data.id); // remove current data from dataset
   const similarSector = filteredDatasets.filter(
-    (item) => item.Sector === data["Sector"]
+    (item) => item.Sector === data.Sector
   ); // get similar dataset by ml sector
   const similarType = filteredDatasets.filter(
-    (item) => item.ML_Type === data["ML_Type"]
+    (item) => item.ML_Type === data.MLType
   ); // get similar dataset by ml type
   const similarLabeled = filteredDatasets.filter(
-    (item) => item.Labeled === data["Labeled"]
+    (item) => item.Labeled === data.Labeled
   ); // get similar dataset by labeled
   const similarTimeSeries = filteredDatasets.filter(
-    (item) => item["Time Series (Yes/No)"] === data["Time Series (Yes/No)"]
+    (item) => item.TimeSeries === data.TimeSeries
   ); // get similar dataset by time series
 
   const similarDatasets = [

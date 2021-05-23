@@ -33,10 +33,10 @@ export function MOSTPOPULAR(a, b) {
 
 // function to compare and sort dataset by date
 export function DATAADDED(a, b) {
-    if (a.time > b.time) {
+    if (a.Rank > b.Rank) {
         return -1;
     }
-    if (a.time < b.time) {
+    if (a.Rank < b.Rank) {
         return 1;
     }
     return 0;
