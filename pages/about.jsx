@@ -15,11 +15,16 @@ const About = () => {
             have been compiled from various companies and institutions such as
             NASA, University of California Irvine, and University of Wisconsin.
           </p>
+
           <a href="https://github.com/machine-data-hub" className="gitURL">
             You can view our code here!{" "}
             <span className="icon__download">
               <AiFillGithub />
             </span>
+          </a>
+          Do you have a dataset you want to see on Machine Data Hub? Suggest them {" "}
+          <a href="/suggest-dataset" className="gitURL">
+            here!
           </a>
           <p>
             If you are interested in using our Python package, you can install

@@ -3,14 +3,10 @@ title: Appliance Energy Analysis
 date: May 2, 2021
 author: Matthew Sullivan
 img: https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1356&q=80
+summary: As part of my capstone, I am analyzing PHM datasets. I choose UCI's Applicance energy prediction data set. From their website...
 ---
 ---
-# Analyzing Appliances Energy Prediction Data Set from UCI
-
-## Matthew Sullivan
-
-### EE 498 and Lockheed Martin
-
+# Introduction
 As part of my capstone, I am analyzing PHM datasets. I choose UCI's Applicance energy prediction data set. From their website:
 
 
@@ -28,7 +24,6 @@ import seaborn as sns
 import sklearn
 ```
 
----
 # Downloading Data
 
 
@@ -47,7 +42,7 @@ save_file('https://archive.ics.uci.edu/ml/machine-learning-databases/00374/energ
           'energy_data.csv')
 ```
 
----
+
 # First Model
 
 
@@ -140,8 +135,7 @@ plt.title('MinMax Residuals')
 
 
 
-
-![png](https://github.com/PHM-Data-Hub/Examples/blob/main/ApplianceEnergy/output_6_2.png?raw=true)
+<img src="/images/ApplianceEnergy/output_6_2.gif"/>
 
 
 ### Analysis
@@ -183,7 +177,6 @@ print("Standard Error: ", standardError) # not great.
 ### Analysis
 Looks like it won't be that simple lol. Mean normalization improved the model by < 0.01 
 
----
 # Data Exploration
 
 
@@ -268,9 +261,7 @@ plt.legend(['Raw Appliance Data', 'Windowed Avg Appliance Data (size=125)', 'Max
 
 
 
-
-![png](https://github.com/PHM-Data-Hub/Examples/blob/main/ApplianceEnergy/output_14_2.png?raw=true)
-
+<img src="/images/ApplianceEnergy/output_14_2.gif"/>
 
 
 ```python
@@ -343,5 +334,4 @@ plt.legend(['Daily High', 'Daily Avg', 'Daily Low','Running High', 'Running Avg'
 
 
 
-
-![png](https://github.com/PHM-Data-Hub/Examples/blob/main/ApplianceEnergy/output_15_1.png?raw=true)
+<img src="/images/ApplianceEnergy/output_15_1.gif"/>

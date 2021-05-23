@@ -13,7 +13,6 @@ const BlogPost = (props) => {
             <div className="blog__title">{props.title}</div>
             <div className="blog__author">{props.author}</div>
             <div className="blog__date">{props.date}</div>
-
             <div className="prose">{hydrated}</div>
           </div>
         </Layout>

@@ -30,11 +30,6 @@ const Navbar = () => {
         <div className="navbar__right">
           <ul>
             {/* if the condition returns true -> give a nav-active class to li element */}
-            <Link href="/">
-              <li className={router.pathname === "/" ? "nav-active" : ""}>
-                Home
-              </li>
-            </Link>
             <Link href="/getting-started">
               <li className={router.pathname === "/getting-started" ? "nav-active" : ""}>
                 Getting Started
@@ -48,15 +43,6 @@ const Navbar = () => {
             <Link href="/blogs">
               <li className={router.pathname === "/blogs" ? "nav-active" : ""}>
                 Blogs
-              </li>
-            </Link>
-            <Link href="/suggest-dataset">
-              <li
-                className={
-                  router.pathname === "/suggest-dataset" ? "nav-active" : ""
-                }
-              >
-                Suggest a Dataset
               </li>
             </Link>
           </ul>

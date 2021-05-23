@@ -32,6 +32,7 @@ export async function getStaticProps(context) {
         date: data.date,
         img: data.img,
         author: data.author,
+        summary: data.summary,
         content,
         slug,
       })),

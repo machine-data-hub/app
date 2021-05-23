@@ -811,7 +811,7 @@ button:focus {
   }
 
   h2 {
-    color: var(--primary);
+    color: #2B2D2F;
     font-size: 1.25rem;
   }
 
@@ -1036,20 +1036,21 @@ button:focus {
           display: flex;
           white-space: nowrap;
           text-align: center;
+          justify-content: space-between;
+          margin-bottom: 0.67rem;
 
           .more_name {
             font-size: 1rem;
             margin-right: 0.5rem;
+            letter-spacing: .75px;
           }
 
           div {
-            width: 40%;
             color: rgb(33, 120, 179);
             font-size: 0.8rem;
             font-weight: 600;
             display: flex;
             align-items: center;
-            margin: 0.15rem 0.15rem;
 
             span {
               font-size: 1rem;
@@ -1069,15 +1070,16 @@ button:focus {
             &:last-of-type {
               justify-content: flex-end;
             }
-          }
-          .file__size {
-            width: 40%;
-            color: rgb(33, 120, 179);
-            font-size: 0.8rem;
-            font-weight: 600;
-            display: flex;
-            margin: 0 auto;
-            align-items: center;
+
+            .file__size {
+              width: 40%;
+              color: rgb(33, 120, 179);
+              font-size: 0.8rem;
+              font-weight: 600;
+              display: flex;
+              margin: 0 auto;
+              align-items: center;
+            }
           }
 
           .button {
@@ -1141,11 +1143,12 @@ button:focus {
 
       .card__title {
         padding: 16px;
+        text-align: center;
 
         h2 {
           font-size: 1.25rem;
           font-weight: 500;
-          text-align: left;
+          text-align: center;
           padding-left: 8px;
           padding-right: 8px;
           margin-top: 0;
@@ -1450,7 +1453,7 @@ button:focus {
 }
 
 .blog__page {
-  height: 100vh;
+  height: auto;
   padding: 4rem 2rem;
 
   max-width: 1000px;
@@ -1458,11 +1461,12 @@ button:focus {
     color: var(--primary);
     font-size: 1.5rem;
   }
+
+
   .blog__tiles {
     display: grid;
-    grid-template-columns: repeat(1, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, minmax(600px, 1fr));
     grid-gap: 24px;
-    margin: 10px 10px 10px 0px;
 
     @media (max-width: 1200px) {
       grid-template-columns: repeat(1, minmax(250px, 1fr));
@@ -1479,55 +1483,103 @@ button:focus {
     @media (max-width: 512px) {
       grid-template-columns: repeat(1, minmax(200px, 1fr));
     }
+
+
     .blog__card {
       display: flex;
-      align-items: right;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
       border-radius: 4px;
-      overflow: visible;
-      max-width: 100%;
-      max-height: 200px;
+      overflow: hidden;
+      cursor: pointer;
+
       box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
         rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
       &:hover {
         box-shadow: 0px 0px 3px 3px var(--primary);
       }
 
-      img {
-        display: block;
-        width: auto;
-        max-height: 140px;
-        float: left;
-      }
-      .blog__info {
-        display: block;
-        margin: 0;
+      .blog__head{
+        width: 100%;
+        height: 250px;
+        background: #f4f4f4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        @media (max-width: 1200px) {
+          height: 150px;
+        }
+    
+        @media (max-width: 860px) {
+          height: 150px;
+        }
+    
+        @media (max-width: 600px) {
+          height: 150px;
+        }
+    
+        @media (max-width: 512px) {
+          height: 150px;
+        }
+      }
+
+      .blog__info {
+        display: flex;
+        width: 100%;
+        padding: 8px;
+        color: rgb(33, 120, 179);
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 4px;
+        overflow: hidden;
+        
         .blog__title {
-          padding: 16px;
-          cursor: pointer;
+          padding-top: 16px;
+          
+          text-align: center;
+          margin: 0px 0px 0.35em;
           font-weight: 500;
           font-size: 1.2rem;
           line-height: 1.6;
           letter-spacing: 0.0075em;
           height: auto;
         }
+
         .blog__author {
-          padding-left: 16px;
-          font-size: 1rem;
+          width: 100%;
+          text-align: center;
+          font-size: 1.1rem;
           letter-spacing: 0.0075em;
           height: auto;
+
         }
         .blog__date {
+          width: 100%;
+          display: flex;
+          align-items: flex-start;
+          color: var(--accents-2);
           padding-left: 16px;
           font-size: 1rem;
           letter-spacing: 0.0075em;
-          height: auto;
         }
         .blog__summary {
+          display: flex;
+          align-items: flex-start;
+          color: var(--accents-2);
+          width: 100%;
+          max-height: 60px;
+          overflow: hidden;
           padding-left: 16px;
           font-size: 1rem;
           letter-spacing: 0.0075em;
-          height: auto;
         }
       }
 
@@ -1571,15 +1623,38 @@ button:focus {
     max-width: 1280px;
   }
 
+  blockquote {
+    background: #eee;
+    padding: 1em;
+  }
+
+  code{
+    background: #eee;
+    display: block;
+    width: auto;
+  }
+
   h1 {
     padding-top: 0.67em;
     font-size: 2rem;
+    color: var(--primary);
   }
 
   h2{
     font-size: 1.75rem;
     font-weight: 400;
   }
+  .dataframe tbody tr th:only-of-type {
+    vertical-align: middle;
+}
+
+.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
 }
 
 // Footer
@@ -1592,7 +1667,7 @@ button:focus {
   margin: auto;
   padding: 1rem 2rem;
 
-  .footer__left {
+  .container {
     margin: auto;
     display: inline-grid;
     align-items: center;
@@ -1601,29 +1676,16 @@ button:focus {
     cursor: pointer;
     border-radius: 4px;
     text-align: center;
-    &:hover {
-      background: #1f74ad;
-    }
 
     .netlify {
       font-size: 2rem;
     }
-  }
-  .footer__right {
-    margin: auto;
-    display: inline-grid;
-    align-items: center;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 4px;
-    text-align: center;
-    &:hover {
-      background: #1f74ad;
-    }
+
     .icon {
-      margin-left: 4px;
-      font-size: 2rem;
       vertical-align: middle;
+      &:hover {
+        color: var(--grayOrange);
+      }
     }
   }
 }

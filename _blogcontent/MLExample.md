@@ -3,6 +3,7 @@ title: Power Plant Analysis
 date: May 2, 2021
 author: Jiwoo Park
 img: https://images.unsplash.com/photo-1612257627047-d3e7970cdd7c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1778&q=80
+summary: The dataset used contains 9568 data points collected from a Combined Cycle Power Plant over 6 years (2006-2011)...
 ---
 ---
 
@@ -89,8 +90,7 @@ scatter_matrix(df, figsize=(14, 14),diagonal="kde");
 
 ```
 
-
-![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLExample/output_13_0.png?raw=true)
+<img src="/images/MLExample/output_13_0.gif"/>
 
 
 From these scatter plots, temperature shows the strongest linear relationship with the hourly electrical energy output. Exhaust vacuum appears to have a linear relationship, though at a lesser extent. 
@@ -167,8 +167,7 @@ plt.title("Residual Plot of AT")
 
 
 
-
-![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLExample/output_25_1.png?raw=true)
+<img src="/images/MLExample/output_25_1.gif"/>
 
 
 
@@ -187,7 +186,7 @@ plt.title("Residual Plot of V")
 
 
 
-![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLExample/output_26_1.png?raw=true)
+<img src="/images/MLExample/output_26_`.gif"/>
 
 
 
@@ -205,8 +204,7 @@ plt.title("Residual Plot of AP")
 
 
 
-
-![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLExample/output_27_1.png?raw=true)
+<img src="/images/MLExample/output_27_1.gif"/>
 
 
 
@@ -224,8 +222,7 @@ plt.title("Residual Plot of RH")
 
 
 
-
-![png](https://github.com/PHM-Data-Hub/Examples/blob/main/MLExample/output_28_1.png?raw=true)
+<img src="/images/MLExample/output_28_1.gif"/>
 
 
 As expected, all of the independent variables in the data set are showing a random pattern. Some residuals are negative while others are positive; there is no non-random shapes such as U-shaped or inverted U. We can conclude at this point that for our predictions, linear regression is a good candidate.
