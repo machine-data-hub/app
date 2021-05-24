@@ -55,7 +55,7 @@ const GettingStarted = () => {
           </p>
           <div className="started__image-box">
             <img
-              src="/images/MainPage.gif"
+              src="/images/MainPage.jpg"
               class="started__image"
               title="Main Page"
               alt="Main Page"
@@ -67,7 +67,7 @@ const GettingStarted = () => {
           </p>
           <div className="started__image-box">
             <img
-              src="/images/Sorter.gif"
+              src="/images/Sorter.jpg"
               class="started__image"
               title="Sorter Page"
               alt="Sorter Page"
@@ -79,7 +79,7 @@ const GettingStarted = () => {
           the main card. These cards are suggested using similar tags.
           <div className="started__image-box">
             <img
-              src="/images/FocusedDataset.gif"
+              src="/images/FocusedDataset.jpg"
               class="started__image"
               title="Sorter Page"
               alt="Sorter Page"

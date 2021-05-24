@@ -6,6 +6,9 @@ img: https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?ixid=MnwxMjA3f
 summary: As part of my capstone, I am analyzing PHM datasets. I choose UCI's Applicance energy prediction data set. From their website...
 ---
 ---
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/machine-data-hub/binder-examples/HEAD)
+
 # Introduction
 As part of my capstone, I am analyzing PHM datasets. I choose UCI's Applicance energy prediction data set. From their website:
 

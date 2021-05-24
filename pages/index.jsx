@@ -60,18 +60,26 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
         if (v.Name.toLocaleLowerCase().includes(query.toLowerCase().trim())) {
           return true;
         }
-        if (v.ShortSummary.toLocaleLowerCase().includes(query.toLowerCase().trim())) {
+        if (
+          v.ShortSummary.toLocaleLowerCase().includes(
+            query.toLowerCase().trim()
+          )
+        ) {
           return true;
         }
 
         // ML tags
         // tags = boolean array
         for (var i = 0; i < v.MLType.length; i++) {
-          if( v.MLType[i].toLocaleLowerCase().includes(query.toLocaleLowerCase().trim())) {
+          if (
+            v.MLType[i]
+              .toLocaleLowerCase()
+              .includes(query.toLocaleLowerCase().trim())
+          ) {
             return true;
           }
         }
-        
+
         if (
           v.TimeSeries === "Yes" &&
           "time series".includes(query.toLowerCase().trim())
@@ -85,14 +93,14 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
         ) {
           return true;
         }
-         // simulation
-         if (
+        // simulation
+        if (
           v.Simulation === "Yes" &&
           "simulation".includes(query.toLowerCase().trim())
         ) {
           return true;
         }
-        return false; 
+        return false;
       });
       setList(map);
     } else {
@@ -289,63 +297,63 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
   }, [totalPagination]);
 
   return (
-    <Layout title={`Machine Data Hub`}>
-      <Search
-        sectors={sectors}
-        mLTypes={mLTypes}
-        setQuery={setQuery}
-        list={list}
-        setList={setList}
-        sort={sort}
-        setSort={setSort}
-        sectorList={sectorList}
-        setSecorList={setSecorList}
-        typeList={typeList}
-        setTypeList={setTypeList}
-        labeled={labeled}
-        setLabeled={setLabeled}
-        simulation={simulation}
-        setSimulation={setSimulation}
-        timeSeries={timeSeries}
-        setTimeSeries={setTimeSeries}
-      />
-      <List
-        // paginate(array, post per page, current page)
-        datasets={paginate(
-          handleSort(hanldeAllFilters(list)),
-          postPerPage,
-          page
-        )}
-        sectorList={sectorList}
-        setSecorList={setSecorList}
-        typeList={typeList}
-        setTypeList={setTypeList}
-        labeled={labeled}
-        setLabeled={setLabeled}
-        simulation={simulation}
-        setSimulation={setSimulation}
-        timeSeries={timeSeries}
-        setTimeSeries={setTimeSeries}
-        currentPage={page}
-        totalPage={totalPagination}
-      />
-      <div className="pagination">
-        {/* mapping pagination button. index 0 = page 1 */}
-        {[...Array(totalPagination)].map((x, index) => {
-          return (
-            <div
-              className={`page ${
-                parseInt(index + 1) === parseInt(page) ? "active" : ""
-              }`}
-              key={index}
-              onClick={() => changePage(index + 1)}
-            >
-              {index + 1}
-            </div>
-          );
-        })}
-      </div>
-    </Layout>
+      <Layout title={`Machine Data Hub`}>
+        <Search
+          sectors={sectors}
+          mLTypes={mLTypes}
+          setQuery={setQuery}
+          list={list}
+          setList={setList}
+          sort={sort}
+          setSort={setSort}
+          sectorList={sectorList}
+          setSecorList={setSecorList}
+          typeList={typeList}
+          setTypeList={setTypeList}
+          labeled={labeled}
+          setLabeled={setLabeled}
+          simulation={simulation}
+          setSimulation={setSimulation}
+          timeSeries={timeSeries}
+          setTimeSeries={setTimeSeries}
+        />
+        <List
+          // paginate(array, post per page, current page)
+          datasets={paginate(
+            handleSort(hanldeAllFilters(list)),
+            postPerPage,
+            page
+          )}
+          sectorList={sectorList}
+          setSecorList={setSecorList}
+          typeList={typeList}
+          setTypeList={setTypeList}
+          labeled={labeled}
+          setLabeled={setLabeled}
+          simulation={simulation}
+          setSimulation={setSimulation}
+          timeSeries={timeSeries}
+          setTimeSeries={setTimeSeries}
+          currentPage={page}
+          totalPage={totalPagination}
+        />
+        <div className="pagination">
+          {/* mapping pagination button. index 0 = page 1 */}
+          {[...Array(totalPagination)].map((x, index) => {
+            return (
+              <div
+                className={`page ${
+                  parseInt(index + 1) === parseInt(page) ? "active" : ""
+                }`}
+                key={index}
+                onClick={() => changePage(index + 1)}
+              >
+                {index + 1}
+              </div>
+            );
+          })}
+        </div>
+      </Layout>
   );
 }
 

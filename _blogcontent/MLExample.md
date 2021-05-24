@@ -7,6 +7,9 @@ summary: The dataset used contains 9568 data points collected from a Combined Cy
 ---
 ---
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/machine-data-hub/binder-examples/HEAD)
+
+
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt

@@ -1501,7 +1501,7 @@ button:focus {
       }
 
       .blog__head{
-        width: 100%;
+        width: auto;
         height: 250px;
         background: #f4f4f4;
         display: flex;
@@ -1646,15 +1646,21 @@ button:focus {
   }
   .dataframe tbody tr th:only-of-type {
     vertical-align: middle;
-}
+    border: 1px solid #999;
+    border-collapse: collapse;
+  }
 
-.dataframe tbody tr th {
-    vertical-align: top;
-}
+  .dataframe tbody tr th {
+      vertical-align: top;
+      border: 1px solid #999;
+      border-collapse: collapse;
+  }
 
-.dataframe thead th {
-    text-align: right;
-}
+  .dataframe thead th {
+      text-align: right;
+      border: 1px solid #999;
+      border-collapse: collapse;
+  }
 }
 
 // Footer

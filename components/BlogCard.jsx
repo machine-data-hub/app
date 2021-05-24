@@ -5,7 +5,7 @@ const BlogCard = ({ slug, title, img, author, summary, date, content }) => {
         <Link href={`/blog/${slug}`}>
             <div className="blog__card">
                 <div className="blog__head">
-                    <img src={img} />
+                    <img src={img} height="250"/>
                 </div>
                 <div className="blog__info">
                     <div className="blog__title">{title}</div>
