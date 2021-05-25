@@ -138,7 +138,7 @@ plt.title('MinMax Residuals')
 
 
 
-<img src="/images/ApplianceEnergy/output_6_2.gif"/>
+<img src="/images/ApplianceEnergy/output_6_2.jpg"/>
 
 
 ### Analysis
@@ -264,7 +264,7 @@ plt.legend(['Raw Appliance Data', 'Windowed Avg Appliance Data (size=125)', 'Max
 
 
 
-<img src="/images/ApplianceEnergy/output_14_2.gif"/>
+<img src="/images/ApplianceEnergy/output_14_2.jpg"/>
 
 
 ```python
@@ -337,4 +337,4 @@ plt.legend(['Daily High', 'Daily Avg', 'Daily Low','Running High', 'Running Avg'
 
 
 
-<img src="/images/ApplianceEnergy/output_15_1.gif"/>
+<img src="/images/ApplianceEnergy/output_15_1.jpg"/>

@@ -757,7 +757,7 @@ _ = plt.ylabel("True Remaining Useful Life")
 
 
 
-<img src="/images/MLProjMarkdown/output_36_0.png"/>
+<img src="/images/MLProjMarkdown/output_36_0.jpg"/>
 
 
 
@@ -795,7 +795,7 @@ _ = plt.ylabel("True Log of Remaining Useful Life")
 ```
 
 
-<img src="/images/MLProjMarkdown/output_40_0.png"/>
+<img src="/images/MLProjMarkdown/output_40_0.jpg"/>
 
 
 As you can tell, after the transformation of the data, we got a much more reasonable plot along the diagonal.
@@ -847,7 +847,7 @@ _ = plt.xlabel("Predicted Remaining Useful Life")
 _ = plt.ylabel("True Remaining Useful Life")
 ```
 
-<img src="/images/MLProjMarkdown/output_47_0.png"/>
+<img src="/images/MLProjMarkdown/output_47_0.jpg"/>
 
 
 
@@ -873,7 +873,7 @@ _ = plt.ylabel("True Log of Remaining Useful Life")
     Validation MSE:  0.3344698236654492
     
 
-<img src="/images/MLProjMarkdown/output_49_1.png"/>
+<img src="/images/MLProjMarkdown/output_49_1.jpg"/>
 
 
 While the model does better with the transformed data, Linear Regression still has better performance.
@@ -927,7 +927,7 @@ _ = plt.xlabel("Predicted Remaining Useful Life")
 _ = plt.ylabel("True Remaining Useful Life")
 ```
 
-<img src="/images/MLProjMarkdown/output_57_0.png"/>
+<img src="/images/MLProjMarkdown/output_57_0.jpg"/>
 
 
 
@@ -953,7 +953,7 @@ _ = plt.ylabel("True Log of Remaining Useful Life")
     Validation MSE:  0.33295082949341687
     
 
-<img src="/images/MLProjMarkdown/output_59_1.png"/>
+<img src="/images/MLProjMarkdown/output_59_1.jpg"/>
 
 
 
@@ -1267,7 +1267,7 @@ Since our model actually makes a prediction for each row of data, we can plot ou
 _ = plt.plot(y_hat_test[0][0:400])
 ```
 
-<img src="/images/MLProjMarkdown/output_70_0.png"/>
+<img src="/images/MLProjMarkdown/output_70_0.jpg"/>
 
 
 Ultimately, we want a prediction output of one value for each unit that tell us the remaining useful life for each unit in the data. Right now, we have one prediction per row of data, and each unit has many rows. To get just one prediction per unit, we will loop through `y_hat_test` dataframe of the predictions, and grab the last prediction for each unit since that will tell us the final number of cycles for the remaining useful life.. 
@@ -1351,7 +1351,7 @@ _ = plt.xlabel("Predicted Log of Remaining Useful Life")
 _ = plt.ylabel("True Log of Remaining Useful Life")
 ```
 
-<img src="/images/MLProjMarkdown/output_75_0.png"/>
+<img src="/images/MLProjMarkdown/output_75_0.jpg"/>
 
 
 # Conclusion
