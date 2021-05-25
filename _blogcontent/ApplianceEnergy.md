@@ -2,10 +2,13 @@
 title: Appliance Energy Analysis
 date: May 2, 2021
 author: Matthew Sullivan
-img: https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1356&q=80
+img: /images/ApplianceEnergy/title.jpg
 summary: As part of my capstone, I am analyzing PHM datasets. I choose UCI's Applicance energy prediction data set. From their website...
 ---
 ---
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/machine-data-hub/binder-examples/HEAD)
+
 # Introduction
 As part of my capstone, I am analyzing PHM datasets. I choose UCI's Applicance energy prediction data set. From their website:
 
@@ -135,7 +138,7 @@ plt.title('MinMax Residuals')
 
 
 
-<img src="/images/ApplianceEnergy/output_6_2.gif"/>
+<img src="/images/ApplianceEnergy/output_6_2.jpg"/>
 
 
 ### Analysis
@@ -261,7 +264,7 @@ plt.legend(['Raw Appliance Data', 'Windowed Avg Appliance Data (size=125)', 'Max
 
 
 
-<img src="/images/ApplianceEnergy/output_14_2.gif"/>
+<img src="/images/ApplianceEnergy/output_14_2.jpg"/>
 
 
 ```python
@@ -334,4 +337,4 @@ plt.legend(['Daily High', 'Daily Avg', 'Daily Low','Running High', 'Running Avg'
 
 
 
-<img src="/images/ApplianceEnergy/output_15_1.gif"/>
+<img src="/images/ApplianceEnergy/output_15_1.jpg"/>

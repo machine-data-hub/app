@@ -459,7 +459,7 @@ button:focus {
         font-weight: 500px;
 
         &:hover {
-          font-weight: bold;
+          text-decoration: underline;
         }
       }
     }
@@ -803,6 +803,21 @@ button:focus {
 // Page - About
 .page__about {
   padding: 4rem 2rem;
+
+  .gitURL {
+    font-weight: 600;
+  }
+  a {
+    color: var(--dark);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  a:visited {
+    text-decoration: none;
+    color: var(--primary);
+  }
   
   h1 {
     color: var(--primary);
@@ -828,18 +843,6 @@ button:focus {
 
     p {
       color: black;
-    }
-
-    .gitURL {
-      font-weight: 600;
-    }
-
-    a {
-      color: var(--dark);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
     }
 
     .icon__download {
@@ -1501,7 +1504,7 @@ button:focus {
       }
 
       .blog__head{
-        width: 100%;
+        width: auto;
         height: 250px;
         background: #f4f4f4;
         display: flex;
@@ -1646,15 +1649,21 @@ button:focus {
   }
   .dataframe tbody tr th:only-of-type {
     vertical-align: middle;
-}
+    border: 1px solid #999;
+    border-collapse: collapse;
+  }
 
-.dataframe tbody tr th {
-    vertical-align: top;
-}
+  .dataframe tbody tr th {
+      vertical-align: top;
+      border: 1px solid #999;
+      border-collapse: collapse;
+  }
 
-.dataframe thead th {
-    text-align: right;
-}
+  .dataframe thead th {
+      text-align: right;
+      border: 1px solid #999;
+      border-collapse: collapse;
+  }
 }
 
 // Footer
@@ -1666,26 +1675,33 @@ button:focus {
   align-items: center;
   margin: auto;
   padding: 1rem 2rem;
-
+  
   .container {
     margin: auto;
     display: inline-grid;
     align-items: center;
-
-    font-size: 1rem;
     cursor: pointer;
-    border-radius: 4px;
+    font-size: 1rem;
+
+
     text-align: center;
 
     .netlify {
       font-size: 2rem;
     }
 
-    .icon {
-      vertical-align: middle;
+    .icon {      
+      justify-content: center;
+      display:block;
+      margin-left:-115px;
+      line-height: 60%;
       &:hover {
         color: var(--grayOrange);
       }
+    }
+
+    .with__text {
+      margin-top: 5px;
     }
   }
 }

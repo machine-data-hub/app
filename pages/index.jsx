@@ -12,9 +12,6 @@ import { usePage } from "../context/PageContext";
 import { useSort } from "../context/SortContext";
 import { ASC, DATAADDED, DES, MOSTPOPULAR, DOWNLOAD } from "../utils/sort";
 
-//---------------------------
-import { useCard } from "../context/CardContext";
-
 // Change page limit here
 const postPerPage = 20;
 
@@ -55,6 +52,7 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
     // filter when query is not empty
     if (query !== "") {
       const map = datasets.filter((v, i) => {
+        console.log(v.Name)
         if (v.Owner.toLocaleLowerCase().includes(query.toLowerCase().trim())) {
           return true;
           // return v.Owner.toLocaleLowerCase().includes(query.toLowerCase().trim());
@@ -63,45 +61,47 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
         if (v.Name.toLocaleLowerCase().includes(query.toLowerCase().trim())) {
           return true;
         }
-        if (v["Short Summary"].toLocaleLowerCase().includes(query.toLowerCase().trim())) {
+        if (
+          v.ShortSummary.toLocaleLowerCase().includes(
+            query.toLowerCase().trim()
+          )
+        ) {
           return true;
         }
 
         // ML tags
         // tags = boolean array
-        for (var i = 0; i < v["ML Type"].length; i++) {
-          if( v["ML Type"][i].toLocaleLowerCase().includes(query.toLocaleLowerCase().trim())) {
+        for (var i = 0; i < v.MLType.length; i++) {
+          if (
+            v.MLType[i]
+              .toLocaleLowerCase()
+              .includes(query.toLocaleLowerCase().trim())
+          ) {
             return true;
           }
         }
-        // v["ML Type"].map((entry) => {
-        //   if (entry.toLocaleLowerCase().includes(query.toLowerCase().trim())) {
-        //     return true;
-        //   }});
 
-        // can't I use a switch statement? I couldn't figure it out :(
-        // time series
         if (
-          v["Time Series"] === "Yes" &&
+          v.TimeSeries === "Yes" &&
           "time series".includes(query.toLowerCase().trim())
         ) {
           return true;
         }
         // labeled
         if (
-          v["Labeled"] === "Yes" &&
+          v.Labeled === "Yes" &&
           "labeled".includes(query.toLowerCase().trim())
         ) {
           return true;
         }
-         // simulation
-         if (
-          v["Simulation (Yes/No)"] === "Yes" &&
+        // simulation
+        if (
+          v.Simulation === "Yes" &&
           "simulation".includes(query.toLowerCase().trim())
         ) {
           return true;
         }
-        return false; 
+        return false;
       });
       setList(map);
     } else {
@@ -151,7 +151,7 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
     // filterList = array of ml type keyword
     const filtered = [];
     array.map((item) => {
-      item["ML Type"]?.map((tag) => {
+      item.MLType?.map((tag) => {
         if (filterList?.some((x) => x === tag)) {
           filtered.push(item);
         }
@@ -222,10 +222,10 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
     if (simulation && timeSeries) {
       const datas = filterAll(list); // run filterAll() --- line 72
       const filteredSimulation = datas.filter(
-        (item) => item["Simulation (Yes/No)"] === "Yes"
+        (item) => item.Simulation === "Yes"
       ); // filter by simulation
       const filteredTimeSeries = filteredSimulation.filter(
-        (item) => item["Time Series (Yes/No)"] === "Yes"
+        (item) => item.Simulation === "Yes"
       ); // filter by timeseries
 
       return filteredTimeSeries;
@@ -235,7 +235,7 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
     if (simulation && !timeSeries) {
       const datas = filterAll(list); // run filterAll() --- line 72
       const filteredSimulation = datas.filter(
-        (item) => item["Simulation (Yes/No)"] === "Yes"
+        (item) => item.Simulation === "Yes"
       ); // filter by simulation
 
       return filteredSimulation;
@@ -245,7 +245,7 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
     if (!simulation && timeSeries) {
       const datas = filterAll(list); // run filterAll() --- line 72
       const filteredTimeSeries = datas.filter(
-        (item) => item["Time Series (Yes/No)"] === "Yes"
+        (item) => item.TimeSeries === "Yes"
       ); // filter by timeseries
 
       return filteredTimeSeries;
@@ -298,66 +298,63 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
   }, [totalPagination]);
 
   return (
-    <Layout title={`Machine Data Hub`}>
-      <Search
-        sectors={sectors}
-        mLTypes={mLTypes}
-        setQuery={setQuery}
-        list={list}
-        setList={setList}
-        sort={sort}
-        setSort={setSort}
-        sectorList={sectorList}
-        setSecorList={setSecorList}
-        typeList={typeList}
-        setTypeList={setTypeList}
-        labeled={labeled}
-        setLabeled={setLabeled}
-        simulation={simulation}
-        setSimulation={setSimulation}
-        timeSeries={timeSeries}
-        setTimeSeries={setTimeSeries}
-      />
-      <List
-        // paginate(array, post per page, current page)
-        datasets={paginate(
-          handleSort(hanldeAllFilters(list)),
-          postPerPage,
-          page
-        )}
-        sectorList={sectorList}
-        setSecorList={setSecorList}
-        typeList={typeList}
-        setTypeList={setTypeList}
-        labeled={labeled}
-        setLabeled={setLabeled}
-        simulation={simulation}
-        setSimulation={setSimulation}
-        timeSeries={timeSeries}
-        setTimeSeries={setTimeSeries}
-        currentPage={page}
-        totalPage={totalPagination}
-        //---------------------------
-        // card={card}
-        // setCard={setCard}
-      />
-      <div className="pagination">
-        {/* mapping pagination button. index 0 = page 1 */}
-        {[...Array(totalPagination)].map((x, index) => {
-          return (
-            <div
-              className={`page ${
-                parseInt(index + 1) === parseInt(page) ? "active" : ""
-              }`}
-              key={index}
-              onClick={() => changePage(index + 1)}
-            >
-              {index + 1}
-            </div>
-          );
-        })}
-      </div>
-    </Layout>
+      <Layout title={`Machine Data Hub`}>
+        <Search
+          sectors={sectors}
+          mLTypes={mLTypes}
+          setQuery={setQuery}
+          list={list}
+          setList={setList}
+          sort={sort}
+          setSort={setSort}
+          sectorList={sectorList}
+          setSecorList={setSecorList}
+          typeList={typeList}
+          setTypeList={setTypeList}
+          labeled={labeled}
+          setLabeled={setLabeled}
+          simulation={simulation}
+          setSimulation={setSimulation}
+          timeSeries={timeSeries}
+          setTimeSeries={setTimeSeries}
+        />
+        <List
+          // paginate(array, post per page, current page)
+          datasets={paginate(
+            handleSort(hanldeAllFilters(list)),
+            postPerPage,
+            page
+          )}
+          sectorList={sectorList}
+          setSecorList={setSecorList}
+          typeList={typeList}
+          setTypeList={setTypeList}
+          labeled={labeled}
+          setLabeled={setLabeled}
+          simulation={simulation}
+          setSimulation={setSimulation}
+          timeSeries={timeSeries}
+          setTimeSeries={setTimeSeries}
+          currentPage={page}
+          totalPage={totalPagination}
+        />
+        <div className="pagination">
+          {/* mapping pagination button. index 0 = page 1 */}
+          {[...Array(totalPagination)].map((x, index) => {
+            return (
+              <div
+                className={`page ${
+                  parseInt(index + 1) === parseInt(page) ? "active" : ""
+                }`}
+                key={index}
+                onClick={() => changePage(index + 1)}
+              >
+                {index + 1}
+              </div>
+            );
+          })}
+        </div>
+      </Layout>
   );
 }
 
@@ -374,8 +371,8 @@ Home.getInitialProps = async (context) => {
   const typeWrapper = [];
   datasets.map((item) => {
     // mapping through datasest to get sector list only
-    if (item["ML Type"].length > 0) {
-      typeWrapper.push(...item["ML Type"]);
+    if (item.MLType.length > 0) {
+      typeWrapper.push(...item.MLType);
     }
   });
 

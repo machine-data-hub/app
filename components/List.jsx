@@ -155,9 +155,9 @@ const List = ({
                             <Link href={`/posts/${item.id}`} key={index}>
                                 <div className="clickable__tile">
                                     <div className="card__image">
-                                        {item.img_link ? (
+                                        {item.ImgLink ? (
                                             <img
-                                                src={item.img_link}
+                                                src={item.ImgLink}
                                                 alt="Dataset"
                                             />
                                         ) : (
@@ -169,34 +169,9 @@ const List = ({
                                     <div className="card__title">
                                         <h2>{item.Name}</h2>
                                         <div className="card__info">
-                                            {item["One Line"]}
-                                            {/* <span>{item['File Size']}</span> */}
-                                            {/* {item.Attributes && item.Attributes !== "N/A" ? (
-                    <span>{item.Attributes} Attributes</span>
-                  ) : (
-                    ""
-                  )}
-                  {item.Instances && item.Instances !== "N/A" ? (
-                    <span>{item.Instances} Instances</span>
-                  ) : (
-                    ""
-                  )} */}
+                                            {item["OneLine"]}
                                         </div>
                                     </div>
-                                    {/* <div className="card__details">
-                <div>
-                  <span className="icon__download">
-                    <MdFileDownload />
-                  </span>
-                  {item.Downloads ? item.Downloads : 0} Downloads
-                </div>
-                <div>
-                  <span>
-                    <MdFavorite />
-                  </span>
-                  {item.Likes} Likes
-                </div>
-              </div> */}
                                 </div>
                             </Link>
 
@@ -216,8 +191,8 @@ const List = ({
                                     </div>
                                 )}
 
-                                {item["ML Type"]?.length > 0 &&
-                                    item["ML Type"].map((tag, index) => (
+                                {item.MLType?.length > 0 &&
+                                    item.MLType.map((tag, index) => (
                                         <div
                                             className="buttonsML"
                                             key={index}
@@ -252,7 +227,7 @@ const List = ({
                                     </div>
                                 )}
 
-                                {item["Time Series"] === "Yes" && (
+                                {item.TimeSeries === "Yes" && (
                                     <div
                                         onClick={() =>
                                             handleTimeSeriesFilter("Yes")
@@ -262,7 +237,7 @@ const List = ({
                                         Time Series
                                     </div>
                                 )}
-                                {item["Simulation (Yes/No)"] === "Yes" && (
+                                {item.Simulation === "Yes" && (
                                     <div
                                         onClick={() =>
                                             handleSimulationFilter("Yes")

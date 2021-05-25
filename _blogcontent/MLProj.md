@@ -2,17 +2,34 @@
 title: Remaining Useful Life Tutorial
 date: May 3, 2021
 author: Cecilia Barnes
-img: https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1532&q=80
-summary: Remaining Useful Life prediction can be highly useful in maintenence of machines. Today, we will be using data from NASA's...
+img: /images/MLProjMarkdown/title.jpg
+summary: To put it simply, a turbofan is a jet engine with a fan attached to the front, that acts as a propeller and compression fan...
 ---
 ---
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/machine-data-hub/binder-examples/HEAD)
+
+# TurboFan Engine Degredation Simulation
+
+To put it simply, a turbofan is a jet engine with a fan attached to the front, that acts as a propeller and compression fan to produce more thrust with less energy. The health index of a turbofan is reliant on how far the engine is operating from operating limits like the Exhaust Gas Temperature (EGT) and amount of stalling in the Fan and in the High and Low Pressure Compressors (HPC and LPC respectively). 
+
+In this simulation, the fault in the High Pressure Compressor (or HPC) grows in magnitude until system failure. The fault in this case is an HPC compressor stall. A compressor stall occurs when there is an imbalance between the airflow supply and the airflow demand. This creates a pressure ratio that isn't compatible with the engine's revolutions per minute. This in turn makes the air through the compressor slow down.
+(https://www.skybrary.aero/index.php/Compressor_Stall)
+
+This dataset contains the operational settings and sensor measurements for a simulated turbofan engine going through degredation. It was made due to the lack of run-to-failure data needed for prognostics, which is the reduction of remaining useful component life. Below is a photo from the *Damage Propagation Modeling for Aircraft Engine Run-to-Failure Simulation* paper about this simulation.
+
+![Screen Shot 2021-05-22 at 11.49.38 AM.png](attachment:b685614b-30fd-4a17-9f0d-305a3bac9079.png)
+
+
 # Remaining Useful Life Prediction
-Remaining Useful Life prediction can be highly useful in maintenence of machines. Today, we will be using data from NASA's Turbofan Engine Degradation Simulation to build a model that predicts how many cycles are left in the jet engines life before failure. The general workflow will be:
-- use the Machine Data Hub command line package to download the data
-- process and clean the data
-- do some dimensionality reduction
-- make predictive models
-- assess model accuracy and performance
+Remaining Useful Life (RUL) prediction can be highly useful in maintenence of machines. RUL is useful because it allows us to know when a machine will fail to improve cost savings, and safety. Additionally, it gives decision-makers insight on how they may need to change operational characteristics, such as load, to prolong the life of the machine.
+
+Today, we will be using data from NASA's Turbofan Engine Degradation Simulation to build a model that predicts how many cycles are left in the jet engines life before failure. The general workflow will be:
+1. use the Machine Data Hub command line package to download the data
+2. process and clean the data
+3. do some dimensionality reduction
+4. make predictive models
+5. assess model accuracy and performance
 
 ## Using MDH Command Line to Get Data
 
@@ -23,123 +40,29 @@ Then, we need to get our dataset. Let's find what ID our dataset has in order to
 - type `mdh list` to view the datasets and their ID's
 
 We can see the dataset we want has an ID of 9. It also tell us that there are 2 available files. Now we can download the data (make sure you're in a directory where you want the data files to be)
-- type `mdh download 9 1` to download the first file of the 9th dataset
+- type `mdh download 9 1` to download the first file of the 9th dataset![Screen Shot 2021-05-22 at 11.49.24 AM.png](attachment:98e9af66-5c8f-4832-b66e-735a13370490.png)
 
 
 ```python
 import pandas as pd
 import numpy as np
+import random
 ```
 
-# Reading in the data
-First, let's look at the readme.txt file for some context about the data.
+## Understanding the Data
+The readme.txt file gives us some context about the data.
+- In the training set, the fault grows in magnitude **until system failure.** 
+- In the test set, the time series ends some time **prior to system failure.** 
+- Also provided a vector of true Remaining Useful Life (RUL) values for the test data.
 
+**GOAL: Predict the number of remaining operational cycles before failure in the test set, i.e., the number of operational cycles after the last cycle that the engine will continue to operate.**
 
-```python
-f = open('CMAPSSData/readme.txt', 'r', errors='ignore')
-file_contents = f.read()
-print(file_contents)
-f.close()
-```
-
-    Data Set: FD001
-    Train trjectories: 100
-    Test trajectories: 100
-    Conditions: ONE (Sea Level)
-    Fault Modes: ONE (HPC Degradation)
-    
-    Data Set: FD002
-    Train trjectories: 260
-    Test trajectories: 259
-    Conditions: SIX 
-    Fault Modes: ONE (HPC Degradation)
-    
-    Data Set: FD003
-    Train trjectories: 100
-    Test trajectories: 100
-    Conditions: ONE (Sea Level)
-    Fault Modes: TWO (HPC Degradation, Fan Degradation)
-    
-    Data Set: FD004
-    Train trjectories: 248
-    Test trajectories: 249
-    Conditions: SIX 
-    Fault Modes: TWO (HPC Degradation, Fan Degradation)
-    
-    
-    
-    Experimental Scenario
-    
-    Data sets consists of multiple multivariate time series. Each data set is further divided into training and test subsets. Each time series is from a different engine  i.e., the data can be considered to be from a fleet of engines of the same type. Each engine starts with different degrees of initial wear and manufacturing variation which is unknown to the user. This wear and variation is considered normal, i.e., it is not considered a fault condition. There are three operational settings that have a substantial effect on engine performance. These settings are also included in the data. The data is contaminated with sensor noise.
-    
-    The engine is operating normally at the start of each time series, and develops a fault at some point during the series. In the training set, the fault grows in magnitude until system failure. In the test set, the time series ends some time prior to system failure. The objective of the competition is to predict the number of remaining operational cycles before failure in the test set, i.e., the number of operational cycles after the last cycle that the engine will continue to operate. Also provided a vector of true Remaining Useful Life (RUL) values for the test data.
-    
-    The data are provided as a zip-compressed text file with 26 columns of numbers, separated by spaces. Each row is a snapshot of data taken during a single operational cycle, each column is a different variable. The columns correspond to:
-    1)	unit number
-    2)	time, in cycles
-    3)	operational setting 1
-    4)	operational setting 2
-    5)	operational setting 3
-    6)	sensor measurement  1
-    7)	sensor measurement  2
-    ...
-    26)	sensor measurement  26
-    
-    
-    Reference: A. Saxena, K. Goebel, D. Simon, and N. Eklund, Damage Propagation Modeling for Aircraft Engine Run-to-Failure Simulation, in the Proceedings of the Ist International Conference on Prognostics and Health Management (PHM08), Denver CO, Oct 2008.
-    
-
-
-## Remaining useful life for each unit
-Next, lets read in the file with values of remaining useful life (target) for each unit in test data. We will just look at the first simulation, FD001.
-
-
-```python
-RUL = pd.read_csv('CMAPSSData/RUL_FD001.txt', header=None)
-RUL.columns = ['RUL']
-RUL.head()
-```
-
-
-
-
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr className="text-align: right;">
-      <th></th>
-      <th>RUL</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>112</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>98</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>69</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>82</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>91</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
+When building machine learning models, it is best practice that you **do not touch** the test data until the very end, when you have chosen the "best" model. We will not use the test set until we have chosen a model that we decide is "best" based on metrics we get to choose, that can be found by splitting the training data into training and validation sets.
 
 ## Training Data
-Now we'll read in the simulation data. In this training set, the fault grows in magnitude until system failure (run-to-failure data).
+Now we'll read in the simulation data. In this training set, the fault in the High Pressure Compressor (or HPC) grows in magnitude until system failure, also known as run-to-failure data.
+
+You can see that there is simulation data run on many different units with different sets of operational settings and sensor measurements. As we use this data, we want to make sure we can make predictions for each unit, so we need to keep each unit's data together.
 
 
 ```python
@@ -150,13 +73,10 @@ units = train['unit']
 train.head()
 ```
 
-
-
-
 <div>
 <table border="1" class="dataframe">
   <thead>
-    <tr className="text-align: right;">
+    <tr>
       <th></th>
       <th>unit</th>
       <th>cycle</th>
@@ -309,6 +229,56 @@ train.head()
 
 
 
+## Remaining useful life for each unit
+Next, lets read in the file with values of remaining useful life, or RUL, (our target variable) for each unit in test data. We will just look at the first simulation, FD001. In this dataset, RUL is given to us in cycles, which are integers. 
+
+RUL is the target data in this case because it is the variable we want to *predict*. We want to be able to take **input data about the engine** and **output how many remaining cycles** we think the engine has.
+
+
+```python
+RUL = pd.read_csv('CMAPSSData/RUL_FD001.txt', header=None)
+RUL.columns = ['RUL']
+RUL.head()
+```
+
+
+
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>RUL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>112</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>98</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>69</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>91</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
 ## Test Data
 Last, we'll get the test set. In the test set, the time series ends some time prior to system failure.
 
@@ -327,7 +297,7 @@ test.head()
 <div>
 <table border="1" class="dataframe">
   <thead>
-    <tr className="text-align: right;">
+    <tr>
       <th></th>
       <th>unit</th>
       <th>cycle</th>
@@ -502,7 +472,7 @@ max_life,min_life,mean_life
 ## Setting up X and y in training and testing data
 #### Setting up Remaining Useful Life variable (y)
 The data gives us measurements from each cycle counting up, but we want the remaining useful life, or the cycles left before failure.
-In order to set up the data to have remaining cycles left, we will reverse the cycles column so that instead of counting up, it's counting down until failure. This will ultimately be our y variable.
+In order to set up the data to have remaining cycles left, we will reverse the cycles column so that instead of counting up, it's counting down until failure. This will ultimately be our target y variable.
 
 
 ```python
@@ -512,7 +482,7 @@ rul_lst = [j for i in train["unit"].unique() for j in np.array(grp.get_group(i)[
 ```
 
 #### Setting up sensor measurements (X)
-Since we are predicting remaining useful life, we don't want that column in our X data, so we remove it.
+Since we are predicting remaining useful life, we don't want that column in our X, or input data, so we remove it.
 
 
 ```python
@@ -522,7 +492,9 @@ test_x = test.drop("cycle", axis=1)
 ```
 
 ## Applying Principal Component Analysis
-We are applying Principal Component Analysis (PCA) in order to avoid overfitting due to the large number of features in the dataset. PCA reduces the dimensionality of the data. Here, we are setting PCA to choose the # of features that explain 95% of the variance in the data.
+We are applying Principal Component Analysis (PCA) in order to avoid overfitting due to the large number of features in the dataset. PCA reduces the dimensionality of the data by using the given features and linearly transforming them to new features that capture the same amount of variance as all of the original features. Here, we are setting PCA to choose the # of features that explain 95% of the variance in the data.
+
+More info on how PCA works: https://towardsdatascience.com/how-exactly-does-pca-work-5c342c3077fe
 
 
 ```python
@@ -580,7 +552,7 @@ train_df.head()
 <div>
 <table border="1" class="dataframe">
   <thead>
-    <tr className="text-align: right;">
+    <tr>
       <th></th>
       <th>Unit</th>
       <th>RUL</th>
@@ -684,15 +656,24 @@ train_df.head()
 
 
 
+# Making Predictions
+Here, we will train a few different models and see how well they can predict the remaining useful life.
+Our process for each model is as follows:
+- Split up training data into train and validate sets based on their unit
+- Train model on the training set
+- Use model to predict RUL on validation set
+- Assess model accuracy
+
 ## Splitting into Train and Validate Sets
-First, we will split up the data randomly by units. We don't want random rows of units being selected for train and validate sets, but rather want to keep all the data for each unit together.
+Since we don't want to use the test set unti the very end *but* we still want to be able to evaluate our models, we will split the data into training and validation sets. We will train the model using 80% of the training set, and then evaluate our model's performance on the remaining 20% of the training set, which we will call validation data.
 
+![image.png](attachment:dc537cfa-4334-4a61-b33c-1e204fdef6e7.png)
 
-```python
-import random
-```
+https://towardsdatascience.com/train-validation-and-test-sets-72cb40cba9e7
 
 ### Splitting up units randomly
+First, we will split up the data randomly *by units*. We don't want to mux up data from different units in the train and validate sets, but rather want to keep all the data for each unit together.
+
 Here, we get a list of all unique units (a list from 1-100) and shuffle it. Then, to do an 80-20 train-validate split, we get the first 80 units of the shuffled list and store them as training units, and then get the last 20 units of the shuffled list and store them as validation units.
 
 
@@ -724,15 +705,12 @@ X_train = X_train.set_index('Unit')
 X_validate = X_validate.set_index('Unit')
 ```
 
-# Making Predictions
-Here, we will train a few different models and see how well they can predict the remaining useful life.
-Our process for each model is as follows:
-- Split up training data into train and validate sets based on their unit
-- Train model on the training set
-- Use model to predict RUL on validation set
-- Assess model accuracy
+## Model 1: Linear Regression Model
 
-## Linear Regression Model
+"Linear regression attempts to model the relationship between two variables by fitting a linear equation to observed data. One variable is considered to be an explanatory variable, and the other is considered to be a dependent variable."
+http://www.stat.yale.edu/Courses/1997-98/101/linreg.htm
+
+In this case, our explanatory variables are the features we extracted from PCA, and the dependent variable is Remaining Useful Life.
 
 
 ```python
@@ -760,11 +738,11 @@ print('Validation R^2: ', r2_score(y_validate, y_hat))
 print('Validation MSE: ', mean_squared_error(y_validate, y_hat))
 ```
 
-    Training Cross Validation Score:  [0.65181542 0.60621829 0.56514893 0.52319301 0.51774096]
-    Validation Cross Validation Score:  [0.72617618 0.42561359 0.30175429 0.70016344 0.42958844]
-    Validation R^2:  0.5254642642582465
-    Validation MSE:  2437.895634893165
-
+    Training Cross Validation Score:  [0.69888362 0.54057989 0.63081576 0.55132441 0.51100305]
+    Validation Cross Validation Score:  [ 0.58426628  0.4519635   0.35682625  0.51766295 -0.08685208]
+    Validation R^2:  0.46824152428606947
+    Validation MSE:  2698.1020688217295
+    
 
 ### Plotting Predicted vs True Values
 Ideally, all values would be close to a regressed diagonal line and fairly symmetric.
@@ -777,7 +755,10 @@ _ = plt.xlabel("Predicted Remaining Useful Life")
 _ = plt.ylabel("True Remaining Useful Life")
 ```
 
-<img src="/images/MLProjMarkdown/output_37_0.gif"/>
+
+
+<img src="/images/MLProjMarkdown/output_36_0.jpg"/>
+
 
 
 This plot shows a clear curve in the data which suggests we may be able to transform the data to get better performance. Let's try taking the log of the RUL to fix this.
@@ -799,11 +780,11 @@ print('Validation R^2: ', r2_score(log_y_validate, y_hat))
 print('Validation MSE: ', mean_squared_error(log_y_validate, y_hat))
 ```
 
-    Training Cross Validation Score:  [0.65181542 0.60621829 0.56514893 0.52319301 0.51774096]
-    Validation Cross Validation Score:  [0.86189994 0.57916562 0.62127333 0.84606404 0.71891191]
-    Validation R^2:  0.7119259657778766
-    Validation MSE:  0.2747472045111408
-
+    Training Cross Validation Score:  [0.69888362 0.54057989 0.63081576 0.55132441 0.51100305]
+    Validation Cross Validation Score:  [0.67334079 0.72128858 0.65043858 0.71438363 0.56484904]
+    Validation R^2:  0.6915045493347627
+    Validation MSE:  0.2984384342830433
+    
 
 
 ```python
@@ -814,12 +795,20 @@ _ = plt.ylabel("True Log of Remaining Useful Life")
 ```
 
 
-<img src="/images/MLProjMarkdown/output_41_0.gif"/>
+<img src="/images/MLProjMarkdown/output_40_0.jpg"/>
+
 
 As you can tell, after the transformation of the data, we got a much more reasonable plot along the diagonal.
 
 ## Decision Tree Regressor
 Let's try another model to see if it performs better.
+
+Decision trees are predictive models that use a set of binary rules to calculate a target value. A decision tree is arriving at an estimate by asking a series of questions to the data, each question narrowing our possible values until the model get confident enough to make a single prediction.
+Here's a visual example of a decision tree regressor from
+https://gdcoder.com/decision-tree-regressor-explained-in-depth/
+
+![Screen Shot 2021-05-22 at 1.22.47 PM.png](attachment:3cb9be4e-43f0-4b71-9307-cd0160558d01.png)
+
 ### Fitting the model
 
 
@@ -842,11 +831,11 @@ print('Validation R^2: ', r2_score(y_validate, y_hat))
 print('Validation MSE: ', mean_squared_error(y_validate, y_hat))
 ```
 
-    Training Cross Validation Score:  [0.3314608  0.03284172 0.17224829 0.25248153 0.28469372]
-    Validation Cross Validation Score:  [ 0.21143813  0.00097633 -0.03242251  0.25507367 -0.23748143]
-    Validation R^2:  0.15272460204742866
-    Validation MSE:  4352.820743820744
-
+    Training Cross Validation Score:  [0.35184965 0.06401961 0.26987918 0.24646428 0.34449397]
+    Validation Cross Validation Score:  [ 0.34478644  0.36825102  0.08006531  0.20222369 -1.89180928]
+    Validation R^2:  0.14566532645905728
+    Validation MSE:  4334.829166666666
+    
 
 ### Plotting Predicted vs True Values
 
@@ -858,8 +847,8 @@ _ = plt.xlabel("Predicted Remaining Useful Life")
 _ = plt.ylabel("True Remaining Useful Life")
 ```
 
+<img src="/images/MLProjMarkdown/output_47_0.jpg"/>
 
-<img src="/images/MLProjMarkdown/output_48_0.gif"/>
 
 
 While this plot is symmetric, after 50 or so cycles it it's performance drastically decreases. Let's try using the transformed data like we did with linear regression.
@@ -878,19 +867,26 @@ _ = plt.xlabel("Predicted Log of Remaining Useful Life")
 _ = plt.ylabel("True Log of Remaining Useful Life")
 ```
 
-    Training Cross Validation Score:  [0.77366425 0.7180512  0.73196486 0.68458347 0.67246177]
-    Validation Cross Validation Score:  [0.72003447 0.55813942 0.4954202  0.74433481 0.60379024]
-    Validation R^2:  0.680685900000316
-    Validation MSE:  0.3045420479245905
+    Training Cross Validation Score:  [0.77002853 0.70817928 0.75497914 0.68358901 0.69388449]
+    Validation Cross Validation Score:  [0.66017649 0.72371054 0.53224588 0.70034248 0.50563546]
+    Validation R^2:  0.6542589454556127
+    Validation MSE:  0.3344698236654492
+    
 
-
-<img src="/images/MLProjMarkdown/output_50_1.gif"/>
+<img src="/images/MLProjMarkdown/output_49_1.jpg"/>
 
 
 While the model does better with the transformed data, Linear Regression still has better performance.
 
 ## K-Nearest Neighbors Regressor
 Let's try one last model to see if it performs better.
+
+Regression with K-Nearest Neighbors takes a y-value, then looks at the data and averages all the X points that are closest to that y-value. This average is the prediction. A visual of this from https://towardsdatascience.com/the-basics-knn-for-classification-and-regression-c1e8a6c955:
+
+![image.png](attachment:14cfa731-92b6-456c-8e7c-b39c823a4288.png)
+
+The blue points are the given data, the blue points circled in red are the nearest neighbors of the Y value, represented by the vertical red lines. The predictions, which are averages of the blue points circled in red, are the red dots on the lines.
+
 ### Fitting the Model
 
 
@@ -915,11 +911,11 @@ print('Validation R^2: ', r2_score(y_validate, y_hat))
 print('Validation MSE: ', mean_squared_error(y_validate, y_hat))
 ```
 
-    Training Cross Validation Score:  [0.33669568 0.06067125 0.19325714 0.25780171 0.29606065]
-    Validation Cross Validation Score:  [ 0.19072975 -0.01737705 -0.04616889  0.28963416 -0.31215523]
-    Validation R^2:  0.132442225711644
-    Validation MSE:  4457.020097020097
-
+    Training Cross Validation Score:  [0.35758267 0.0736068  0.25672278 0.23704877 0.32959209]
+    Validation Cross Validation Score:  [ 0.3644445   0.3667751   0.10499852  0.22457352 -1.93173184]
+    Validation R^2:  0.14180190709216056
+    Validation MSE:  4354.431862745098
+    
 
 ### Plotting Predicted vs True Values
 
@@ -931,7 +927,8 @@ _ = plt.xlabel("Predicted Remaining Useful Life")
 _ = plt.ylabel("True Remaining Useful Life")
 ```
 
-<img src="/images/MLProjMarkdown/output_58_0.gif"/>
+<img src="/images/MLProjMarkdown/output_57_0.jpg"/>
+
 
 
 While this plot is symmetric, after 50 or so cycles it it's performance drastically decreases. Let's try using the transformed data like we did with linear regression.
@@ -950,15 +947,15 @@ _ = plt.xlabel("Predicted Log of Remaining Useful Life")
 _ = plt.ylabel("True Log of Remaining Useful Life")
 ```
 
-    Training Cross Validation Score:  [0.77184865 0.71060796 0.73260798 0.68050613 0.67374973]
-    Validation Cross Validation Score:  [0.72126975 0.55465672 0.50704406 0.7478887  0.59853228]
-    Validation R^2:  0.6802101443785232
-    Validation MSE:  0.3049957942244644
+    Training Cross Validation Score:  [0.77136845 0.7052402  0.75711344 0.6900989  0.69191554]
+    Validation Cross Validation Score:  [0.66254355 0.72646867 0.51679784 0.69416712 0.50404909]
+    Validation R^2:  0.655829127904749
+    Validation MSE:  0.33295082949341687
+    
 
-<img src="/images/MLProjMarkdown/output_60_1.gif"/>
+<img src="/images/MLProjMarkdown/output_59_1.jpg"/>
 
 
-While the model does better with the transformed data, Linear Regression still has the best performance.
 
 # Trying Our Model On Test Data
 Now that we've used the training data to find the best model, it's time to test our model on the test data! Remember, from the documentation we read in at the beginning, "In the test set, the time series ends some time prior to system failure." Let's take a look at the test data to see what we have..
@@ -974,7 +971,7 @@ test.head()
 <div>
 <table border="1" class="dataframe">
   <thead>
-    <tr className="text-align: right;">
+    <tr>
       <th></th>
       <th>unit</th>
       <th>cycle</th>
@@ -1157,7 +1154,7 @@ test_df.head()
 <div>
 <table border="1" class="dataframe">
   <thead>
-    <tr className="text-align: right;">
+    <tr>
       <th></th>
       <th>0</th>
       <th>1</th>
@@ -1270,7 +1267,7 @@ Since our model actually makes a prediction for each row of data, we can plot ou
 _ = plt.plot(y_hat_test[0][0:400])
 ```
 
-<img src="/images/MLProjMarkdown/output_72_0.gif"/>
+<img src="/images/MLProjMarkdown/output_70_0.jpg"/>
 
 
 Ultimately, we want a prediction output of one value for each unit that tell us the remaining useful life for each unit in the data. Right now, we have one prediction per row of data, and each unit has many rows. To get just one prediction per unit, we will loop through `y_hat_test` dataframe of the predictions, and grab the last prediction for each unit since that will tell us the final number of cycles for the remaining useful life.. 
@@ -1300,7 +1297,7 @@ rul_pred.head()
 <div>
 <table border="1" class="dataframe">
   <thead>
-    <tr className="text-align: right;">
+    <tr>
       <th></th>
       <th>0</th>
     </tr>
@@ -1308,23 +1305,23 @@ rul_pred.head()
   <tbody>
     <tr>
       <th>0</th>
-      <td>5.276372</td>
+      <td>5.215959</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>4.661821</td>
+      <td>4.615012</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>4.047469</td>
+      <td>4.043047</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>4.276243</td>
+      <td>4.232985</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>4.430838</td>
+      <td>4.392286</td>
     </tr>
   </tbody>
 </table>
@@ -1340,11 +1337,11 @@ print('Validation R^2: ', r2_score(y_test, rul_pred))
 print('Validation MSE: ', mean_squared_error(y_test, rul_pred))
 ```
 
-    Training Cross Validation Score:  [0.47533422 0.82207707 0.66695714 0.80961257 0.80561609]
-    Validation Cross Validation Score:  [0.47533422 0.82207707 0.66695714 0.80961257 0.80561609]
-    Validation R^2:  0.7423429266648431
-    Validation MSE:  0.18018159916559606
-
+    Training Cross Validation Score:  [0.47738765 0.81889428 0.65937406 0.81015806 0.80221537]
+    Validation Cross Validation Score:  [0.47738765 0.81889428 0.65937406 0.81015806 0.80221537]
+    Validation R^2:  0.7565921223696981
+    Validation MSE:  0.1702170255729099
+    
 
 
 ```python
@@ -1354,11 +1351,18 @@ _ = plt.xlabel("Predicted Log of Remaining Useful Life")
 _ = plt.ylabel("True Log of Remaining Useful Life")
 ```
 
-<img src="/images/MLProjMarkdown/output_77_0.gif"/>
+<img src="/images/MLProjMarkdown/output_75_0.jpg"/>
 
 
 # Conclusion
 In this tutorial, we wanted to be able to predict a machine's remaining useful life given sensor measurements and operational settings over time in cycles. To do this, we read in the data, processed it, split it into training, validation, and test sets, applied dimensionality reduction, and finally ran three different models on the training and validation data. Then, we looked to the model accuracy metrics to decide on a model to move forward with for predictions. When looking at r-squared, linear regression was the best model with an r-squared of 71% compared to 68% for the other two models. When applying our model to the test data, we get an r-squared of 74% which is slightly better performance than it was on the training set. Now you can go forward knowing how many cycle's are left in this simulated engine's life!
+
+## Next Steps
+Possible next steps to improve model performance:
+- research other regression models and try implementing them
+- try tuning parameters in sklearn's models that we used above
+- try different implementations of PCA (we got # of features to explain 95% of the variance in the data. Maybe try changing this to a higher or lower percentage)
+- research the models others have made on this dataset and try implementing them for yourself
 
 
 ```python

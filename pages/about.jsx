@@ -29,7 +29,7 @@ const About = () => {
           <p>
             If you are interested in using our Python package, you can install
             it the PyPI package in the near future using{" "}
-            <a href="https://machine-data-hub.readthedocs.io/en/latest/?badge=latest" className="gitURL">
+            <a href="https://pypi.org/project/machine-data-hub/" className="gitURL">
               ‘pip install machine-data-hub’!
             </a>{" "}
             It will allow you to view available datasets, see information about
