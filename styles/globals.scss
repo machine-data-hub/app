@@ -803,6 +803,21 @@ button:focus {
 // Page - About
 .page__about {
   padding: 4rem 2rem;
+
+  .gitURL {
+    font-weight: 600;
+  }
+  a {
+    color: var(--dark);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  a:visited {
+    text-decoration: none;
+    color: var(--primary);
+  }
   
   h1 {
     color: var(--primary);
@@ -828,18 +843,6 @@ button:focus {
 
     p {
       color: black;
-    }
-
-    .gitURL {
-      font-weight: 600;
-    }
-
-    a {
-      color: var(--dark);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
     }
 
     .icon__download {

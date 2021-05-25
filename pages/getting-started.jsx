@@ -30,7 +30,7 @@ const GettingStarted = () => {
         <div className="body">
           The machinedatahub Python package allows users to maneuver Machine
           Data Hub from a local Python environment. The package can be installed
-          in the near future using
+          in the near future using{" "}
           <a
             href="https://machine-data-hub.readthedocs.io/en/latest/?badge=latest"
             className="gitURL"
@@ -92,7 +92,21 @@ const GettingStarted = () => {
         <h1>ETL Process</h1>
         <div clasName="body">
           Machine Data Hub has its own Extract, Transform, Load (ETL) processes
-          using the Python package. This package is coming June 2021!
+          using the Python package. You can view our package{" "}
+          <a
+            href="https://pypi.org/project/machine-data-hub/"
+            className="gitURL"
+          >
+            here!
+          </a>
+          {"\n"}
+          Documentation for the package can be found{" "}
+          <a
+            href="https://machine-data-hub.readthedocs.io/en/latest/?badge=latest"
+            className="gitURL"
+          >
+            here.
+          </a>
         </div>
 
         <h1 id="blogs">Blogs</h1>
