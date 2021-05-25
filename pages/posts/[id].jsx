@@ -75,7 +75,7 @@ const Posts = ({ data, similar }) => {
               <div className="more">
                 <div>More info:</div>
                 <a href={data.URL}>
-                  {data.URL}
+                  Origial Website
                 </a>
               </div>
             </div>

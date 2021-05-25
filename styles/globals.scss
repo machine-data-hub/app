@@ -1691,9 +1691,14 @@ button:focus {
       justify-content: center;
       display:block;
       margin-left:-115px;
+      line-height: 60%;
       &:hover {
         color: var(--grayOrange);
       }
+    }
+
+    .with__text {
+      margin-top: 5px;
     }
   }
 }

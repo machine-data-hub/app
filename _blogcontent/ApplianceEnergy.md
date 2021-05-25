@@ -2,7 +2,7 @@
 title: Appliance Energy Analysis
 date: May 2, 2021
 author: Matthew Sullivan
-img: https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1356&q=80
+img: /images/ApplianceEnergy/title.jpg
 summary: As part of my capstone, I am analyzing PHM datasets. I choose UCI's Applicance energy prediction data set. From their website...
 ---
 ---

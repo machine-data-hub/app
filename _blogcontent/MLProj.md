@@ -2,7 +2,7 @@
 title: Remaining Useful Life Tutorial
 date: May 3, 2021
 author: Cecilia Barnes
-img: https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1532&q=80
+img: /images/MLProjMarkdown/title.jpg
 summary: To put it simply, a turbofan is a jet engine with a fan attached to the front, that acts as a propeller and compression fan...
 ---
 ---

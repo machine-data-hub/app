@@ -2,7 +2,7 @@
 title: Predicting Energy Output of A Cycle Power Plant
 date: May 2, 2021
 author: Jiwoo Park
-img: https://images.unsplash.com/photo-1612257627047-d3e7970cdd7c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1778&q=80
+img: /images/MLExample/title.jpg
 summary: The dataset used contains 9568 data points collected from a Combined Cycle Power Plant over 6 years (2006-2011)...
 ---
 ---

@@ -18,7 +18,7 @@ const Footer = () => {
       </div>
       <div className="container">
         <Link href="/suggest-dataset">
-          <span className="icon">
+          <span className="icon with__text">
             <FaFileUpload size={32} />
             <p>Suggest a Dataset</p>
           </span>
