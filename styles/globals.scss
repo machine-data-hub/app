@@ -459,7 +459,7 @@ button:focus {
         font-weight: 500px;
 
         &:hover {
-          font-weight: bold;
+          text-decoration: underline;
         }
       }
     }
@@ -1672,23 +1672,25 @@ button:focus {
   align-items: center;
   margin: auto;
   padding: 1rem 2rem;
-
+  
   .container {
     margin: auto;
     display: inline-grid;
     align-items: center;
-
-    font-size: 1rem;
     cursor: pointer;
-    border-radius: 4px;
+    font-size: 1rem;
+
+
     text-align: center;
 
     .netlify {
       font-size: 2rem;
     }
 
-    .icon {
-      vertical-align: middle;
+    .icon {      
+      justify-content: center;
+      display:block;
+      margin-left:-115px;
       &:hover {
         color: var(--grayOrange);
       }
