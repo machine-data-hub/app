@@ -52,6 +52,7 @@ export default function Home({ datasets, sectors, isServer, mLTypes }) {
     // filter when query is not empty
     if (query !== "") {
       const map = datasets.filter((v, i) => {
+        console.log(v.Name)
         if (v.Owner.toLocaleLowerCase().includes(query.toLowerCase().trim())) {
           return true;
           // return v.Owner.toLocaleLowerCase().includes(query.toLowerCase().trim());

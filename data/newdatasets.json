@@ -746,7 +746,7 @@
     "id": "21",
     "Rank": 21,
     "Name": "GreenD: Energy Metering",
-    "Owner": null,
+    "Owner": "",
     "URL": "https://sourceforge.net/projects/greend/",
     "OneLine": "Provides a detailed energy profile from multiply households in Austria and Italy on a per device basis with a sampling rate of 1 Hz",
     "ShortSummary": "GREEND is an energy dataset containing power measurements collected from multiple households in Austria and Italy. It provides detailed energy profiles on a per dvice basis with a sampling rate of 1 Hz",
