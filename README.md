@@ -11,6 +11,7 @@ pip install machinedatahub
 ```
 
 ## Contributing
+Please read our contributing guidelines [here](https://github.com/machine-data-hub/app/blob/main/CONTRIBUTING.md).
 Pull requests welcomed!
 
 ## License
