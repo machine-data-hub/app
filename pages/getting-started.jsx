@@ -85,8 +85,6 @@ const GettingStarted = () => {
               alt="Sorter Page"
             />
           </div>
-          <h2>Python CLI</h2>
-          Coming June 2021!
         </div>
 
         <h1>ETL Process</h1>
