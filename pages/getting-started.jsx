@@ -118,7 +118,7 @@ const GettingStarted = () => {
               <a href="/blog/MLProj"> Remaining Useful Life Example</a>
             </li>
             <li>
-              <a href="/blog/MLExample"> Power Plant Output Example</a>
+              <a href="/blog/CombinedPowerPlant"> Power Plant Output Example</a>
             </li>
             <li>
               <a href="/blog/ApplianceEnergy"> Appliance Energy Consumption</a>
