@@ -40,9 +40,9 @@ Pull requests welcomed!
     │   ├── package-lock.json: Dependencies
     │   └── package.json: Dependencies
     ├── lib: Python package/
-    │   ├── .idea: 
-    │   ├── .github: Workflows
-    │   ├── .vscode: Settings
+    │   ├── .idea: IntelliJ IDE project-specific settings
+    │   ├── .github: GitHub project-specific settings
+    │   ├── .vscode: Visual Studio Code project-specific settings
     │   ├── src: Commands user calls
     │   ├── docs: Sphinx documentation
     │   ├── test: Files for testing package
