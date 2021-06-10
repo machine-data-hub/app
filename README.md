@@ -20,7 +20,7 @@ Pull requests welcomed!
 
 ## GitHub Tree
 .
-└-- machine-data-hub/
++-- machine-data-hub/
     +-- app: web application/
     |   +-- _blogcontent: Markdown files for blog
     |   +-- components: React components
@@ -37,7 +37,7 @@ Pull requests welcomed!
     |   +-- README: Introductory file
     |   +-- netlify.toml: Loader for Netlify deploys
     |   +-- package-lock.json: Dependencies
-    |   └-- package.json: Dependencies
+    |   +-- package.json: Dependencies
     +-- lib: Python package/
     |   +-- .idea: 
     |   +-- .github: Workflows
@@ -49,10 +49,10 @@ Pull requests welcomed!
     |   +-- README: Introductory file
     |   +-- noxfile.py: Script to automate testing
     |   +-- poetry.toml: Dependencies
-    |   └-- poetry.lock: Asserts dependencies versions
+    |   +-- poetry.lock: Asserts dependencies versions
     +-- Roadmap: Goals for Machine Data Hub
     +-- binder-examples: Runnable Python notebooks that open on Binder
     +-- Examples -- Outdated
     +-- ml-examples -- Outdated
     +-- jiwoo-ML -- Outdated
-    └-- react -- Outdated
+    +-- react -- Outdated
