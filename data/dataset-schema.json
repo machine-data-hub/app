@@ -1,0 +1,102 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://machinedatahub.ai/dataset-schema.json",
+    "definitions": {
+        "dataset": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "Rank": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Owner": {
+                    "type": "string"
+                },
+                "DateDonated": {
+                    "type": "string"
+                },
+                "URL": {
+                    "type": "string"
+                },
+                "ShortSummary": {
+                    "type": "string"
+                },
+                "OneLine": {
+                    "type": "string"
+                },
+                "FileType": {
+                    "type": "string"
+                },
+                "Sector": {
+                    "type": "string"
+                },
+                "MLType": {
+                    "type": "string"
+                },
+                "Labeled": {
+                    "type": "string"
+                },
+                "TimeSeries": {
+                    "type": "string"
+                },
+                "Simulation": {
+                    "type": "string"
+                },
+                "Attributes": {
+                    "type": "number"
+                },
+                "Instances": {
+                    "type": "number"
+                },
+                "Downloads": {
+                    "type": "number"
+                },
+                "Likes": {
+                    "type": "number"
+                },
+                "FileSize": {
+                    "type": "string"
+                },
+                "ImgLink": {
+                    "type": "string"
+                },
+                "Datasets": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/file"
+                    },
+                    "default": []
+                }
+            }
+        },
+        "file": {
+            "type": "object",
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "URL": {
+                    "type": "string"
+                },
+                "Likes": {
+                    "type": "number"
+                },
+                "Downloads": {
+                    "type": "number"
+                },
+                "FileSize": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/dataset"
+    }
+}
